@@ -1,0 +1,45 @@
+[
+    {"eName": "elementETICS_MW"},
+    {"eName": "elementETICSSoffit_MW"},
+    {"eName": "elementMetalStudCovering"},
+    {
+        "eName": "elementClayBlock",
+        "eNameUI": "Hochlochziegel",
+        "eTypes": "typesClayBlock",
+        "ePSet": "pSetClayBlock",
+        "eGroupName": "brickwork",
+        "eGroupNameUI": "Mauerwerk"
+    },
+    {
+        "eName": "elementConcreteBlock",
+        "eNameUI": "Betonstein",
+        "eTypes": "typesConcreteBlock",
+        "ePSet": "pSetConcreteBlock",
+        "eGroupName": "brickwork",
+        "eGroupNameUI": "Mauerwerk"
+    },
+    {
+        "eName": "elementConcreteGasBlock",
+        "eNameUI": "Porenbetonstein",
+        "eTypes": "typesConcreteGasBlock",
+        "ePSet": "pSetConcreteGasBlock",
+        "eGroupName": "brickwork",
+        "eGroupNameUI": "Mauerwerk"
+    },
+    {
+        "eName": "elementMouldBlock",
+        "eNameUI": "Schalstein",
+        "eTypes": "typesMouldBlock",
+        "ePSet": "pSetMouldBlock",
+        "eGroupName": "brickwork",
+        "eGroupNameUI": "Mauerwerk"
+    },
+    {
+        "eName": "elementCoatBlock",
+        "eNameUI": "Mantelstein",
+        "eTypes": "typesCoatBlock",
+        "ePSet": "pSetCoatBlock",
+        "eGroupName": "brickwork",
+        "eGroupNameUI": "Mauerwerk"
+    }
+]

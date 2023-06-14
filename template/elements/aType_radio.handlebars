@@ -1,0 +1,9 @@
+<div class="my-4">
+    <label>{{aNameUI}}</label>
+    {{#each aValue}}
+    <div class="custom-control custom-radio mb-2">
+        <input type="radio" id="radio-{{@index}}" name="{{@root.aName}}" class="custom-control-input" value="{{this}}">
+        <label class="custom-control-label" for="radio-{{@index}}">{{this}}</label>
+    </div>
+    {{/each}}
+</div>

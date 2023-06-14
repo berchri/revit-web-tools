@@ -1,0 +1,123 @@
+{
+    "psetNameUI": "Mauerwerk",
+    "psetElement": [
+        {
+            "aName": "LV_08_Typ",
+            "aNameJS": "LV_08_Typ",
+            "aNameUI": "Mauerwerk Typ",
+            "aValueType": "radio",
+            "aValue": [
+                "Hochlochziegel",
+                "HLZ Planziegel",
+                "Betonsteine",
+                "Porenbetonsteine",
+                "Schalsteine",
+                "Mantelbetonsteine"
+            ],
+            "aValueUnit": ""
+        },
+        {
+            "aName": "LV_08_Dicke",
+            "aNameJS": "thicknessMasonry",
+            "aNameUI": "Dicke Mauerwerk",
+            "aValueType": "enumNr",
+            "aValue": [
+                10,
+                12,
+                15,
+                17,
+                18,
+                19,
+                20,
+                22,
+                25,
+                30,
+                32,
+                35,
+                38,
+                40,
+                50
+            ],
+            "aValueDefault": "",
+            "aValueUnit": "cm"
+        },
+        {
+            "aName": "LV_08_Schutzwirkung",
+            "aNameJS": "masonryInsulation",
+            "aNameUI": "Schutzwirkung",
+            "aValueType": "enum",
+            "aValue": [
+                "-",
+                "kein Schall- o. Wärmeschutz",
+                "Schallschutz",
+                "Wärmeschutz"
+            ],
+            "aValueDefault": 1,
+            "aValueUnit": ""
+        },
+        {
+            "aName": "LV_08_Planziegel",
+            "aNameJS": "planarBlock",
+            "aNameUI": "Planziegel",
+            "aValueType": "boolean",
+            "aValue": false,
+            "aValueUI": "N",
+            "aValueDefault": false,
+            "aValueUnit": ""
+        },
+        {
+            "aName": "LV_08_Betonstein_Ausführung",
+            "aNameUI": "Betonstein Ausführung",
+            "aValueType": "enum",
+            "aValue": [
+                "-",
+                "Beton-HBL-Steine",
+                "LB-HBL-Steine",
+                "LB-Schallschutz"
+            ],
+            "aValueDefault": 1,
+            "aValueUnit": ""
+        },
+        {
+            "aName": "LV_08_Porenbeton_Festigkeitsklasse",
+            "aNameJS": "cGasBlockStrength",
+            "aNameUI": "Porenbeton Festigkeitsklasse",
+            "aValueType": "enumNr",
+            "aValue": [
+                "-",
+                2.5,
+                5
+            ],
+            "aValueDefault": "-",
+            "aValueUnit": "N/mm²"
+        },
+        {
+            "aName": "R_Typ_Kommentar",
+            "aNameJS": "typeComment",
+            "aNameUI": "Kommentar",
+            "aValueType": "string"
+        }
+    ],
+    "psetElementConst": [
+        {
+            "aName": "LV_Gewerk",
+            "aNameJS": "trade",
+            "aValue": "08 Mauerarbeiten"
+        },
+        {
+            "aName": "iTWO_Key",
+            "aNameJS": "iTWO_Key",
+            "aValue": "WA-MWK-HLZ"
+        },
+        {
+            "aName": "LV_Beschreibung",
+            "aNameJS": "description",
+            "aValue": ""
+        },
+        {
+            "aName": "Material",
+            "aValue": "Mauerwerk - Ziegel"
+        }
+    ],
+    "psetElementModelCategory": "Architektur/Wand"
+}

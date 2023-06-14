@@ -1,0 +1,13 @@
+<svg id="Komponente_20_1" data-name="Komponente 20 – 1"
+    xmlns="http://www.w3.org/2000/svg" width="159" height="108" viewBox="0 0 159 108">
+    <rect id="Rechteck_69" data-name="Rechteck 69" width="159" height="46" rx="4" fill="#fde1c5"/>
+    <line id="Linie_37" data-name="Linie 37" x2="98" transform="translate(53.5 33.75)" fill="none" stroke="#f17a23" stroke-linecap="round" stroke-width="5"/>
+    <line id="Linie_38" data-name="Linie 38" x2="98" transform="translate(53.5 11.75)" fill="none" stroke="#f17a23" stroke-linecap="round" stroke-width="5"/>
+    <line id="Linie_39" data-name="Linie 39" x2="98" transform="translate(53.5 55.75)" fill="none" stroke="#00385e" stroke-linecap="round" stroke-width="5"/>
+    <line id="Linie_40" data-name="Linie 40" y1="15" transform="translate(115.49 73) rotate(120)" fill="none" stroke="#00385e" stroke-linecap="round" stroke-width="5"/>
+    <line id="Linie_41" data-name="Linie 41" y2="15" transform="translate(102.5 65.5) rotate(60)" fill="none" stroke="#00385e" stroke-linecap="round" stroke-width="5"/>
+    <line id="Linie_65" data-name="Linie 65" x2="98" transform="translate(55 105.5)" fill="none" stroke="#dee2e6" stroke-linecap="round" stroke-width="5"/>
+    <line id="Linie_66" data-name="Linie 66" x2="98" transform="translate(55 83.5)" fill="none" stroke="#dee2e6" stroke-linecap="round" stroke-width="5"/>
+    <line id="Linie_67" data-name="Linie 67" y1="15" transform="translate(37.49 29.5) rotate(120)" fill="none" stroke="#f17a23" stroke-linecap="round" stroke-width="5"/>
+    <line id="Linie_68" data-name="Linie 68" y2="15" transform="translate(24.5 22) rotate(60)" fill="none" stroke="#f17a23" stroke-linecap="round" stroke-width="5"/>
+</svg>

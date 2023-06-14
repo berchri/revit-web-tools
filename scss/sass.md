@@ -1,0 +1,1 @@
+sass custom.scss ../static/css/main.css

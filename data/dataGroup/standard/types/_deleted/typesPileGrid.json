@@ -1,0 +1,21 @@
+{
+    "typesCollection": [
+        {
+            "id": 1,
+            "Name": "PR_STB_500x400",
+            "Kategorie": "Balken",
+            "LV_Gewerk": "07 Beton- u Stahlbetonarbeiten",
+            "Ausführung": "Ortbeton",
+            "Material": "Beton",
+            "LV_Beschreibung": "Pfahlrost",
+            "iTWO_Key": "BA-PFAHL",
+            "Typenkommentare": "",
+            "R_Typ_Kommentar": "",
+            "Q_Dicke": 50,
+            "Breite": 50,
+            "Q_Laenge": 40,
+            "Höhe": 40,
+            "LV_07_Schalung": "Pfahlrostschalung"
+        }
+    ]
+}

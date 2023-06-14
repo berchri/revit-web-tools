@@ -1,0 +1,10 @@
+node_modules
+.DS_Store
+Thumbs.db
+ignore
+static/jquery.js
+static/css/materialdesignicons.min.css.map
+static/fonts/materialdesignicons-webfont.woff2
+static/css/materialdesignicons.min.css
+scss/.sass-cache
+daemon

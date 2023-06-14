@@ -1,0 +1,18 @@
+{
+    "typesCollection": [
+        {
+            "id": 1,
+            "Name": "WA_GK_Frei_IW01a",
+            "Kategorie": "Wand",
+            "LV_Gewerk": "39 Trockenbauarbeiten",
+            "Material": "Trockenbau",
+            "LV_Beschreibung": "Einfachständerwand",
+            "iTWO_Key": "WA-GK-FREI",
+            "Typenkommentare": "",
+            "R_Typ_Kommentar": "",
+            "Q_Dicke": 10,
+            "LV_39_Typ_Frei": "Einfachständerwand",
+            "LV_Kurztext": "GK Wand"
+        }
+    ]
+}

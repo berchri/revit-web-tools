@@ -1,0 +1,128 @@
+{
+    "psetNameUI": "Wärmedämmverbundsystem",
+    "psetElement": [
+        {
+            "aName": "LV_44_Typ",
+            "aNameJS": "LV_44_Typ",
+            "aNameUI": "WDVS Typ",
+            "aValueType": "radio",
+            "aValue": [
+                "EPS-F",
+                "MW-PT",
+                "MW-PT Untersicht"
+            ],
+            "aValueUnit": ""
+        },
+        {
+            "aName": "Q_Dicke",
+            "aNameJS": "thickness",
+            "aNameUI": "Dicke",
+            "aValueType": "numericMeasure",
+            "aValueDefault": "6",
+            "aValueUnit": "cm"
+        },
+        {
+            "aName": "LV_44_Lambdawert",
+            "aNameJS": "LV_44_Lambdawert",
+            "aNameUI": "Wärmeleitfähigkeit Lambda",
+            "aValueType": "enumNr",
+            "aValue": [
+                "-",
+                0.031,
+                0.034,
+                0.036,
+                0.04
+            ],
+            "aValueDefault": 0.031,
+            "aValueUnit": "W/(mk)"
+        },
+        {
+            "aName": "LV_44_Unterputzdicke",
+            "aNameJS": "LV_44_Unterputzdicke",
+            "aNameUI": "Unterputzdicke",
+            "aValueType": "enumNr",
+            "aValue": [
+                3,
+                5,
+                8
+            ],
+            "aValueDefault": 0,
+            "aValueUnit": "mm"
+        },
+        {
+            "aName": "LV_44_my10",
+            "aNameJS": "LV_44_my10",
+            "aNameUI": "my10",
+            "aValueType": "boolean",
+            "aValue": false,
+            "aValueDefault": false,
+            "aValueUI": "N",
+            "aValueUnit": ""
+        },
+        {
+            "aName": "LV_44_Oberputz",
+            "aNameJS": "LV_44_Oberputz",
+            "aNameUI": "Oberputz",
+            "aValueType": "enum",
+            "aValue": [
+                "Dünnputz kunstharzgebunden",
+                "Silikat-Dünnputz",
+                "Silikon-Dünnputz"
+            ],
+            "aValueDefault": 1,
+            "aValueUnit": ""
+        },
+        {
+            "aName": "LV_44_Oberputzstruktur",
+            "aNameJS": "LV_44_Oberputzstruktur",
+            "aNameUI": "Oberputzstruktur",
+            "aValueType": "enum",
+            "aValue": [
+                "Feinputz",
+                "Rillenstruktur",
+                "Reibstruktur",
+                "Füllputz"
+            ],
+            "aValueDefault": 0,
+            "aValueUnit": ""
+        },
+        {
+            "aName": "LV_44_Oberputzdicke",
+            "aNameJS": "LV_44_Oberputzdicke",
+            "aNameUI": "Oberputzdicke",
+            "aValueType": "enumNr",
+            "aValue": [
+                0.5,
+                1,
+                1.5,
+                2,
+                3
+            ],
+            "aValueDefault": 0,
+            "aValueUnit": "mm"
+        },
+        {
+            "aName": "R_Typ_Kommentar",
+            "aNameJS": "typeComment",
+            "aNameUI": "Kommentar",
+            "aValueType": "string"
+        }
+    ],
+    "psetElementConst": [
+        {
+            "aName": "LV_Gewerk",
+            "aNameJS": "trade",
+            "aValue": "44 Wärmedämmverbundsysteme"
+        },
+        {
+            "aName": "iTWO_Key",
+            "aNameJS": "iTWO_Key",
+            "aValue": "WA-VWS-EPS"
+        },
+        {
+            "aName": "Material",
+            "aValue": "Dämmung - hart"
+        }
+    ],
+    "psetElementModelCategory": "-"
+}

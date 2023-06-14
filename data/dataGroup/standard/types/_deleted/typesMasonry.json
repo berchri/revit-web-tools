@@ -1,0 +1,21 @@
+{
+    "typesCollection": [
+        {
+            "Kategorie": "Wand",
+            "LV_08_Dicke": 25,
+            "LV_08_Planziegel": true,
+            "LV_08_Planziegel_UI": "J",
+            "LV_08_Schutzwirkung": "kein Schall- o. Wärmeschutz",
+            "LV_08_Typ": "Hochlochziegel",
+            "LV_Beschreibung": "Hochlochziegel",
+            "LV_Gewerk": "08 Mauerarbeiten",
+            "Material": "Mauerwerk",
+            "Name": "WA_HLZ-P_250",
+            "Q_Dicke": 25,
+            "R_Typ_Kommentar": "",
+            "Typenkommentare": "",
+            "iTWO_Key": "WA-MWK-HLZ",
+            "id": 1
+        }
+    ]
+}

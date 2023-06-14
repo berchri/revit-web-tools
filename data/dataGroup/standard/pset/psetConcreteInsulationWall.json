@@ -1,0 +1,70 @@
+{
+    "psetNameUI": "Dämmung Wand",
+    "psetElement": [
+        {
+            "aName": "LV_Beschreibung",
+            "aNameUI": "Dämmung Typ",
+            "aValueType": "radio",
+            "aValue": [
+                "Kellerwand",
+                "Feuermauer",
+                "Trennfuge"
+            ]
+        },
+        {
+            "aName": "Q_Dicke",
+            "aNameJS": "thickness",
+            "aNameUI": "Dicke",
+            "aValueType": "numericMeasure",
+            "aValueDefault": "-",
+            "aValueUnit": "cm"
+        },
+        {
+            "aName": "Q_Dicke_2",
+            "aNameUI": "Dicke Auswahl",
+            "aValueType": "enumNr",
+            "aValue": [
+                "-",
+                2,
+                3,
+                4,
+                5,
+                7.5,
+                10,
+                12.5,
+                15,
+                17.5
+            ],
+            "aValueDefault": "-",
+            "aValueUnit": "cm"
+        },
+        {
+            "aName": "R_Typ_Kommentar",
+            "aNameJS": "typeComment",
+            "aNameUI": "Kommentar",
+            "aValueType": "string"
+        }
+    ],
+    "psetElementConst": [
+        {
+            "aName": "LV_Gewerk",
+            "aNameJS": "trade",
+            "aValue": "07 Beton- u Stahlbetonarbeiten"
+        },
+        {
+            "aName": "iTWO_Key",
+            "aNameJS": "iTWO_Key",
+            "aValue": "WA-DAEMMUNG"
+        },
+        {
+            "aName": "LV_Beschreibung",
+            "aNameJS": "description",
+            "aValue": "X"
+        },
+        {
+            "aName": "Material",
+            "aValue": "Dämmung - hart"
+        }
+    ],
+    "psetElementModelCategory": "Architektur/Wand"
+}

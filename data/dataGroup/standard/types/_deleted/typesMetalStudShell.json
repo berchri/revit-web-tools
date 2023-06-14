@@ -1,0 +1,34 @@
+{
+    "typesCollection": [
+        {
+            "id": 1,
+            "Name": "WA_GKVS_SB_7_GKB_1x12,5mm",
+            "Kategorie": "Wand",
+            "LV_Gewerk": "39 Trockenbauarbeiten",
+            "LV_Beschreibung": "Vosatzschale direkt befestigt",
+            "iTWO_Key": "WA-GKVS-SB",
+            "Typenkommentare": "",
+            "R_Typ_Kommentar": "",
+            "Q_Dicke": 7,
+            "LV_39_Typ": "direkt befestigt",
+            "LV_39_CW_Profil": "MW50",
+            "LV_39_Beplankung": "GKB_1x12,5mm",
+            "Material": "Trockenbau"
+        },
+        {
+            "id": 2,
+            "Name": "WA_GKVS_MS_10_CW75_GKB_1x12,5mm",
+            "Kategorie": "Wand",
+            "LV_Gewerk": "39 Trockenbauarbeiten",
+            "LV_Beschreibung": "Freistehende Vorsatzschale",
+            "iTWO_Key": "WA-GKVS-MS-CW75",
+            "Typenkommentare": "",
+            "R_Typ_Kommentar": "",
+            "Q_Dicke": 10,
+            "LV_39_Typ": "freistehend",
+            "LV_39_CW_Profil": "CW75",
+            "LV_39_Beplankung": "GKB_1x12,5mm",
+            "Material": "Trockenbau"
+        }
+    ]
+}

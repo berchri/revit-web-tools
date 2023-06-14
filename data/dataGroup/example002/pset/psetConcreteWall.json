@@ -1,0 +1,108 @@
+{
+    "psetNameUI": "Wand aus Beton",
+    "psetElement": [
+        {
+            "aName": "Q_Dicke",
+            "aNameJS": "Q_Dicke",
+            "aNameJS_": "thickness",
+            "aNameUI": "Dicke",
+            "aValueType": "numericMeasure",
+            "aValueDefault": "18",
+            "aValueUnit": "cm"
+        },
+        {
+            "aName": "LV_07_Betonfestigkeitsklasse",
+            "aNameJS": "LV_07_Betonfestigkeitsklasse",
+            "aNameJS_": "concreteStrengthClass",
+            "aNameUI": "Betonfestigkeitsklasse",
+            "aValueType": "enum",
+            "aValue": [
+                "C20/25",
+                "C25/30",
+                "C30/37",
+                "C35/45",
+                "C40/50",
+                "C45/55",
+                "C50/60"
+            ],
+            "aValueDefault": 3,
+            "aValueUnit": ""
+        },
+        {
+            "aName": "LV_07_Expositionsklasse",
+            "aNameJS": "LV_07_Expositionsklasse",
+            "aNameJS_": "exposureClass",
+            "aNameUI": "Expositionsklasse",
+            "aValueType": "enum",
+            "aValue": [
+                "XC1",
+                "XC2",
+                "XC3",
+                "XC4",
+                "XD2",
+                "XD3",
+                "XF1",
+                "XF2",
+                "XF3",
+                "XF4",
+                "BS1A",
+                "B1",
+                "B2",
+                "B4",
+                "B7"
+            ],
+            "aValueDefault": 0,
+            "aValueUnit": ""
+        },
+        {
+            "aName": "LV_07_Bruestung",
+            "aNameJS": "LV_07_Bruestung",
+            "aNameUI": "Brüstung, Attika",
+            "aValueType": "boolean",
+            "aValue": false,
+            "aValueDefault": false,
+            "aValueUnit": ""
+        },
+        {
+            "aName": "R_Typ_Kommentar",
+            "aNameJS": "R_Typ_Kommentar",
+            "aNameJS_": "typeComment",
+            "aNameUI": "Kommentar",
+            "aValueType": "string"
+        }
+    ],
+    "psetElementConst": [
+        {
+            "aName": "LV_07_Schalung",
+            "aNameJS": "LV_07_Schalung",
+            "aNameJS_": "formwork",
+            "aValue": "Wandschalung"
+        },
+        {
+            "aName": "LV_Gewerk",
+            "aNameJS": "LV_Gewerk",
+            "aNameJS_": "trade",
+            "aValue": "07 Beton- u Stahlbetonarbeiten"
+        },
+        {
+            "aName": "iTWO_Key",
+            "aNameJS": "iTWO_Key",
+            "aNameJS_": "iTWO_Key",
+            "aValue": "WA-BET"
+        },
+        {
+            "aName": "LV_Beschreibung",
+            "aNameJS": "LV_Beschreibung",
+            "aNameJS_": "description",
+            "aValue": "Ortbetonwand"
+        },
+        {
+            "aName": "Material",
+            "aValue": "Beton"
+        },
+        {
+            "aName": "Ausführung",
+            "aValue": "Ortbeton"
+        }
+    ]
+}

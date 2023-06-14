@@ -1,0 +1,10 @@
+{
+    "editor.formatOnSave": true,
+    "editor.wordWrap": "on",
+    "explorer.confirmDragAndDrop": false,
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": true,
+    "files.trimTrailingWhitespace": true,
+    "html.format.maxPreserveNewLines": 0,
+    "terminal.integrated.defaultLocation": "editor"
+}

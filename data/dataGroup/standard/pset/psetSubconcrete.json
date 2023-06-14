@@ -1,0 +1,65 @@
+{
+    "psetNameUI": "Unterbeton",
+    "psetElement": [
+        {
+            "aName": "Q_Hoehe",
+            "aNameJS": "hight",
+            "aNameUI": "Höhe",
+            "aValueType": "numericMeasure",
+            "aValue": 0,
+            "aValueDefault": "5",
+            "aValueUnit": "cm"
+        },
+        {
+            "aName": "LV_07_Betonfestigkeitsklasse",
+            "aNameJS": "concreteStrengthClass",
+            "aNameUI": "Betonfestigkeitsklasse",
+            "aValueType": "enum",
+            "aValue": [
+                "C12/15",
+                "C16/20"
+            ],
+            "aValueDefault": 0,
+            "aValueUnit": ""
+        },
+        {
+            "aName": "R_Typ_Kommentar",
+            "aNameJS": "typeComment",
+            "aNameUI": "Kommentar",
+            "aValueType": "string",
+            "aValue": "",
+            "aValueUnit": "max. 20 Zeichen"
+        }
+    ],
+    "psetElementConst": [
+        {
+            "aName": "LV_07_Schalung",
+            "aNameJS": "formwork",
+            "aValue": "Fundamentschalung"
+        },
+        {
+            "aName": "LV_Gewerk",
+            "aNameJS": "trade",
+            "aValue": "07 Beton- u Stahlbetonarbeiten"
+        },
+        {
+            "aName": "iTWO_Key",
+            "aNameJS": "iTWO_Key",
+            "aValue": "RB-FU-UB"
+        },
+        {
+            "aName": "LV_Beschreibung",
+            "aNameJS": "description",
+            "aValue": "Unterbeton"
+        },
+        {
+            "aName": "Material",
+            "aValue": "Ortbeton - bewehrt Verputzt"
+        },
+        {
+            "aName": "Ausführung",
+            "aValue": "Ortbeton"
+        }
+    ],
+    "psetElementModelCategory": "Ingenieurbau/Fundament/Platte"
+}

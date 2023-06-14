@@ -1,0 +1,99 @@
+{
+    "psetNameUI": "Decke aus Beton",
+    "psetElement": [
+        {
+            "aName": "Q_Hoehe",
+            "aNameJS": "hight",
+            "aNameUI": "Höhe",
+            "aValueType": "numericMeasure",
+            "aValueDefault": "20",
+            "aValueUnit": "cm"
+        },
+        {
+            "aName": "LV_07_Betonfestigkeitsklasse",
+            "aNameJS": "concreteStrengthClass",
+            "aNameUI": "Betonfestigkeitsklasse",
+            "aValueType": "enum",
+            "aValue": [
+                "C20/25",
+                "C25/30",
+                "C30/37",
+                "C35/45",
+                "C40/50",
+                "C45/55",
+                "C50/60"
+            ],
+            "aValueDefault": 2,
+            "aValueUnit": ""
+        },
+        {
+            "aName": "LV_07_Expositionsklasse",
+            "aNameJS": "exposureClass",
+            "aNameUI": "Expositionsklasse",
+            "aValueType": "enum",
+            "aValue": [
+                "XC1",
+                "XC2",
+                "B1",
+                "B2",
+                "B3",
+                "B4",
+                "B5",
+                "B7",
+                "BS1A"
+            ],
+            "aValueDefault": 0,
+            "aValueUnit": ""
+        },
+        {
+            "aName": "LV_07_Ausführung",
+            "aNameUI": "Ausführung",
+            "aValueType": "enum",
+            "aValue": [
+                "Geschoßdecke",
+                "Decke über Aufzug",
+                "Rampe"
+            ],
+            "aValueDefault": 0
+        },
+        {
+            "aName": "R_Typ_Kommentar",
+            "aNameJS": "typeComment",
+            "aNameUI": "Kommentar",
+            "aValueType": "string",
+            "aValue": "",
+            "aValueUnit": "max. 20 Zeichen"
+        }
+    ],
+    "psetElementConst": [
+        {
+            "aName": "LV_07_Schalung",
+            "aNameJS": "formwork",
+            "aValue": "Deckenschalung"
+        },
+        {
+            "aName": "LV_Gewerk",
+            "aNameJS": "trade",
+            "aValue": "07 Beton- u Stahlbetonarbeiten"
+        },
+        {
+            "aName": "iTWO_Key",
+            "aNameJS": "iTWO_Key",
+            "aValue": "DE-BET"
+        },
+        {
+            "aName": "LV_Beschreibung",
+            "aNameJS": "description",
+            "aValue": "Ortbetondecke"
+        },
+        {
+            "aName": "Material",
+            "aValue": "Ortbeton - bewehrt Verputzt"
+        },
+        {
+            "aName": "Ausführung",
+            "aValue": "Ortbeton"
+        }
+    ],
+    "psetElementModelCategory": "Architektur/Geschoßdecke"
+}

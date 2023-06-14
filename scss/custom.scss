@@ -1,0 +1,244 @@
+/**
+  * mixins
+  */
+
+@mixin hover() {
+  &:hover {
+    @content;
+  }
+}
+
+@mixin hover-focus() {
+
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+
+/**
+  * Colors Swietelsky Corporate Design
+  */
+
+$theme-colors: (
+  "primary": #00385E,
+  "secondary": #F17A23,
+  "swi-orange1": rgb(246, 158, 76),
+  "swi-orange2": rgb(250, 193, 137),
+  // "swi-orange3": rgb(252, 226, 200),
+  "swi-orange3": hsl(25, 88%, 94%),
+  "swi-blau1": rgb(55, 86, 129),
+  "swi-blau2": rgb(116, 133, 167),
+  // "swi-blau3": rgb(182, 189, 210),
+  "swi-blau3": hsl(204, 100%, 94%),
+  "swi-grau": rgb(110, 110, 110),
+  "swi-grau1": rgb(248, 248, 248),
+  "swi-grau2": rgb(241, 241, 241),
+  "swi-grau3": rgb(231, 231, 231),
+  "swi-grau4": rgb(221, 221, 221),
+  "swi-grau5": rgb(211, 211, 211),
+  "swi-grau6": rgb(201, 201, 201)
+);
+
+$prim: rgb(0, 56, 94);
+$sec: #F17A23;
+$swi-orange1: rgb(246, 158, 76);
+$swi-orange2: rgb(250, 193, 137);
+$swi-orange3: rgb(253, 225, 197);
+$swi-blau1: rgb(55, 86, 129);
+$swi-blau2: rgb(116, 133, 167);
+// $swi-blau3: rgb(216, 221, 236);
+$swi-blau3: hsl(204, 100%, 94%);
+$swi-grau: rgb(110, 110, 110);
+$swi-grau1: rgb(251, 251, 251);
+$swi-grau2: rgb(241, 241, 241);
+$swi-grau3: rgb(231, 231, 231);
+$swi-grau4: rgb(221, 221, 221);
+$swi-grau5: rgb(211, 211, 211);
+$swi-grau6: rgb(201, 201, 201);
+
+// bootstrap Standard farben
+$white: #fff;
+$red: #dc3545;
+
+/**
+  * Font
+  */
+
+$body-color: $prim;
+$font-family-sans-serif: "Helvetica Neue",
+  Arial,
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  Roboto,
+  "Noto Sans",
+  sans-serif,
+  "Apple Color Emoji",
+  "Segoe UI Emoji",
+  "Segoe UI Symbol",
+  "Noto Color Emoji";
+
+$font-size-base: 0.875rem;
+$line-height-base: 1.25;
+
+$headings-font-weight: bold;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  text-transform: uppercase;
+}
+
+
+/**
+  * Nav
+  */
+
+$component-active-color: $sec;
+
+
+$navbar-light-color: rgba($prim, 1);
+// $navbar-light-hover-color:          rgba($prim, .7);
+$navbar-light-hover-color: $sec;
+$navbar-light-active-color: $sec;
+
+.nav.flex-column .nav-link.active {
+  color: $navbar-light-active-color;
+}
+
+.nav-link,
+.nav-link.inactive {
+  @include hover-focus() {
+    color: $navbar-light-active-color;
+  }
+}
+
+.nav-item.bg-active {
+  background-color: $swi-grau3;
+}
+
+.nav-link.inactive {
+  // color: $swi-grau;
+  color: $prim;
+}
+
+/*
+* Table
+*/
+
+thead th {
+  text-transform: uppercase;
+}
+
+// light
+// $table-color:
+// $table-border-color: $prim;
+// $table-bg;
+
+// dark
+// $table-dark-border-color: $prim;
+// $table-dark-color: $prim;
+// $table-dark-bg: $swi-orange3;
+
+// $table-accent-bg: $swi-blau3;
+$table-hover-bg: $swi-orange3;
+
+// $table-striped-order: even;
+
+
+/**
+* Button
+*/
+
+.btn-swi {
+  display: inline-block;
+  // font-family:             $btn-font-family;
+  // font-weight:             $btn-font-weight;
+  color: $white;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: null;
+  vertical-align: middle;
+  background-color: $sec;
+  border: 1px solid $sec;
+  border-radius: 0;
+  padding: 0px 10px;
+  height: 30px;
+  transition: all .2s ease-in-out;
+
+  @include hover() {
+    color: $sec;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  &.disabled,
+  &:disabled {
+    background-color: $swi-grau3;
+    border-color: $swi-grau3;
+    color: $white;
+  }
+}
+
+.btn-swi-secondary {
+  display: inline-block;
+  // font-family:             $btn-font-family;
+  // font-weight:             $btn-font-weight;
+  color: $white;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: null;
+  vertical-align: middle;
+  background-color: $red;
+  border: 1px solid $red;
+  border-radius: 0;
+  padding: 0px 10px;
+  height: 30px;
+  transition: all .2s ease-in-out;
+
+  @include hover() {
+    color: $sec;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  &.disabled,
+  &:disabled {
+    background-color: $swi-grau3;
+    border-color: $swi-grau3;
+    color: $white;
+  }
+}
+
+
+
+/*
+  Input Select
+*/
+.form-control>:disabled,
+.custom-select>:disabled {
+  background-color: $swi-grau6;
+  // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
+  opacity: 1;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+@import "../node_modules/bootstrap/scss/bootstrap";

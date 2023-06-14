@@ -1,0 +1,16 @@
+<div class="form-group my-4" id="form-enumNr">
+    <label for="{{aName}}-select">{{aNameUI}}</label>
+    <div class="input-group mb-0">
+        <select name="{{aName}}" class="custom-select" data-valuetype="{{aValueType}}" id="{{aName}}-select"
+            {{availableOnStart}}>
+            {{#each aValue}}
+            <option value="{{this}}">{{this}}</option>
+            {{/each}}
+        </select>
+        <div class="invalid-tooltip" id="{{aName}}-notification">Fehler</div>
+        <div class="input-group-append">
+            <span class="input-group-text" id="i-enumNr-unit">{{aValueUnit}}</span>
+        </div>
+    </div>
+    <small id="{{aName}}Original" class="form-text text-muted mt-0">{{aName}}</small>
+</div>

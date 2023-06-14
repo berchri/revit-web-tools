@@ -1,0 +1,19 @@
+{
+    "typesCollection": [
+        {
+            "id": 1,
+            "Name": "DA_STB_200_C25/30_XC1",
+            "Kategorie": "Dach",
+            "LV_Gewerk": "07 Beton- u Stahlbetonarbeiten",
+            "Ausführung": "Ortbeton",
+            "Material": "Beton",
+            "LV_Beschreibung": "Sargdeckel",
+            "iTWO_Key": "DA-BET",
+            "Typenkommentare": "",
+            "Q_Hoehe": 20,
+            "LV_07_Betonfestigkeitsklasse": "C25/30",
+            "LV_07_Expositionsklasse": "XC1",
+            "LV_07_Schalung": "Sargdeckel"
+        }
+    ]
+}

@@ -1,0 +1,67 @@
+{
+    "psetNameUI": "Pfahlrost",
+    "psetElement": [
+        {
+            "aName": "Q_Dicke",
+            "aNameUI": "Dicke",
+            "aValueType": "numericMeasure",
+            "aValueDefault": "18",
+            "aValueUnit": "cm"
+        },
+        {
+            "aName": "Q_Hoehe",
+            "aNameUI": "Höhe",
+            "aValueType": "numericMeasure",
+            "aValueDefault": "20",
+            "aValueUnit": "cm"
+        },
+        {
+            "aName": "LV_07_Betonfestigkeitsklasse",
+            "aNameUI": "Betonfestigkeitsklasse",
+            "aValueType": "enum",
+            "aValue": [
+                "C25/30",
+                "C30/37",
+                "C35/45",
+                "C40/50",
+                "C45/55",
+                "C50/60"
+            ],
+            "aValueDefault": 0,
+            "aValueUnit": ""
+        },
+        {
+            "aName": "R_Typ_Kommentar",
+            "aNameJS": "R_Typ_Kommentar",
+            "aNameUI": "Kommentar",
+            "aValueType": "string"
+        }
+    ],
+    "psetElementConst": [
+        {
+            "aName": "LV_07_Schalung",
+            "aValue": "Pfahlrostschalung"
+        },
+        {
+            "aName": "LV_Gewerk",
+            "aValue": "07 Beton- u Stahlbetonarbeiten"
+        },
+        {
+            "aName": "iTWO_Key",
+            "aValue": "BA-PFAHL"
+        },
+        {
+            "aName": "LV_Beschreibung",
+            "aValue": "Pfahlrost"
+        },
+        {
+            "aName": "Material",
+            "aValue": "Ortbeton - bewehrt Verputzt"
+        },
+        {
+            "aName": "Ausführung",
+            "aValue": "Ortbeton"
+        }
+    ],
+    "psetElementModelCategory": "Ingenieurbau/Träger"
+}

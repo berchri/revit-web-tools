@@ -1,0 +1,106 @@
+<svg id="Komponente_29_1" data-name="Komponente 29 – 1"
+    xmlns="http://www.w3.org/2000/svg" width="770" height="1011" viewBox="0 0 770 1011">
+    <g id="Gruppe_7" data-name="Gruppe 7" transform="translate(-216 -16)">
+        <circle id="Ellipse_18" data-name="Ellipse 18" cx="28" cy="28" r="28" transform="translate(566 461)" fill="#fde1c5"/>
+        <circle id="Ellipse_19" data-name="Ellipse 19" cx="28" cy="28" r="28" transform="translate(566 228)" fill="#fde1c5"/>
+    </g>
+    <path id="Differenzmenge_1" data-name="Differenzmenge 1" d="M-141-6819a355.545,355.545,0,0,1-35.786-1.807,350.981,350.981,0,0,1-34.752-5.3,348.223,348.223,0,0,1-65.7-20.394,350.033,350.033,0,0,1-59.453-32.27,352.532,352.532,0,0,1-51.8-42.738,352.5,352.5,0,0,1-42.738-51.8,350.009,350.009,0,0,1-32.27-59.452,348.236,348.236,0,0,1-20.394-65.7,350.891,350.891,0,0,1-5.3-34.751A355.633,355.633,0,0,1-491-7169H209a355.612,355.612,0,0,1-1.807,35.785,350.886,350.886,0,0,1-5.3,34.751,348.235,348.235,0,0,1-20.394,65.7,350.007,350.007,0,0,1-32.27,59.452,352.472,352.472,0,0,1-42.738,51.8,352.514,352.514,0,0,1-51.8,42.738A350.013,350.013,0,0,1-4.764-6846.5a348.213,348.213,0,0,1-65.7,20.394,350.967,350.967,0,0,1-34.752,5.3A355.537,355.537,0,0,1-141-6819Z" transform="translate(519 7766)" fill="#fde1c5"/>
+    <g id="Rechteck_153" data-name="Rechteck 153" transform="translate(155 829)" fill="#b2d9f3" stroke="#00385e" stroke-width="3">
+        <rect width="430" height="65" stroke="none"/>
+        <rect x="1.5" y="1.5" width="427" height="62" fill="none"/>
+    </g>
+    <g id="Rechteck_155" data-name="Rechteck 155" transform="translate(185 585)" fill="#b2d9f3" stroke="#00385e" stroke-width="3">
+        <rect width="400" height="50" stroke="none"/>
+        <rect x="1.5" y="1.5" width="397" height="47" fill="none"/>
+    </g>
+    <g id="Rechteck_157" data-name="Rechteck 157" transform="translate(185 341)" fill="#b2d9f3" stroke="#00385e" stroke-width="3">
+        <rect width="400" height="50" stroke="none"/>
+        <rect x="1.5" y="1.5" width="397" height="47" fill="none"/>
+    </g>
+    <g id="Rechteck_158" data-name="Rechteck 158" transform="translate(185 97)" fill="#b2d9f3" stroke="#00385e" stroke-width="3">
+        <rect width="400" height="50" stroke="none"/>
+        <rect x="1.5" y="1.5" width="397" height="47" fill="none"/>
+    </g>
+    <g id="Rechteck_154" data-name="Rechteck 154" transform="translate(185 632)" fill="#fff" stroke="#00385e" stroke-width="3">
+        <rect width="50" height="200" stroke="none"/>
+        <rect x="1.5" y="1.5" width="47" height="197" fill="none"/>
+    </g>
+    <g id="Rechteck_156" data-name="Rechteck 156" transform="translate(185 388)" fill="#fff" stroke="#00385e" stroke-width="3">
+        <rect width="50" height="200" stroke="none"/>
+        <rect x="1.5" y="1.5" width="47" height="197" fill="none"/>
+    </g>
+    <g id="Rechteck_159" data-name="Rechteck 159" transform="translate(185 144)" fill="#fff" stroke="#00385e" stroke-width="3">
+        <rect width="50" height="200" stroke="none"/>
+        <rect x="1.5" y="1.5" width="47" height="197" fill="none"/>
+    </g>
+    <text id="_0_00" data-name="±0,00" transform="translate(63 505.5)" fill="#00385e" font-size="36" font-family="ArialMT, Arial">
+        <tspan x="0" y="0">±0,00</tspan>
+    </text>
+    <line id="Linie_142" data-name="Linie 142" x2="165" transform="translate(605 596)" fill="none" stroke="#00385e" stroke-width="3"/>
+    <line id="Linie_143" data-name="Linie 143" x2="165" transform="translate(0 596)" fill="none" stroke="#00385e" stroke-width="3"/>
+    <g id="Gruppe_4" data-name="Gruppe 4" transform="translate(-232 51)">
+        <g id="Komponente_23_1" data-name="Komponente 23 – 1" transform="translate(524 536)">
+            <path id="Polygon_21" data-name="Polygon 21" d="M10,0,20,20H0Z" fill="#00385e"/>
+            <path id="Polygon_22" data-name="Polygon 22" d="M10,0,20,20H0Z" transform="translate(20 47) rotate(180)" fill="#00385e"/>
+            <line id="Linie_139" data-name="Linie 139" y2="7" transform="translate(10 20)" fill="none" stroke="#00385e" stroke-width="3"/>
+        </g>
+        <g id="Komponente_23_2" data-name="Komponente 23 – 2" transform="translate(524 290)">
+            <path id="Polygon_21-2" data-name="Polygon 21" d="M10,0,20,20H0Z" fill="#00385e"/>
+            <path id="Polygon_22-2" data-name="Polygon 22" d="M10,0,20,20H0Z" transform="translate(20 47) rotate(180)" fill="#00385e"/>
+            <line id="Linie_139-2" data-name="Linie 139" y2="7" transform="translate(10 20)" fill="none" stroke="#00385e" stroke-width="3"/>
+        </g>
+        <g id="Komponente_23_3" data-name="Komponente 23 – 3" transform="translate(524 49)">
+            <path id="Polygon_21-3" data-name="Polygon 21" d="M10,0,20,20H0Z" fill="#00385e"/>
+            <path id="Polygon_22-3" data-name="Polygon 22" d="M10,0,20,20H0Z" transform="translate(20 47) rotate(180)" fill="#00385e"/>
+            <line id="Linie_139-3" data-name="Linie 139" y2="7" transform="translate(10 20)" fill="none" stroke="#00385e" stroke-width="3"/>
+        </g>
+        <g id="Komponente_27_1" data-name="Komponente 27 – 1" transform="translate(524 781)">
+            <path id="Polygon_21-4" data-name="Polygon 21" d="M10,0,20,20H0Z" fill="#00385e"/>
+            <path id="Polygon_22-4" data-name="Polygon 22" d="M10,0,20,20H0Z" transform="translate(20 60) rotate(180)" fill="#00385e"/>
+            <line id="Linie_139-4" data-name="Linie 139" y2="20" transform="translate(10 20)" fill="none" stroke="#00385e" stroke-width="3"/>
+        </g>
+    </g>
+    <g id="Gruppe_5" data-name="Gruppe 5" transform="translate(-216 -16)">
+        <g id="Komponente_24_1" data-name="Komponente 24 – 1" transform="translate(747 404)">
+            <path id="Polygon_25" data-name="Polygon 25" d="M10,0,20,20H0Z" fill="#00385e"/>
+            <path id="Polygon_26" data-name="Polygon 26" d="M10,0,20,20H0Z" transform="translate(20 199) rotate(180)" fill="#00385e"/>
+            <line id="Linie_141" data-name="Linie 141" y2="159" transform="translate(10 20)" fill="none" stroke="#00385e" stroke-width="3"/>
+        </g>
+        <g id="Komponente_24_2" data-name="Komponente 24 – 2" transform="translate(747 649)">
+            <path id="Polygon_25-2" data-name="Polygon 25" d="M10,0,20,20H0Z" fill="#00385e"/>
+            <path id="Polygon_26-2" data-name="Polygon 26" d="M10,0,20,20H0Z" transform="translate(20 199) rotate(180)" fill="#00385e"/>
+            <line id="Linie_141-2" data-name="Linie 141" y2="159" transform="translate(10 20)" fill="none" stroke="#00385e" stroke-width="3"/>
+        </g>
+        <g id="Komponente_24_3" data-name="Komponente 24 – 3" transform="translate(747 161)">
+            <path id="Polygon_25-3" data-name="Polygon 25" d="M10,0,20,20H0Z" fill="#00385e"/>
+            <path id="Polygon_26-3" data-name="Polygon 26" d="M10,0,20,20H0Z" transform="translate(20 199) rotate(180)" fill="#00385e"/>
+            <line id="Linie_141-3" data-name="Linie 141" y2="159" transform="translate(10 20)" fill="none" stroke="#00385e" stroke-width="3"/>
+        </g>
+    </g>
+    <text id="_1" data-name="1" transform="translate(363 489)" fill="#00385e" font-size="48" font-family="ArialMT, Arial">
+        <tspan x="0" y="0">1</tspan>
+    </text>
+    <circle id="Ellipse_18-2" data-name="Ellipse 18" cx="28" cy="28" r="28" transform="translate(350 708)" fill="#fff"/>
+    <text id="_1-2" data-name="1" transform="translate(363 752)" fill="#00385e" font-size="48" font-family="ArialMT, Arial">
+        <tspan x="0" y="0">1</tspan>
+    </text>
+    <text id="_2" data-name="2" transform="translate(365 257)" fill="#00385e" font-size="48" font-family="ArialMT, Arial">
+        <tspan x="0" y="0">2</tspan>
+    </text>
+    <circle id="Ellipse_19-2" data-name="Ellipse 19" cx="28" cy="28" r="28" transform="translate(350 955)" fill="#dee2e6"/>
+    <circle id="Ellipse_20" data-name="Ellipse 20" cx="28" cy="28" r="28" transform="translate(349)" fill="#dee2e6"/>
+    <text id="_2-2" data-name="2" transform="translate(365 1000)" fill="#91979c" font-size="48" font-family="ArialMT, Arial">
+        <tspan x="0" y="0">2</tspan>
+    </text>
+    <text id="_3" data-name="3" transform="translate(364 45)" fill="#91979c" font-size="48" font-family="ArialMT, Arial">
+        <tspan x="0" y="0">3</tspan>
+    </text>
+    <g id="Gruppe_6" data-name="Gruppe 6" transform="translate(-216 -16)">
+        <line id="Linie_138" data-name="Linie 138" x2="588" transform="translate(271.5 541)" fill="none" stroke="#00385e" stroke-width="3"/>
+        <g id="Komponente_27_2" data-name="Komponente 27 – 2" transform="translate(628 542)">
+            <path id="Polygon_21-5" data-name="Polygon 21" d="M10,0,20,20H0Z" fill="#00385e"/>
+            <path id="Polygon_22-5" data-name="Polygon 22" d="M10,0,20,20H0Z" transform="translate(20 60) rotate(180)" fill="#00385e"/>
+            <line id="Linie_139-5" data-name="Linie 139" y2="20" transform="translate(10 20)" fill="none" stroke="#00385e" stroke-width="3"/>
+        </g>
+    </g>
+</svg>

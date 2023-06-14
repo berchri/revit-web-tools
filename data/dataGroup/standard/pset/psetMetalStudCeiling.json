@@ -1,0 +1,105 @@
+{
+    "psetNameUI": "Decken Gipskarton",
+    "psetElement": [
+        {
+            "aName": "LV_39_Typ",
+            "aNameJS": "LV_39_Typ",
+            "aNameUI": "Metallständerwand Typ",
+            "aValueType": "radio",
+            "aValue": [
+                "Deckenuntersicht",
+                "Abgehängte Decke"
+            ],
+            "aValueUnit": ""
+        },
+        {
+            "aName": "LV_39_Beplankung",
+            "aNameJS": "drywallBoarding",
+            "aNameUI": "Beplankung Gipskartonplatten",
+            "aValueType": "enum",
+            "aValue": [
+                "GKB_1x12,5mm",
+                "GKB_1x15mm",
+                "GKB_1x20mm",
+                "GKB_2x12,5mm",
+                "GKF_2x12,5mm",
+                "GKF_1x15mm",
+                "GKF_2x15mm",
+                "GKF_3x15mm",
+                "GKF_2x20mm"
+            ],
+            "aValueDefault": 0,
+            "aValueUnit": ""
+        },
+        {
+            "aName": "Q_Hoehe",
+            "aNameUI": "Höhe",
+            "aValueType": "numericMeasure",
+            "aValueDefault": "10",
+            "aValueUnit": "cm"
+        },
+        {
+            "aName": "LV_39_Decke_Daemmung",
+            "aNameUI": "Dämmung",
+            "aValueType": "enum",
+            "aValue": [
+                "keine",
+                "Mineralwolle",
+                "Steinwolle"
+            ],
+            "aValueDefault": 0
+        },
+        {
+            "aName": "LV_39_Decke_Daemmung_Dicke",
+            "aNameUI": "Dicke Dämmung",
+            "aValueType": "enumNr",
+            "aValue": [
+                "-",
+                5,
+                6,
+                8,
+                10,
+                12,
+                14,
+                16,
+                18,
+                20,
+                22,
+                24,
+                26
+            ],
+            "aValueDefault": 0,
+            "aValueUnit": "cm"
+        },
+        {
+            "aName": "R_Typ_Kommentar",
+            "aNameJS": "typeComment",
+            "aNameUI": "Kommentar",
+            "aValueType": "string",
+            "aValue": "",
+            "aValueUnit": "max. 20 Zeichen"
+        }
+    ],
+    "psetElementConst": [
+        {
+            "aName": "LV_Gewerk",
+            "aNameJS": "trade",
+            "aValue": "39 Trockenbauarbeiten"
+        },
+        {
+            "aName": "iTWO_Key",
+            "aNameJS": "iTWO_Key",
+            "aValue": ""
+        },
+        {
+            "aName": "LV_Beschreibung",
+            "aNameJS": "description",
+            "aValue": "Decke Trockenbau"
+        },
+        {
+            "aName": "Material",
+            "aValue": "Trockenbau - Gipsplatte"
+        }
+    ],
+    "psetElementModelCategory": "Architektur/Decke"
+}

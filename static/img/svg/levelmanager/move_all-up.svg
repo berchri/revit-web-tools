@@ -1,0 +1,16 @@
+<svg id="Komponente_22_1" data-name="Komponente 22 – 1"
+    xmlns="http://www.w3.org/2000/svg" width="159" height="129" viewBox="0 0 159 129">
+    <rect id="Rechteck_69" data-name="Rechteck 69" width="159" height="46" rx="4" fill="#fde1c5"/>
+    <line id="Linie_37" data-name="Linie 37" x2="98" transform="translate(53.5 33.75)" fill="none" stroke="#f17a23" stroke-linecap="round" stroke-width="5"/>
+    <line id="Linie_38" data-name="Linie 38" x2="98" transform="translate(53.5 11.75)" fill="none" stroke="#f17a23" stroke-linecap="round" stroke-width="5"/>
+    <line id="Linie_39" data-name="Linie 39" x2="98" transform="translate(53.5 55.75)" fill="none" stroke="#00385e" stroke-linecap="round" stroke-width="5"/>
+    <line id="Linie_40" data-name="Linie 40" y1="15" transform="translate(115.49 73) rotate(120)" fill="none" stroke="#00385e" stroke-linecap="round" stroke-width="5"/>
+    <line id="Linie_41" data-name="Linie 41" y2="15" transform="translate(102.5 65.5) rotate(60)" fill="none" stroke="#00385e" stroke-linecap="round" stroke-width="5"/>
+    <line id="Linie_67" data-name="Linie 67" y1="15" transform="translate(37.49 29.5) rotate(120)" fill="none" stroke="#f17a23" stroke-linecap="round" stroke-width="5"/>
+    <line id="Linie_68" data-name="Linie 68" y2="15" transform="translate(24.5 22) rotate(60)" fill="none" stroke="#f17a23" stroke-linecap="round" stroke-width="5"/>
+    <rect id="Rechteck_75" data-name="Rechteck 75" width="159" height="46" rx="4" transform="translate(0 83)" fill="#fde1c5"/>
+    <line id="Linie_71" data-name="Linie 71" x2="98" transform="translate(53.5 116.75)" fill="none" stroke="#f17a23" stroke-linecap="round" stroke-width="5"/>
+    <line id="Linie_72" data-name="Linie 72" x2="98" transform="translate(53.5 94.75)" fill="none" stroke="#f17a23" stroke-linecap="round" stroke-width="5"/>
+    <line id="Linie_73" data-name="Linie 73" y1="15" transform="translate(37.49 112.5) rotate(120)" fill="none" stroke="#f17a23" stroke-linecap="round" stroke-width="5"/>
+    <line id="Linie_74" data-name="Linie 74" y2="15" transform="translate(24.5 105) rotate(60)" fill="none" stroke="#f17a23" stroke-linecap="round" stroke-width="5"/>
+</svg>

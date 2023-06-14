@@ -1,0 +1,24 @@
+{
+    "typesCollection": [
+        {
+            "Kategorie": "Wand",
+            "LV_44_Lambdawert": "0.031",
+            "LV_44_Oberputz": "Dünnputz kunstharzgebunden",
+            "LV_44_Oberputzdicke": 1,
+            "LV_44_Oberputzstruktur": "Feinputz",
+            "LV_44_Typ": "EPS-F",
+            "LV_44_Unterputzdicke": "3mm",
+            "LV_44_my10": false,
+            "LV_44_my10UI": "N",
+            "LV_Beschreibung": "EPS-F 0.031",
+            "LV_Gewerk": "44 Wärmedämmverbundsysteme",
+            "Material": "Dämmung",
+            "Name": "WA_WDVS_EPS-F 0.031_180_3_KHG_Fei_1",
+            "Q_Dicke": 18,
+            "R_Typ_Kommentar": "",
+            "Typenkommentare": "",
+            "iTWO_Key": "WA-VWS-EPS",
+            "id": 1
+        }
+    ]
+}

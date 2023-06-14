@@ -1,0 +1,78 @@
+{
+    "psetNameUI": "Perimeterdämmung",
+    "psetElement": [
+        {
+            "aName": "LV_12_Daemmung",
+            "aNameUI": "Material Dämmung",
+            "aValueType": "enum",
+            "aValue": [
+                "EPS",
+                "XPS"
+            ],
+            "aValueDefault": 0
+        },
+        {
+            "aName": "LV_12_Daemmungsdicke",
+            "aNameUI": "Dicke Dämmung",
+            "aValueType": "enumNr",
+            "aValue": [
+                5,
+                6,
+                8,
+                10,
+                12,
+                14,
+                16,
+                18,
+                20
+            ],
+            "aValueDefault": "",
+            "aValueUnit": "cm"
+        },
+        {
+            "aName": "LV_12_Abdichtung",
+            "aNameJS": "insulation",
+            "aNameUI": "Art der Abdichtung",
+            "aValue": [
+                "1L.E-KV5",
+                "1L.E-KV4+1L.E-KV5/9mm",
+                "2L.E-KV5/10mm",
+                "1L.E-KV4+2L.E-KV5/14mm",
+                "1L.P-KV5/4mm",
+                "1L.P-KV4+1L.P-KV5/9mm",
+                "2L.P-KV5/10mm",
+                "1L.P-KV4+2L.E-KV5/14mm"
+            ],
+            "aValueType": "enum",
+            "aValueDefault": ""
+        },
+        {
+            "aName": "R_Typ_Kommentar",
+            "aNameJS": "typeComment",
+            "aNameUI": "Kommentar",
+            "aValueType": "string"
+        }
+    ],
+    "psetElementConst": [
+        {
+            "aName": "LV_Gewerk",
+            "aNameJS": "trade",
+            "aValue": "12 Abdichtungen bei Betonflächen und Wänden"
+        },
+        {
+            "aName": "iTWO_Key",
+            "aNameJS": "iTWO_Key",
+            "aValue": "WA-PD"
+        },
+        {
+            "aName": "LV_Beschreibung",
+            "aNameJS": "description",
+            "aValue": "Perimeterdämmung"
+        },
+        {
+            "aName": "Material",
+            "aValue": "Dämmung - hart"
+        }
+    ],
+    "psetElementModelCategory": "Architektur/Wand"
+}

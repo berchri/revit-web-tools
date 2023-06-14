@@ -1,0 +1,12 @@
+{
+    "elementCollection": [
+        {
+            "eName": "elementConcreteWall",
+            "eNameUI": "Ortbetonwand",
+            "eTypes": "typesConcreteWall",
+            "ePSet": "pSetConcreteWall",
+            "eGroupName": "concrete",
+            "eGroupNameUI": "Stahlbeton"
+        }
+    ]
+}

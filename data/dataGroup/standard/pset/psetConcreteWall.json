@@ -1,0 +1,97 @@
+{
+    "psetNameUI": "Wand aus Beton",
+    "psetElement": [
+        {
+            "aName": "Q_Dicke",
+            "aNameJS": "thickness",
+            "aNameUI": "Dicke",
+            "aValueType": "numericMeasure",
+            "aValueDefault": "18",
+            "aValueUnit": "cm"
+        },
+        {
+            "aName": "LV_07_Betonfestigkeitsklasse",
+            "aNameJS": "LV_07_Betonfestigkeitsklasse",
+            "aNameJS_": "concreteStrengthClass",
+            "aNameUI": "Betonfestigkeitsklasse",
+            "aValueType": "enum",
+            "aValue": [
+                "C20/25",
+                "C25/30",
+                "C30/37",
+                "C35/45",
+                "C40/50",
+                "C45/55",
+                "C50/60"
+            ],
+            "aValueDefault": 2,
+            "aValueUnit": ""
+        },
+        {
+            "aName": "LV_07_Expositionsklasse",
+            "aNameJS": "exposureClass",
+            "aNameUI": "Expositionsklasse",
+            "aValueType": "enum",
+            "aValue": [
+                "XC1",
+                "XC2",
+                "B1",
+                "B2",
+                "B4",
+                "B5",
+                "B7",
+                "BS1A"
+            ],
+            "aValueDefault": 0,
+            "aValueUnit": ""
+        },
+        {
+            "aName": "LV_07_Bruestung",
+            "aNameUI": "Brüstung, Attika",
+            "aValueType": "boolean",
+            "aValue": false,
+            "aValueDefault": false,
+            "aValueUnit": ""
+        },
+        {
+            "aName": "R_Typ_Kommentar",
+            "aNameUI": "Kommentar",
+            "aValueType": "string"
+        }
+    ],
+    "psetElementConst": [
+        {
+            "aName": "LV_Modellkategorie",
+            "aValue": "Architektur/Wand"
+        },
+        {
+            "aName": "LV_07_Schalung",
+            "aNameJS": "formwork",
+            "aValue": "Wandschalung"
+        },
+        {
+            "aName": "LV_Gewerk",
+            "aNameJS": "LV_Gewerk",
+            "aValue": "07 Beton- u Stahlbetonarbeiten"
+        },
+        {
+            "aName": "iTWO_Key",
+            "aNameJS": "iTWO_Key",
+            "aValue": "WA-BET"
+        },
+        {
+            "aName": "LV_Beschreibung",
+            "aNameJS": "description",
+            "aValue": "Ortbetonwand"
+        },
+        {
+            "aName": "Material",
+            "aValue": "Ortbeton - bewehrt Verputzt"
+        },
+        {
+            "aName": "Ausführung",
+            "aValue": "Ortbeton"
+        }
+    ],
+    "psetElementModelCategory": "Architektur/Wand"
+}

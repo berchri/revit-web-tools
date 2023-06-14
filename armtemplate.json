@@ -1,0 +1,56 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "webAppName": {
+      "type": "string",
+      "defaultValue": "Swietelsky-Revit-Bauteilgenerator",
+      "minLength": 2
+    }
+  },
+  "variables": {
+    "webAppPortalName": "[parameters('webAppName')]",
+    "appServicePlanName": "[concat(parameters('webAppName'), '-AppServicePlan')]"
+  },
+  "resources": [
+    {
+    "type": "Microsoft.Authorization/roleAssignments",
+    "apiVersion": "2017-05-01",
+    "name": "[guid(resourceGroup().id)]",
+    "properties": {
+      "roleDefinitionId": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Authorization/roleDefinitions/', 'b24988ac-6180-42a0-ab88-20f7382dd24c')]",
+      "principalId": "3245637f-6f14-462c-8edd-5b6e63a38993",
+      "scope": "[resourceGroup().id]"
+      }
+    },
+    {
+      "type": "Microsoft.Web/serverfarms",
+      "apiVersion": "2019-08-01",
+      "name": "[variables('appServicePlanName')]",
+      "location": "[resourceGroup().location]",
+      "sku": {
+        "name": "F1"
+      },
+      "kind": "linux",
+      "properties": {
+        "reserved": true
+      }
+    },
+    {
+      "type": "Microsoft.Web/sites",
+      "apiVersion": "2019-08-01",
+      "name": "[variables('webAppPortalName')]",
+      "location": "[resourceGroup().location]",
+      "kind": "app",
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/serverfarms', variables('appServicePlanName'))]"
+      ],
+      "properties": {
+        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('appServicePlanName'))]",
+        "siteConfig": {
+          "linuxFxVersion": "NODE|14-lts"
+        }
+      }
+    }
+  ]
+}

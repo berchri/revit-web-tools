@@ -1,0 +1,125 @@
+{
+    "psetNameUI": "Metallständerwand Gipskarton",
+    "psetElement": [
+        {
+            "aName": "LV_39_Typ",
+            "aNameJS": "LV_39_Typ",
+            "aNameUI": "Metallständerwand Typ",
+            "aValueType": "radio",
+            "aValue": [
+                "Einfachständerwand",
+                "Doppelständerwand",
+                "Schachtwand EI30",
+                "Schachtwand EI90",
+                "Installationswand"
+            ],
+            "aValueUnit": ""
+        },
+        {
+            "aName": "LV_39_CW_Profil",
+            "aNameJS": "cwProfile",
+            "aNameUI": "CW Profil",
+            "aValueType": "enum",
+            "aValue": [
+                "CW50",
+                "CW75",
+                "CW100",
+                "CW125",
+                "CW150"
+            ],
+            "aValueDefault": 1,
+            "aValueUnit": ""
+        },
+        {
+            "aName": "LV_39_Beplankung",
+            "aNameJS": "drywallBoarding",
+            "aNameUI": "Beplankung Gipskartonplatten",
+            "aValueType": "enum",
+            "aValue": [
+                "GKB_1x12,5mm",
+                "GKB_2x12,5mm",
+                "GKB_2x15mm",
+                "GKB_4x12,5mm",
+                "GKF_2x12,5mm",
+                "GKF_2x15mm",
+                "GKF_2x20mm",
+                "GKF_2x25mm",
+                "GKF_3x15mm",
+                "GKF_4x12,5mm",
+                "GKF_5x12,5mm_(60dB)",
+                "GKF_5x12,5mm_(69dB)"
+            ],
+            "aValueDefault": 1,
+            "aValueUnit": ""
+        },
+        {
+            "aName": "Q_Dicke",
+            "aNameJS": "thickness",
+            "aNameUI": "Dicke",
+            "aValueType": "numericMeasure",
+            "aValueDefault": "10",
+            "aValueUnit": "cm"
+        },
+        {
+            "aName": "LV_39_Beplankung_Spezial",
+            "aNameUI": "Spezialanforderung Beplankung",
+            "aValueType": "enum",
+            "aValue": [
+                "keine",
+                "zementgebundene Platte",
+                "Schallschutzplatte",
+                "Hartgipsplatte",
+                "Hartgipsplatte faserverstärkt",
+                "Gipsfaserplatte",
+                "Spezialbrandschutzplatte"
+            ],
+            "aValueDefault": 0,
+            "aValueUnit": ""
+        },
+        {
+            "aName": "LV_39_Beplankung_Spezial_Anzahl",
+            "aNameUI": "Spezialbeplankung Anzahl",
+            "aValueType": "enum",
+            "aValue": [
+                "-",
+                1,
+                2,
+                3,
+                4,
+                5
+            ],
+            "aValueDefault": 0,
+            "aValueUnit": ""
+        },
+        {
+            "aName": "R_Typ_Kommentar",
+            "aNameJS": "typeComment",
+            "aNameUI": "Kommentar",
+            "aValueType": "string",
+            "aValue": "",
+            "aValueUnit": "max. 20 Zeichen"
+        }
+    ],
+    "psetElementConst": [
+        {
+            "aName": "LV_Gewerk",
+            "aNameJS": "trade",
+            "aValue": "39 Trockenbauarbeiten"
+        },
+        {
+            "aName": "iTWO_Key",
+            "aNameJS": "iTWO_Key",
+            "aValue": "WA-GK-ESTW"
+        },
+        {
+            "aName": "LV_Beschreibung",
+            "aNameJS": "description",
+            "aValue": "Metallständerwand Gipskarton"
+        },
+        {
+            "aName": "Material",
+            "aValue": "Trockenbau - Gipsplatte"
+        }
+    ],
+    "psetElementModelCategory": "Architektur/Wand"
+}

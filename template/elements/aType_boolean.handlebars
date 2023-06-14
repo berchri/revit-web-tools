@@ -1,0 +1,12 @@
+<div class="form-check my-4" id="form-boolean">
+    {{#if aValueDefault}}
+    <input name="{{aName}}" class="form-check-input" type="checkbox" value="true" data-valuetype="{{aValueType}}"
+        id="{{aName}}-input" checked {{availableOnStart}} />
+    {{else}}
+    <input name="{{aName}}" class="form-check-input" type="checkbox" value="false" data-valuetype="{{aValueType}}"
+        id="{{aName}}-input" {{availableOnStart}} />
+    {{/if}}
+    <div class="invalid-tooltip" id="{{aName}}-notification"></div>
+    <label class="form-check-label" for="{{aName}}-input">{{aNameUI}}</label>
+    <small id="{{aName}}Original" class="form-text text-muted">{{aName}}</small>
+</div>

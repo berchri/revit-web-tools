@@ -1,0 +1,24 @@
+{
+    "typesCollection": [
+        {
+            "id": 1,
+            "Name": "FU_STB_800x1000x400_C25/30_B2",
+            "Kategorie": "Einzelfundament",
+            "LV_Gewerk": "07 Beton- u Stahlbetonarbeiten",
+            "Ausführung": "Ortbeton",
+            "Material": "Beton",
+            "LV_Beschreibung": "Streifenfundament",
+            "iTWO_Key": "RB-FU-EIN",
+            "Typenkommentare": "",
+            "Q_Breite": 80,
+            "Breite": 80,
+            "Q_Laenge": 100,
+            "Länge": 100,
+            "Q_Hoehe": 40,
+            "h": 40,
+            "LV_07_Betonfestigkeitsklasse": "C25/30",
+            "LV_07_Expositionsklasse": "B2",
+            "LV_07_Schalung": "Fundamentschalung"
+        }
+    ]
+}

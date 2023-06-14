@@ -1,0 +1,38 @@
+{
+    "name": "project_wifi_cb",
+    "version": "1.0.0",
+    "description": "Tool zum Erstellen von Bauteiltypen.",
+    "main": "main.js",
+    "dependencies": {
+        "bootstrap": "^4.5.0",
+        "express": "^4.17.1",
+        "file-saver": "^2.0.2",
+        "fs": "0.0.1-security",
+        "jquery": "^3.5.1",
+        "normalize-port": "^1.0.0",
+        "popper.js": "^1.16.0"
+    },
+    "devDependencies": {
+        "handlebars": "^4.7.7"
+    },
+    "scripts": {
+        "start": "node main.js",
+        "test": "node dev.js",
+        "i-prod": "node node-windows.js install Revit-Tools prod",
+        "u-prod": "node node-windows.js uninstall Revit-Tools",
+        "i-dev": "node node-windows.js install Revit-Tools-Dev dev",
+        "u-dev": "node node-windows.js uninstall Revit-Tools-Dev",
+        "i-dev-new": "node node-windows.js install rvttoolsnew dev",
+        "u-dev-new": "node node-windows.js uninstall rvttoolsnew"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://gitlab.com/chris_b22/project_wifi_cb.git"
+    },
+    "author": "Christoph Berger",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://gitlab.com/chris_b22/project_wifi_cb/issues"
+    },
+    "homepage": "https://gitlab.com/chris_b22/project_wifi_cb#readme"
+}

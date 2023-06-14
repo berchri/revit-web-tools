@@ -1,0 +1,19 @@
+{
+    "typesCollection": [
+        {
+            "id": 1,
+            "Name": "WA_ESTW_100_CW75_GKB_2x12,5mm",
+            "Kategorie": "Wand",
+            "LV_Gewerk": "39 Trockenbauarbeiten",
+            "Material": "Trockenbau",
+            "LV_Beschreibung": "Einfachständerwand",
+            "iTWO_Key": "WA-GK-ESTW",
+            "Typenkommentare": "",
+            "R_Typ_Kommentar": "",
+            "Q_Dicke": 10,
+            "LV_39_Typ": "Einfachständerwand",
+            "LV_39_CW_Profil": "CW75",
+            "LV_39_Beplankung": "GKB_2x12,5mm"
+        }
+    ]
+}

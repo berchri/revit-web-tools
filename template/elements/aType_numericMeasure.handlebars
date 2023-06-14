@@ -1,0 +1,17 @@
+<div class="form-group my-4" id="form-numericMeasure">
+    <label for="{{aName}}-input">{{aNameUI}}</label>
+    <div class="input-group mb-0">
+        {{#if aValueDefault}}
+        <input name="{{aName}}" type="text" class="form-control" data-valuetype="{{aValueType}}" id="{{aName}}-input"
+            placeholder="{{aValueDefault}}" value="{{aValueDefault}}" {{availableOnStart}} />
+        {{else}}
+        <input name="{{aName}}" type="text" class="form-control" data-valuetype="{{aValueType}}" id="{{aName}}-input"
+            placeholder="{{aValueDefault}}" {{availableOnStart}} />
+        {{/if}}
+        <div class="invalid-tooltip" id="{{aName}}-notification"></div>
+        <div class="input-group-append">
+            <span class="input-group-text" id="i-enumNr-unit">{{aValueUnit}}</span>
+        </div>
+    </div>
+    <small id="{{aName}}Original" class="form-text text-muted mt-0">{{aName}}</small>
+</div>

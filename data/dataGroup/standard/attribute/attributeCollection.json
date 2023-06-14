@@ -1,0 +1,661 @@
+﻿[
+    {
+        "aName": "Q_Breite",
+        "aNameJS": "width",
+        "aNameUI": "Breite",
+        "aValueType": "numericMeasure",
+        "aValue": 0,
+        "aValueDefault": "",
+        "aValueUnit": "cm"
+    },
+    {
+        "aName": "Q_Dicke",
+        "aNameJS": "thickness",
+        "aNameUI": "Dicke",
+        "aValueType": "numericMeasure",
+        "aValue": 0,
+        "aValueDefault": "",
+        "aValueUnit": "cm"
+    },
+    {
+        "aName": "Q_Hoehe",
+        "aNameJS": "height",
+        "aNameUI": "Höhe",
+        "aValueType": "numericMeasure",
+        "aValue": 0,
+        "aValueDefault": "",
+        "aValueUnit": "cm"
+    },
+    {
+        "aName": "Q_Laenge",
+        "aNameJS": "length",
+        "aNameUI": "Länge",
+        "aValueType": "numericMeasure",
+        "aValue": 0,
+        "aValueDefault": "",
+        "aValueUnit": "cm"
+    },
+    {
+        "aName": "LV_07_Aufzugsüberfahrt",
+        "aNameUI": "Decke über Aufzug",
+        "aValueType": "boolean",
+        "aValue": false,
+        "aValueDefault": false,
+        "aValueUnit": ""
+    },
+    {
+        "aName": "LV_07_Betonfestigkeitsklasse",
+        "aNameJS": "concreteStrengthClass",
+        "aNameUI": "Betonfestigkeitsklasse",
+        "aValueType": "enum",
+        "aValue": [
+            "C12/15",
+            "C16/20",
+            "C20/25",
+            "C25/30",
+            "C30/37",
+            "C35/45",
+            "C40/50",
+            "C45/55",
+            "C50/60"
+        ],
+        "aValueDefault": 3,
+        "aValueUnit": ""
+    },
+    {
+        "aName": "LV_07_Betonfestigkeitsklasse_Elementschale",
+        "aNameJS": "concreteStrengthClassShell",
+        "aNameUI": "Betonfestigkeitsklasse Elementschale",
+        "aValueType": "enum",
+        "aValue": [
+            "C12/15",
+            "C16/20",
+            "C20/25",
+            "C25/30",
+            "C30/37",
+            "C35/45",
+            "C40/50",
+            "C45/55",
+            "C50/60"
+        ],
+        "aValueDefault": 3,
+        "aValueUnit": ""
+    },
+    {
+        "aName": "LV_07_Breite_Arbeitsraum",
+        "aNameJS": "widthWorkingSpace",
+        "aNameUI": "Breite Arbeitsraum",
+        "aValueType": "numericMeasure",
+        "aValue": 0,
+        "aValueDefault": 50,
+        "aValueUnit": "cm"
+    },
+    {
+        "aName": "LV_07_Bruestung",
+        "aNameJS": "",
+        "aNameUI": "Brüstung, Attika",
+        "aValueType": "boolean",
+        "aValue": false,
+        "aValueDefault": false,
+        "aValueUnit": ""
+    },
+    {
+        "aName": "LV_07_BST550",
+        "aNameJS": "reinforcementVolumeRatio",
+        "aNameUI": "Bewehrungsgrad Stabstahl",
+        "aValueType": "massDensityMeasure",
+        "aValue": 0,
+        "aValueDefault": "90",
+        "aValueUnit": "kg/m³"
+    },
+    {
+        "aName": "LV_07_Expositionsklasse",
+        "aNameJS": "exposureClass",
+        "aNameUI": "Expositionsklasse",
+        "aValueType": "enum",
+        "aValue": [
+            "X0",
+            "XC1",
+            "XC2",
+            "B1",
+            "B2",
+            "B3",
+            "B4",
+            "B5",
+            "B7",
+            "BS1A"
+        ],
+        "aValueDefault": 0,
+        "aValueUnit": ""
+    },
+    {
+        "aName": "LV_07_Expositionsklasse_Elementschale",
+        "aNameJS": "exposureClassShell",
+        "aNameUI": "Expositionsklasse Elementschale",
+        "aValueType": "enum",
+        "aValue": [
+            "",
+            "B1",
+            "B2",
+            "B3",
+            "B4",
+            "B7",
+            "XC1",
+            "XC2",
+            "XC3",
+            "XD1",
+            "XD2",
+            "XD3",
+            "XF1",
+            "XF2",
+            "XF3",
+            "XF4"
+        ],
+        "aValueDefault": 0,
+        "aValueUnit": ""
+    },
+    {
+        "aName": "LV_07_KDD_Typ",
+        "aNameUI": "Ausführung",
+        "aValueType": "radio",
+        "aValue": [
+            "nachträglich befestigt",
+            "mitbetoniert"
+        ],
+        "aValueDefault": 0
+    },
+    {
+        "aName": "LV_07_KDD_Produktart",
+        "aNameUI": "Produktart",
+        "aValueType": "enum",
+        "aValue": [
+            "WWH-MW-WWH 50",
+            "WWH-MW-WWH 100",
+            "MW-WW"
+        ],
+        "aValueDefault": 0
+    },
+    {
+        "aName": "LV_07_Nutzlast",
+        "aNameUI": "Nutzlast",
+        "aValue": [
+            "-",
+            "5kN",
+            "7kN"
+        ],
+        "aValueType": "enum"
+    },
+    {
+        "aName": "LV_07_Sauberkeitschicht",
+        "aNameJS": "",
+        "aNameUI": "Sauberkeitsschicht",
+        "aValueType": "numericMeasure",
+        "aValue": 0,
+        "aValueDefault": "6",
+        "aValueUnit": "cm"
+    },
+    {
+        "aName": "LV_07_Schalung",
+        "aNameJS": "formwork",
+        "aNameUI": "Schalung",
+        "aValueType": "enum",
+        "aValue": [
+            "",
+            "Wandschalung",
+            "Deckenschalung",
+            "Unterzugschalung",
+            "Fundamentschalung",
+            "Stützenschalung"
+        ],
+        "aValueDefault": 0,
+        "aValueUnit": ""
+    },
+    {
+        "aName": "LV_07_Schalung_einseitig",
+        "aNameJS": "formworkOnesided",
+        "aNameUI": "Schalung einseitig",
+        "aValueType": "boolean",
+        "aValue": false,
+        "aValueDefault": false,
+        "aValueUnit": ""
+    },
+    {
+        "aName": "LV_07_Schalung_seitlich",
+        "aNameJS": "formworkBoundary",
+        "aNameUI": "Randschalung",
+        "aValueType": "boolean",
+        "aValue": true,
+        "aValueDefault": true,
+        "aValueUnit": ""
+    },
+    {
+        "aName": "LV_07_Trennschicht",
+        "aNameUI": "Trennschicht",
+        "aValueType": "boolean",
+        "aValue": true,
+        "aValueDefault": false,
+        "aValueUnit": ""
+    },
+    {
+        "aName": "LV_07_Unterstellhoehe",
+        "aNameJS": "formworkHight",
+        "aNameUI": "Höhe Unterstellung",
+        "aValueType": "enumNr",
+        "aValue": [
+            320,
+            500
+        ],
+        "aValueDefault": 320,
+        "aValueUnit": "cm"
+    },
+    {
+        "aName": "LV_07_16_Typ",
+        "aNameUI": "Fertigteil Typ",
+        "aValueType": "radio",
+        "aValue": [
+            "Stahlbetonelementdecke LG07",
+            "Fertigteilbalkonplatte LG16",
+            "Fertigteilpodestplatte LG16"
+        ]
+    },
+    {
+        "aName": "LV_08_Dicke",
+        "aNameJS": "thicknessMasonry",
+        "aNameUI": "Dicke Mauerwerk",
+        "aValueType": "enumNR",
+        "aValue": [
+            10,
+            12,
+            15,
+            17,
+            18,
+            19,
+            20,
+            22,
+            25,
+            30,
+            32,
+            35,
+            38,
+            40,
+            50
+        ],
+        "aValueDefault": 0,
+        "aValueUnit": "cm"
+    },
+    {
+        "aName": "LV_08_Betonstein_Ausführung",
+        "aNameJS": "concreteBlockType",
+        "aNameUI": "Ausführung",
+        "aValueType": "enum",
+        "aValue": [
+            "-",
+            "Beton-HBL-Steine",
+            "LB-HBL-Steine",
+            "LB-Schallschutz"
+        ],
+        "aValueDefault": 0,
+        "aValueUnit": ""
+    },
+    {
+        "aName": "LV_08_Schutzwirkung",
+        "aNameJS": "masonryInsulation",
+        "aNameUI": "Schutzwirkung",
+        "aValueType": "enum",
+        "aValue": [
+            "-",
+            "kein Schall- o. Wärmeschutz",
+            "Schallschutz",
+            "Wärmeschutz"
+        ],
+        "aValueDefault": 1,
+        "aValueUnit": ""
+    },
+    {
+        "aName": "LV_08_Planziegel",
+        "aNameJS": "planarBlock",
+        "aNameUI": "Planziegel",
+        "aValueType": "boolean",
+        "aValue": false,
+        "aValueDefault": false,
+        "aValueUnit": ""
+    },
+    {
+        "aName": "LV_08_Porenbeton_Festigkeitsklasse",
+        "aNameJS": "cGasBlockStrength",
+        "aNameUI": "Festigkeitsklasse",
+        "aValueType": "enumNR",
+        "aValue": [
+            "-",
+            "2,5",
+            "5"
+        ],
+        "aValueDefault": "2,5",
+        "aValueUnit": "N/mm²"
+    },
+    {
+        "aName": "LV_08_Waagr_Abd",
+        "aNameUI": "Waagrechte Abdichtung",
+        "aValueType": "enum",
+        "aValue": [
+            "keine",
+            "E-KV4",
+            "E-KV5"
+        ],
+        "aValueDefault": 0,
+        "aValueUnit": ""
+    },
+    {
+        "aName": "LV_08_Typ",
+        "aNameUI": "Mauerwerk Typ",
+        "aValueType": "radio",
+        "aValue": [
+            "keramisch",
+            "Beton",
+            "Leichtbeton",
+            "Leichtbeton Schallschutz",
+            "Porenbeton"
+        ],
+        "aValueUnit": ""
+    },
+    {
+        "aName": "LV_08_ZW_Schallschutz",
+        "aNameUI": "Schallschutz",
+        "aValueType": "enum",
+        "aValue": [],
+        "aValueDefault": 0,
+        "aValueUnit": ""
+    },
+    {
+        "aName": "LV_12_Abdichtung",
+        "aNameJS": "insulation",
+        "aNameUI": "Art der Abdichtung",
+        "aValue": [
+            "1L.E-KV5",
+            "1L.E-KV4+1L.E-KV5/9mm",
+            "2L.E-KV5/10mm",
+            "1L.E-KV4+2L.E-KV5/14mm",
+            "1L.P-KV5/4mm",
+            "1L.P-KV4+1L.P-KV5/9mm",
+            "2L.P-KV5/10mm",
+            "1L.P-KV4+2L.E-KV5/14mm"
+        ],
+        "aValueType": "enum",
+        "aValueDefault": ""
+    },
+    {
+        "aName": "LV_12_Daemmung",
+        "aNameUI": "Material Dämmung",
+        "aValueType": "enum",
+        "aValue": [
+            "EPS",
+            "XPS"
+        ],
+        "aValueDefault": 0
+    },
+    {
+        "aName": "LV_12_Daemmungsdicke",
+        "aNameUI": "Dicke Dämmung",
+        "aValueType": "enumNr",
+        "aValue": [
+            5,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            20
+        ],
+        "aValueDefault": "",
+        "aValueUnit": "cm"
+    },
+    {
+        "aName": "LV_39_Beplankung",
+        "aNameJS": "drywallBoarding",
+        "aNameUI": "Beplankung Gipskartonplatten",
+        "aValueType": "enum",
+        "aValue": [
+            "GKB_1x12,5mm_(GKVS)",
+            "GKB_2x12,5mm",
+            "GKB_1x15mm",
+            "GKB_2x15mm",
+            "GKB_4x12,5mm",
+            "GKF_2x12,5mm",
+            "GKF_2x15mm",
+            "GKF_4x12,5mm",
+            "GKF_5x12,5mm_(60dB)",
+            "GKF_5x12,5mm_(69dB)"
+        ],
+        "aValueDefault": 1,
+        "aValueUnit": ""
+    },
+    {
+        "aName": "LV_39_Blechstreifen",
+        "aNameUI": "Schraubgrund",
+        "aValueType": "boolean",
+        "aValue": false,
+        "aValueDefault": false,
+        "aValueUnit": ""
+    },
+    {
+        "aName": "LV_39_CW_Profil",
+        "aNameJS": "cwProfile",
+        "aNameUI": "CW Profil",
+        "aValueType": "enum",
+        "aValue": [
+            "CW50",
+            "CW75",
+            "CW100",
+            "CW125"
+        ],
+        "aValueDefault": 1,
+        "aValueUnit": ""
+    },
+    {
+        "aName": "LV_39_Dampfbremse",
+        "aNameJS": "steamBreak",
+        "aNameUI": "Dampfbremse",
+        "aValueType": "boolean",
+        "aValue": false,
+        "aValueDefault": false,
+        "aValueUnit": ""
+    },
+    {
+        "aName": "LV_39_Deckenanschluss_gleitend",
+        "aNameUI": "gleitender Deckenanschluss",
+        "aValueType": "boolean",
+        "aValue": false,
+        "aValueDefault": false,
+        "aValueUnit": ""
+    },
+    {
+        "aName": "LV_39_MW",
+        "aNameUI": "Mineralwolle",
+        "aValueType": "enum",
+        "aValue": [
+            "-",
+            "MW35",
+            "MW50",
+            "MW75",
+            "MW100"
+        ],
+        "aValueDefault": 1,
+        "aValueUnit": ""
+    },
+    {
+        "aName": "LV_39_Staenderachsabstand",
+        "aNameJS": "studSpacing",
+        "aNameUI": "Ständerachsabstand",
+        "aValueType": "enumNr",
+        "aValue": [
+            625,
+            320
+        ],
+        "aValueDefault": 625,
+        "aValueUnit": "cm"
+    },
+    {
+        "aName": "LV_39_Typ",
+        "aNameUI": "Metallständerwand Typ",
+        "aValueType": "enum",
+        "aValue": [
+            "Einfachständerwand",
+            "Doppelständerwand",
+            "Schachtwände EI30",
+            "Schachtwände EI90",
+            "Installationswand"
+        ],
+        "aValueDefault": 0,
+        "aValueUnit": ""
+    },
+    {
+        "aName": "LV_39_Typ",
+        "aNameUI": "Vorsatzschale Typ",
+        "aValueType": "radio",
+        "aValue": [
+            "direkt befestigt",
+            "freistehend"
+        ],
+        "aValueUnit": ""
+    },
+    {
+        "aName": "LV_44_Fassadenfarbe",
+        "aNameJS": "LV_44_Fassadenfarbe",
+        "aNameUI": "Fassadenfarbe",
+        "aValueType": "enum",
+        "aValue": [
+            "kunstharzgebunden Standard",
+            "kunstharzgebunden Sonderfarbe",
+            "Silikatfarbe Standard",
+            "Silikatfarbe Sonderfarbe"
+        ],
+        "aValueDefault": 2,
+        "aValueUnit": ""
+    },
+    {
+        "aName": "LV_44_fungizid",
+        "aNameJS": "LV_44_fungizid",
+        "aNameUI": "fungizid algizid",
+        "aValueType": "boolean",
+        "aValue": false,
+        "aValueDefault": false,
+        "aValueUnit": ""
+    },
+    {
+        "aName": "LV_44_Lambdawert",
+        "aNameJS": "LV_44_Lambdawert",
+        "aNameUI": "Wärmeleitfähigkeit Lambda",
+        "aValueType": "enumNr",
+        "aValue": [
+            0.031,
+            0.034,
+            0.036,
+            0.04
+        ],
+        "aValueDefault": 0.031,
+        "aValueUnit": "W/(mk)"
+    },
+    {
+        "aName": "LV_44_my10",
+        "aNameJS": "LV_44_my10",
+        "aNameUI": "my10",
+        "aValueType": "boolean",
+        "aValue": false,
+        "aValueDefault": false,
+        "aValueUnit": ""
+    },
+    {
+        "aName": "LV_44_Oberputz",
+        "aNameJS": "LV_44_Oberputz",
+        "aNameUI": "Oberputz",
+        "aValueType": "enum",
+        "aValue": [
+            "Dünnputz kunstharzgebunden",
+            "Silikat-Dünnputz",
+            "Silikon-Dünnputz"
+        ],
+        "aValueDefault": 1,
+        "aValueUnit": ""
+    },
+    {
+        "aName": "LV_44_Oberputzstruktur",
+        "aNameUI": "LV_44_Oberputzstruktur",
+        "aValueType": "enum",
+        "aValue": [
+            "Feinputz",
+            "Rillenstruktur",
+            "Reibstruktur",
+            "Füllputz"
+        ],
+        "aValueDefault": 0,
+        "aValueUnit": ""
+    },
+    {
+        "aName": "LV_44_Oberputzdicke",
+        "aNameJS": "LV_44_Oberputzdicke",
+        "aNameUI": "Oberputzdicke",
+        "aValueType": "enumNr",
+        "aValue": [
+            0.5,
+            1,
+            1.5,
+            2,
+            3
+        ],
+        "aValueDefault": 0,
+        "aValueUnit": "mm"
+    },
+    {
+        "aName": "LV_44_Sonderfarbe",
+        "aNameJS": "LV_44_Sonderfarbe",
+        "aNameUI": "Sonderfarbe",
+        "aValueType": "boolean",
+        "aValue": false,
+        "aValueDefault": false,
+        "aValueUnit": ""
+    },
+    {
+        "aName": "LV_44_Typ",
+        "aNameJS": "LV_44_Typ",
+        "aNameUI": "WDVS Typ",
+        "aValueType": "radio",
+        "aValue": [
+            "EPS-F",
+            "MW-PT",
+            "MW-PT Untersicht"
+        ],
+        "aValueUnit": ""
+    },
+    {
+        "aName": "LV_44_Unterputzdicke",
+        "aNameJS": "LV_44_Unterputzdicke",
+        "aNameUI": "Unterputzdicke",
+        "aValueType": "enumNr",
+        "aValue": [
+            3,
+            5,
+            8
+        ],
+        "aValueDefault": 0,
+        "aValueUnit": "mm"
+    },
+    {
+        "aName": "R_Typ_Kommentar",
+        "aNameJS": "typeComment",
+        "aNameUI": "Kommentar",
+        "aValueType": "string",
+        "aValue": "",
+        "aValueDefault": "",
+        "aValueUnit": "max.50 Zeichen"
+    },
+    {
+        "aName": "R_Typ_Name",
+        "aNameUI": "Name",
+        "aValueType": "string",
+        "aValue": "",
+        "aValueDefault": "",
+        "aValueUnit": ""
+    }
+]

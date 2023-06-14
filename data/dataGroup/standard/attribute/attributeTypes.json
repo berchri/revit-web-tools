@@ -1,0 +1,42 @@
+[
+    {
+        "attributeTypeBoolean": {
+            "aName": "string",
+            "aNameUI": "string",
+            "aValue": "Boolean",
+            "aValueDefault": true
+        }
+    },
+    {
+        "attributeTypeEnum": {
+            "aName": "string",
+            "aNameUI": "string",
+            "aValue": ["", "string", "string"],
+            "aValueDefault": 0
+        }
+    },
+    {
+        "attributeTypeEnumNr": {
+            "aName": "string",
+            "aNameUI": "string",
+            "aValue": [0.1, 0.2, 0.3],
+            "aValueDefault": 0,
+            "aValueUnit": "String"
+        }
+    },
+    {
+        "attributeTypeNumericMeasure": {
+            "aName": "string",
+            "aNameUI": "string",
+            "aValue": 0.2,
+            "aVulueUnit": "string"
+        }
+    },
+    {
+        "attributeTypeString": {
+            "aName": "String",
+            "aNameUI": "String",
+            "aValue": "String"
+        }
+    }
+]
