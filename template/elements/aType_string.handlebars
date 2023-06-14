@@ -1,0 +1,17 @@
+<div class="form-group my-4" id="form-string">
+    <label for="{{aName}}-input">{{aNameUI}}</label>
+    <div class="input-group mb-0">
+        <input name="{{aName}}" type="text" class="form-control" data-valuetype="{{aValueType}}" id="{{aName}}-input"
+            placeholder="hier Text eingeben..." {{availableOnStart}}
+            data-whitespace-allowed="{{aValueWhitespaceAllowed}}" data-string-length="{{aValueLength}}" />
+        <div class="invalid-tooltip" id="{{aName}}-notification"></div>
+        <div class="input-group-append">
+            {{#if aValueLength}}
+            <span class="input-group-text">max. {{aValueLength}} Zeichen</span>
+            {{else}}
+            <span class="input-group-text">max. 15 Zeichen</span>
+            {{/if}}
+        </div>
+    </div>
+    <small id="{{aName}}Original" class="form-text text-muted mt-0">{{aName}}</small>
+</div>

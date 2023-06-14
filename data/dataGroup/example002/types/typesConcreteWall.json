@@ -1,0 +1,22 @@
+{
+    "typesCollection": [
+        {
+            "id": 1,
+            "Name": "WA_STB_180_C25/30_XC1",
+            "Kategorie": "Wand",
+            "LV_Gewerk": "07 Beton- u Stahlbetonarbeiten",
+            "Ausführung": "Ortbeton",
+            "Material": "Beton",
+            "LV_Beschreibung": "Ortbetonwand",
+            "iTWO_Key": "WA-BET",
+            "Typenkommentare": "",
+            "R_Typ_Kommentar": "",
+            "Q_Dicke": 18,
+            "LV_07_Betonfestigkeitsklasse": "C25/30",
+            "LV_07_Expositionsklasse": "XC1",
+            "LV_07_Bruestung": false,
+            "LV_07_BruestungUI": "N",
+            "LV_07_Schalung": "Wandschalung"
+        }
+    ]
+}

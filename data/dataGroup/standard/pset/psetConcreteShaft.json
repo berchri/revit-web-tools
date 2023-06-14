@@ -1,0 +1,88 @@
+{
+    "psetNameUI": "Schächte und Kollektoren",
+    "psetElement": [
+        {
+            "aName": "LV_07_Konstruktion",
+            "aNameUI": "Art",
+            "aValueType": "enum",
+            "aValue": [
+                "Schacht bis 1m³",
+                "Schacht über 1-3m³",
+                "Kollektor bis 1m³",
+                "Kollektor über 1-3m³"
+            ],
+            "aValueDefault": 1,
+            "aValueUnit": ""
+        },
+        {
+            "aName": "LV_07_Element",
+            "aNameUI": "Element",
+            "aValueType": "enum",
+            "aValue": [
+                "Bodenplatte",
+                "Decke",
+                "Wand"
+            ],
+            "aValueDefault": 2,
+            "aValueUnit": ""
+        },
+        {
+            "aName": "Q_Dicke",
+            "aNameJS": "thickness",
+            "aNameUI": "Dicke",
+            "aValueType": "numericMeasure",
+            "aValueDefault": "18",
+            "aValueUnit": "cm"
+        },
+        {
+            "aName": "Q_Hoehe",
+            "aNameJS": "hight",
+            "aNameUI": "Höhe",
+            "aValueType": "numericMeasure",
+            "aValueDefault": "20",
+            "aValueUnit": "cm"
+        },
+        {
+            "aName": "LV_07_Betonfestigkeitsklasse",
+            "aNameJS": "concreteStrengthClass",
+            "aNameUI": "Betonfestigkeitsklasse",
+            "aValueType": "enum",
+            "aValue": [
+                "C16/20",
+                "C20/25",
+                "C25/30"
+            ],
+            "aValueDefault": 3,
+            "aValueUnit": ""
+        },
+        {
+            "aName": "R_Typ_Kommentar",
+            "aNameJS": "typeComment",
+            "aNameUI": "Kommentar",
+            "aValueType": "string",
+            "aValue": "",
+            "aValueUnit": "max. 20 Zeichen"
+        }
+    ],
+    "psetElementConst": [
+        {
+            "aName": "LV_Gewerk",
+            "aNameJS": "trade",
+            "aValue": "07 Beton- u Stahlbetonarbeiten"
+        },
+        {
+            "aName": "LV_Beschreibung",
+            "aNameJS": "description",
+            "aValue": "Schacht/Kollektor"
+        },
+        {
+            "aName": "Material",
+            "aValue": "Ortbeton - bewehrt Verputzt"
+        },
+        {
+            "aName": "Ausführung",
+            "aValue": "Ortbeton"
+        }
+    ],
+    "psetElementModelCategory": "Architektur/Wand"
+}

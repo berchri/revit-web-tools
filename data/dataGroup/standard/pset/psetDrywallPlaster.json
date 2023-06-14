@@ -1,0 +1,66 @@
+{
+    "psetNameUI": "Trockenputz",
+    "psetElement": [
+        {
+            "aName": "LV_39_Typ",
+            "aNameUI": "Trockenputz Typ",
+            "aValueType": "radio",
+            "aValue": [
+                "Trockenputz ohne Wärmedämmung",
+                "Trockenputz mit Wärmedämmung"
+            ],
+            "aValueUnit": ""
+        },
+        {
+            "aName": "Q_Dicke_WD",
+            "aNameUI": "Dicke WD",
+            "aValueType": "enumNr",
+            "aValue": [
+                "-",
+                2,
+                3,
+                4
+            ],
+            "aValueDefault": "-",
+            "aValueUnit": "cm"
+        },
+        {
+            "aName": "Q_Dicke",
+            "aNameJS": "thickness",
+            "aNameUI": "Dicke",
+            "aValueType": "numericMeasure",
+            "aValueDefault": "1.75",
+            "aValueUnit": "cm"
+        },
+        {
+            "aName": "R_Typ_Kommentar",
+            "aNameJS": "typeComment",
+            "aNameUI": "Kommentar",
+            "aValueType": "string",
+            "aValue": "",
+            "aValueUnit": "max. 20 Zeichen"
+        }
+    ],
+    "psetElementConst": [
+        {
+            "aName": "LV_Gewerk",
+            "aNameJS": "trade",
+            "aValue": "39 Trockenbauarbeiten"
+        },
+        {
+            "aName": "iTWO_Key",
+            "aNameJS": "iTWO_Key",
+            "aValue": "WA-TRP"
+        },
+        {
+            "aName": "LV_Beschreibung",
+            "aNameJS": "description",
+            "aValue": "???"
+        },
+        {
+            "aName": "Material",
+            "aValue": "Trockenbau - Gipsplatte"
+        }
+    ],
+    "psetElementModelCategory": "Architektur/Wand"
+}

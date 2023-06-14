@@ -1,0 +1,19 @@
+{
+    "typesCollection": [
+        {
+            "id": 1,
+            "Name": "FU_STB_400_C25/30_B2",
+            "Kategorie": "Fundament",
+            "LV_Gewerk": "07 Beton- u Stahlbetonarbeiten",
+            "Ausführung": "Ortbeton",
+            "Material": "Beton",
+            "LV_Beschreibung": "Fundamentplatte",
+            "iTWO_Key": "RB-FU-PL-H",
+            "Typenkommentare": "",
+            "Q_Hoehe": 40,
+            "LV_07_Betonfestigkeitsklasse": "C25/30",
+            "LV_07_Expositionsklasse": "B2",
+            "LV_07_Schalung": "Fundamentschalung"
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "typesCollection": [
+        {
+            "id": 1,
+            "Name": "DE_STB_200_C25/30_XC1",
+            "Kategorie": "Decke",
+            "LV_Gewerk": "07 Beton- u Stahlbetonarbeiten",
+            "Ausführung": "Ortbeton",
+            "Material": "Beton",
+            "LV_Beschreibung": "Ortbetondecke",
+            "iTWO_Key": "DE-BET",
+            "Typenkommentare": "",
+            "Q_Hoehe": 20,
+            "LV_07_Betonfestigkeitsklasse": "C25/30",
+            "LV_07_Expositionsklasse": "XC1",
+            "LV_07_Aufzugsüberfahrt_UI": "N",
+            "LV_07_Aufzugsüberfahrt": "N",
+            "LV_07_Schalung": "Deckenschalung"
+        }
+    ]
+}

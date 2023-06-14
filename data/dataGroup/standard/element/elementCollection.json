@@ -1,0 +1,244 @@
+{
+    "elementCollection": [
+        {
+            "eName": "PadFooting",
+            "eNameUI": "Einzelfundament",
+            "eTypes": "typesPadFooting",
+            "ePSet": "pSetPadFooting",
+            "eGroupName": "concrete footing",
+            "eGroupNameUI": "Stahlbeton Fundament"
+        },
+        {
+            "eName": "StripFooting",
+            "eNameUI": "Streifenfundament",
+            "eTypes": "typesStripFooting",
+            "ePSet": "pSetStripFooting",
+            "eGroupName": "concrete footing",
+            "eGroupNameUI": "Stahlbeton Fundament"
+        },
+        {
+            "eName": "FoundationSlab",
+            "eNameUI": "Plattenfundament",
+            "eTypes": "typesFoundationSlab",
+            "ePSet": "pSetFoundationSlab",
+            "eGroupName": "concrete footing",
+            "eGroupNameUI": "Stahlbeton Fundament"
+        },
+        {
+            "eName": "FoundationHaunch",
+            "eNameUI": "Fundamentverstärkung",
+            "eTypes": "typesFoundationHaunch",
+            "ePSet": "pSetFoundationHaunch",
+            "eGroupName": "concrete footing",
+            "eGroupNameUI": "Stahlbeton Fundament"
+        },
+        {
+            "eName": "PileGrid",
+            "eNameUI": "Pfahlrost",
+            "eTypes": "typesPileGrid",
+            "ePSet": "pSetPileGrid",
+            "eGroupName": "concrete footing",
+            "eGroupNameUI": "Stahlbeton Fundament"
+        },
+        {
+            "eName": "Subconcrete",
+            "eNameUI": "Unterbeton",
+            "eTypes": "typesSubconcrete",
+            "ePSet": "pSetSubconcrete",
+            "eGroupName": "concrete footing",
+            "eGroupNameUI": "Stahlbeton Fundament"
+        },
+        {
+            "eName": "ConcreteWall",
+            "eNameUI": "Ortbetonwand",
+            "eTypes": "typesConcreteWall",
+            "ePSet": "pSetConcreteWall",
+            "eGroupName": "concrete",
+            "eGroupNameUI": "Stahlbeton"
+        },
+        {
+            "eName": "ConcreteSlab",
+            "eNameUI": "Ortbetondecke",
+            "eTypes": "typesConcreteSlab",
+            "ePSet": "pSetConcreteSlab",
+            "eGroupName": "concrete",
+            "eGroupNameUI": "Stahlbeton"
+        },
+        {
+            "eName": "ConcreteColumn",
+            "eNameUI": "Ortbetonstütze",
+            "eTypes": "typesConcreteColumn",
+            "ePSet": "pSetConcreteColumn",
+            "eGroupName": "concrete",
+            "eGroupNameUI": "Stahlbeton"
+        },
+        {
+            "eName": "ConcreteColumnRound",
+            "eNameUI": "Ortbetonstütze rund",
+            "eTypes": "typesConcreteColumnRound",
+            "ePSet": "pSetConcreteColumnRound",
+            "eGroupName": "concrete",
+            "eGroupNameUI": "Stahlbeton"
+        },
+        {
+            "eName": "ConcreteBeam",
+            "eNameUI": "Ortbetonbalken",
+            "eTypes": "typesConcreteBeam",
+            "ePSet": "pSetConcreteBeam",
+            "eGroupName": "concrete",
+            "eGroupNameUI": "Stahlbeton"
+        },
+        {
+            "eName": "ConcreteRoof",
+            "eNameUI": "Sargdeckel",
+            "eTypes": "typesConcreteRoof",
+            "ePSet": "pSetConcreteRoof",
+            "eGroupName": "concrete",
+            "eGroupNameUI": "Stahlbeton"
+        },
+        {
+            "eName": "ConcreteShaft",
+            "eNameUI": "Schacht und Kollektor",
+            "eTypes": "typesConcreteShaft",
+            "ePSet": "pSetConcreteShaft",
+            "eGroupName": "concrete",
+            "eGroupNameUI": "Stahlbeton"
+        },
+        {
+            "eName": "WoodWool",
+            "eNameUI": "Dämmung Decke",
+            "eTypes": "typesWoodWool",
+            "ePSet": "pSetWoodWool",
+            "eGroupName": "concrete",
+            "eGroupNameUI": "Stahlbeton"
+        },
+        {
+            "eName": "ConcreteInsulationWall",
+            "eNameUI": "Dämmung Wand",
+            "eTypes": "typesConcreteInsulationWall",
+            "ePSet": "pSetConcreteInsulationWall",
+            "eGroupName": "concrete",
+            "eGroupNameUI": "Stahlbeton"
+        },
+        {
+            "eName": "PrefabElementSlab",
+            "eNameUI": "Fertigteil Decke",
+            "eTypes": "typesPrefabElementSlab",
+            "ePSet": "pSetPrefabElementSlab",
+            "eGroupName": "concreteAdditional",
+            "eGroupNameUI": "Stahlbeton Fertigteil"
+        },
+        {
+            "eName": "PrefabColumn",
+            "eNameUI": "Fertigteil Stütze",
+            "eTypes": "typesPrefabColumn",
+            "ePSet": "pSetPrefabColumn",
+            "eGroupName": "concreteAdditional",
+            "eGroupNameUI": "Stahlbeton Fertigteil"
+        },
+        {
+            "eName": "PrefabColumnRound",
+            "eNameUI": "Fertigteil Stütze rund",
+            "eTypes": "typesPrefabColumnRound",
+            "ePSet": "pSetPrefabColumnRound",
+            "eGroupName": "concreteAdditional",
+            "eGroupNameUI": "Stahlbeton Fertigteil"
+        },
+        {
+            "eName": "PrefabWall",
+            "eNameUI": "Fertigteil Wand",
+            "eTypes": "typesPrefabWall",
+            "ePSet": "pSetPrefabWall",
+            "eGroupName": "concreteAdditional",
+            "eGroupNameUI": "Stahlbeton Fertigteil"
+        },
+        {
+            "eName": "MetalStudWall",
+            "eNameUI": "Metallständerwand",
+            "eTypes": "typesMetalStudWall",
+            "ePSet": "pSetMetalStudWall",
+            "eGroupName": "dryConstruction",
+            "eGroupNameUI": "Trockenbau"
+        },
+        {
+            "eName": "MetalStudShell",
+            "eNameUI": "Vorsatzschale",
+            "eTypes": "typesMetalStudShell",
+            "ePSet": "pSetMetalStudShell",
+            "eGroupName": "dryConstruction",
+            "eGroupNameUI": "Trockenbau"
+        },
+        {
+            "eName": "DrywallPlaster",
+            "eNameUI": "Trockenputz",
+            "eTypes": "typesDrywallPlaster",
+            "ePSet": "pSetDrywallPlaster",
+            "eGroupName": "dryConstruction",
+            "eGroupNameUI": "Trockenbau"
+        },
+        {
+            "eName": "MetalStudWallCustom",
+            "eNameUI": "sonstige Trockenbau",
+            "eTypes": "typesMetalStudWallCustom",
+            "ePSet": "pSetMetalStudWallCustom",
+            "eGroupName": "dryConstruction",
+            "eGroupNameUI": "Trockenbau"
+        },
+        {
+            "eName": "MetalStudCeiling",
+            "eNameUI": "Decke Trockenbau",
+            "eTypes": "typesMetalStudCeiling",
+            "ePSet": "pSetMetalStudCeiling",
+            "eGroupName": "dryConstruction",
+            "eGroupNameUI": "Trockenbau"
+        },
+        {
+            "eName": "ETICS",
+            "eNameUI": "WDVS Fassade",
+            "eTypes": "typesETICS",
+            "ePSet": "pSetETICS",
+            "eGroupName": "facade",
+            "eGroupNameUI": "Fassade"
+        },
+        {
+            "eName": "Masonry",
+            "eNameUI": "Mauerwerk",
+            "eTypes": "typesMasonry",
+            "ePSet": "pSetMasonry",
+            "eGroupName": "masonry",
+            "eGroupNameUI": "Mauerwerk"
+        },
+        {
+            "eName": "MasonryNonBearing",
+            "eNameUI": "Mauerwerk nichttragend",
+            "eTypes": "typesMasonryNonBearing",
+            "ePSet": "pSetMasonryNonBearing",
+            "eGroupName": "masonry",
+            "eGroupNameUI": "Mauerwerk"
+        },
+        {
+            "eName": "PerimeterInsulation",
+            "eNameUI": "Perimeterdämmung",
+            "eTypes": "typesPerimeterInsulation",
+            "ePSet": "pSetPerimeterInsulation",
+            "eGroupName": "insulation",
+            "eGroupNameUI": "Abdichtung"
+        },
+        {
+            "eName": "WallCustom",
+            "eNameUI": "sonstige Wand",
+            "eTypes": "typesWallCustom",
+            "ePSet": "pSetWallCustom",
+            "eGroupName": "Custom",
+            "eGroupNameUI": "Sonstige"
+        },
+        {
+            "eName": "SlabCustom",
+            "eNameUI": "sonstige Decke",
+            "eTypes": "typesSlabCustom",
+            "ePSet": "pSetSlabCustom",
+            "eGroupName": "Custom",
+            "eGroupNameUI": "Sonstige"
+        }
+    ]
+}

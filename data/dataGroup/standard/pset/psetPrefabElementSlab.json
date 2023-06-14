@@ -1,0 +1,66 @@
+{
+    "psetNameUI": "Decke aus Betonfertigteilen",
+    "psetElement": [
+        {
+            "aName": "LV_07_16_Typ",
+            "aNameUI": "Fertigteil Typ",
+            "aValueType": "radio",
+            "aValue": [
+                "Stahlbetonelementdecke LG07",
+                "Fertigteilbalkonplatte LG16",
+                "Fertigteilpodestplatte LG16"
+            ]
+        },
+        {
+            "aName": "Q_Hoehe",
+            "aNameUI": "Höhe",
+            "aValueType": "numericMeasure",
+            "aValueDefault": "20",
+            "aValueUnit": "cm"
+        },
+        {
+            "aName": "LV_07_Nutzlast",
+            "aNameUI": "Nutzlast",
+            "aValue": [
+                "-",
+                "5kN",
+                "7kN"
+            ],
+            "aValueType": "enum"
+        },
+        {
+            "aName": "R_Typ_Kommentar",
+            "aNameJS": "typeComment",
+            "aNameUI": "Kommentar",
+            "aValueType": "string",
+            "aValue": "",
+            "aValueUnit": "max. 20 Zeichen"
+        }
+    ],
+    "psetElementConst": [
+        {
+            "aName": "LV_Gewerk",
+            "aNameJS": "trade",
+            "aValue": "07 Beton- u Stahlbetonarbeiten"
+        },
+        {
+            "aName": "iTWO_Key",
+            "aNameJS": "iTWO_Key",
+            "aValue": "DE-BET-ELMT"
+        },
+        {
+            "aName": "LV_Beschreibung",
+            "aNameJS": "description",
+            "aValue": "Elementdecke"
+        },
+        {
+            "aName": "Material",
+            "aValue": "Ortbeton - bewehrt Verputzt"
+        },
+        {
+            "aName": "Ausführung",
+            "aValue": "Halbfertigteil"
+        }
+    ],
+    "psetElementModelCategory": "Architektur/Geschoßdecke"
+}

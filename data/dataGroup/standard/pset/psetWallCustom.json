@@ -1,0 +1,76 @@
+{
+    "psetNameUI": "frei definierte Wand",
+    "psetElement": [
+        {
+            "aName": "LV_Gewerk",
+            "aNameUI": "Gewerk",
+            "aValueType": "radio",
+            "aValue": [
+                "08 Mauerarbeiten",
+                "16 Fertigteile",
+                "44 Wärmedämmverbundsysteme",
+                "67 Pfosten-Riegel-Fassaden",
+                "68 Vorgehängte hinterlüftete Fassaden"
+            ],
+            "aValueUnit": ""
+        },
+        {
+            "aName": "Name",
+            "aNameJS": "customName",
+            "aNameUI": "Name Kurzbezeichnung",
+            "aValueType": "string",
+            "aValue": ""
+        },
+        {
+            "aName": "LV_Mengeneinheit",
+            "aNameUI": "Mengeneinheit",
+            "aValueType": "enum",
+            "aValue": [
+                "m²",
+                "m³",
+                "Stk"
+            ],
+            "aValueDefault": 0,
+            "aValueUnit": "cm"
+        },
+        {
+            "aName": "Q_Dicke",
+            "aNameJS": "thickness",
+            "aNameUI": "Dicke",
+            "aValueType": "numericMeasure",
+            "aValueDefault": 10,
+            "aValueUnit": "cm"
+        },
+        {
+            "aName": "LV_Kurztext",
+            "aNameJS": "shortText",
+            "aNameUI": "Kurztext",
+            "aValueType": "string",
+            "aValue": "",
+            "aValueWhitespaceAllowed": true,
+            "aValueLength": 60
+        }
+    ],
+    "psetElementConst": [
+        {
+            "aName": "LV_Gewerk",
+            "aNameJS": "trade",
+            "aValue": ""
+        },
+        {
+            "aName": "iTWO_Key",
+            "aNameJS": "iTWO_Key",
+            "aValue": "WA-FREI"
+        },
+        {
+            "aName": "LV_Beschreibung",
+            "aNameJS": "description",
+            "aValue": ""
+        },
+        {
+            "aName": "Material",
+            "aValue": ""
+        }
+    ],
+    "psetElementModelCategory": "Architektur/Wand"
+}

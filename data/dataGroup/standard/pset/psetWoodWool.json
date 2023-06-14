@@ -1,0 +1,69 @@
+{
+    "psetNameUI": "Dämmung Decke Tektalan",
+    "psetElement": [
+        {
+            "aName": "LV_07_KDD_Typ",
+            "aNameUI": "Ausführung",
+            "aValueType": "radio",
+            "aValue": [
+                "nachträglich befestigt",
+                "mitbetoniert"
+            ],
+            "aValueDefault": 0
+        },
+        {
+            "aName": "LV_07_KDD_Produktart",
+            "aNameUI": "Produktart",
+            "aValueType": "enum",
+            "aValue": [
+                "WWH-MW-WWH 50",
+                "WWH-MW-WWH 100",
+                "MW-WW"
+            ],
+            "aValueDefault": 0
+        },
+        {
+            "aName": "Q_Hoehe",
+            "aNameUI": "Dicke",
+            "aValueType": "enumNr",
+            "aValue": [
+                5,
+                7.5,
+                10,
+                12.5,
+                15,
+                17.5
+            ],
+            "aValueDefault": "",
+            "aValueUnit": "cm"
+        },
+        {
+            "aName": "R_Typ_Kommentar",
+            "aNameJS": "typeComment",
+            "aNameUI": "Kommentar",
+            "aValueType": "string"
+        }
+    ],
+    "psetElementConst": [
+        {
+            "aName": "LV_Gewerk",
+            "aNameJS": "trade",
+            "aValue": "07 Beton- u Stahlbetonarbeiten"
+        },
+        {
+            "aName": "iTWO_Key",
+            "aNameJS": "iTWO_Key",
+            "aValue": "AI-DE-KDD"
+        },
+        {
+            "aName": "LV_Beschreibung",
+            "aNameJS": "description",
+            "aValue": "Kellerdeckendämmung"
+        },
+        {
+            "aName": "Material",
+            "aValue": "Dämmung - hart"
+        }
+    ],
+    "psetElementModelCategory": "Architektur/Geschoßdecke"
+}

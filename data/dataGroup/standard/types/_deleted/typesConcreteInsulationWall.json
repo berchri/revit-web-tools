@@ -1,0 +1,40 @@
+{
+    "typesCollection": [
+        {
+            "id": 1,
+            "Name": "WA_DAEMM_KW_125",
+            "Kategorie": "Wand",
+            "LV_Gewerk": "07 Beton- u Stahlbetonarbeiten",
+            "Material": "Dämmung",
+            "LV_Beschreibung": "Dämmung Kellerwand",
+            "iTWO_Key": "WA-DAEMMUNG",
+            "Typenkommentare": "",
+            "R_Typ_Kommentar": "",
+            "Q_Dicke": 12.5
+        },
+        {
+            "id": 2,
+            "Name": "WA_DAEMM_FM_160",
+            "Kategorie": "Wand",
+            "LV_Gewerk": "07 Beton- u Stahlbetonarbeiten",
+            "Material": "Dämmung",
+            "LV_Beschreibung": "Dämmung Feuermauer",
+            "iTWO_Key": "WA-DAEMMUNG",
+            "Typenkommentare": "",
+            "R_Typ_Kommentar": "",
+            "Q_Dicke": 16
+        },
+        {
+            "id": 3,
+            "Name": "WA_DAEMM_TF_20",
+            "Kategorie": "Wand",
+            "LV_Gewerk": "07 Beton- u Stahlbetonarbeiten",
+            "Material": "Dämmung",
+            "LV_Beschreibung": "Dämmung Trennfuge",
+            "iTWO_Key": "WA-DAEMMUNG",
+            "Typenkommentare": "",
+            "R_Typ_Kommentar": "",
+            "Q_Dicke": 2
+        }
+    ]
+}

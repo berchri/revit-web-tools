@@ -1,0 +1,20 @@
+{
+    "typesCollection": [
+        {
+            "Kategorie": "Wand",
+            "LV_08_Dicke": 10,
+            "LV_08_Planziegel": true,
+            "LV_08_Planziegel_UI": "J",
+            "LV_08_Typ": "Zwischenwand keramisch",
+            "LV_Beschreibung": "Zwischenwand keramisch",
+            "LV_Gewerk": "08 Mauerarbeiten",
+            "Name": "WA_HLZ-Zw_100",
+            "Material": "Mauerwerk",
+            "Q_Dicke": 10,
+            "R_Typ_Kommentar": "",
+            "Typenkommentare": "",
+            "iTWO_Key": "WA-MWK-NTR-HLZ",
+            "id": 1
+        }
+    ]
+}

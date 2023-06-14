@@ -1,0 +1,22 @@
+{
+    "typesCollection": [
+        {
+            "id": 1,
+            "Name": "ST_STB_180x600_C30/37_XC1",
+            "Kategorie": "Stütze",
+            "LV_Gewerk": "07 Beton- u Stahlbetonarbeiten",
+            "Ausführung": "Ortbeton",
+            "Material": "Beton",
+            "LV_Beschreibung": "Ortbetonstütze",
+            "iTWO_Key": "ST-BET",
+            "Typenkommentare": "",
+            "Q_Dicke": 18,
+            "Breite": 18,
+            "Q_Laenge": 60,
+            "Höhe": 60,
+            "LV_07_Betonfestigkeitsklasse": "C30/37",
+            "LV_07_Expositionsklasse": "XC1",
+            "LV_07_Schalung": "Stuetzenschalung"
+        }
+    ]
+}

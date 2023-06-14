@@ -1,0 +1,18 @@
+{
+    "typesCollection": [
+        {
+            "id": 1,
+            "Name": "DE_KDD_100_MW-WW",
+            "Kategorie": "Decke",
+            "LV_Gewerk": "07 Beton- u Stahlbetonarbeiten",
+            "Material": "Dämmung",
+            "LV_Beschreibung": "Kellerdeckendämmung nachträglich befestigt",
+            "iTWO_Key": "AI-DE-KDD",
+            "Typenkommentare": "",
+            "R_Typ_Kommentar": "",
+            "LV_07_KDD_Typ": "nachträglich befestigt",
+            "Q_Hoehe": 10,
+            "LV_07_KDD_Produktart": "MW-WW"
+        }
+    ]
+}

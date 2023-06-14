@@ -1,0 +1,31 @@
+{
+    "typesCollection": [
+        {
+            "Kategorie": "Wand",
+            "LV_Beschreibung": "Doppelwand",
+            "LV_Gewerk": "07 Beton- u Stahlbetonarbeiten",
+            "Ausführung": "Halbfertigteil",
+            "Material": "Beton",
+            "Name": "WA_DWE_200",
+            "Q_Dicke": 20,
+            "R_Typ_Kommentar": "",
+            "Typenkommentare": "",
+            "iTWO_Key": "WA-DWE-BET",
+            "id": 1,
+            "LV_07_Schalung": "Doppelwandelement"
+        },
+        {
+            "id": 2,
+            "Name": "WA_FT_LBBR_180",
+            "Kategorie": "Wand",
+            "LV_Gewerk": "16 Fertigteile",
+            "Ausführung": "Fertigteil",
+            "Material": "Beton",
+            "LV_Beschreibung": "Loggien-Balkonbrüstung",
+            "iTWO_Key": "RB-FT-SF| L- Balkonbrüstung",
+            "Typenkommentare": "",
+            "R_Typ_Kommentar": "",
+            "Q_Dicke": 18
+        }
+    ]
+}

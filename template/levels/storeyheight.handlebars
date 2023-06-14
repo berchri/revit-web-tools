@@ -1,0 +1,19 @@
+<div class="d-flex">
+    <div class="col col-wall"></div>
+    <div class="col col-storeyheight d-flex align-items-start py-1" data-storey="{{storeyName}}">
+        <div class="level-card border rounded p-2" data-id="{{id}}">
+            <h6 class="mb-3">{{storeyName}}</h6>
+            <div class="d-flex justify-content-end align-items-center">
+                <div class="text-right">Rohbauhöhe</div>
+                <div class="input-group ml-2 card-input input-storeyheight">
+                    <input name="EG" type="text" class="form-control" id="{{id}}" value="{{height}}"
+                        data-type="{{levelType}}" />
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="i-enumNr-unit">m</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col col-inputs" data-storey="{{storeyName}}"></div>
+</div>

@@ -1,0 +1,12 @@
+{{#each exportList}}
+<li class="list-group-item d-flex justify-content-between align-items-center px-5">
+    {{eNameUI}}
+    <span class="badge badge-primary badge-pill ml-1">{{countedTypes}}</span>
+</li>
+{{/each}}
+{{#unless exportList}}
+<li class="list-group-item d-flex justify-content-between align-items-center px-5">
+    Keine Elemente angelegt.
+    <span class="badge badge-primary badge-pill ml-1 float-right"></span>
+</li>
+{{/unless}}

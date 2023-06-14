@@ -1,0 +1,33 @@
+{
+    "typesCollection": [
+        {
+            "id": 1,
+            "Name": "DE_STB_ELMT_200_5kN",
+            "Kategorie": "Decke",
+            "LV_Gewerk": "07 Beton- u Stahlbetonarbeiten",
+            "Ausführung": "Halbfertigteil",
+            "Material": "Beton",
+            "LV_Beschreibung": "Elementdecke",
+            "iTWO_Key": "DE-BET-ELMT",
+            "Typenkommentare": "",
+            "R_Typ_Kommentar": "",
+            "Q_Hoehe": 20,
+            "LV_07_16_Typ": "Stahlbetonelementdecke LG07",
+            "LV_07_Nutzlast": "5kN"
+        },
+        {
+            "id": 2,
+            "Name": "DE_FT_B_200",
+            "Kategorie": "Decke",
+            "LV_Gewerk": "16 Fertigteile",
+            "Ausführung": "Fertigteil",
+            "Material": "Beton",
+            "LV_Beschreibung": "Balkonplatte",
+            "iTWO_Key": "RB-FT-BAPL",
+            "Typenkommentare": "",
+            "R_Typ_Kommentar": "",
+            "Q_Hoehe": 20,
+            "LV_07_16_Typ": "Fertigteilbalkonplatte LG16"
+        }
+    ]
+}

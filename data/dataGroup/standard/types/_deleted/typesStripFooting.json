@@ -1,0 +1,22 @@
+{
+    "typesCollection": [
+        {
+            "id": 1,
+            "Name": "FU_STB_900x400_C25/30_B2",
+            "Kategorie": "Streifenfundament",
+            "LV_Gewerk": "07 Beton- u Stahlbetonarbeiten",
+            "Ausführung": "Ortbeton",
+            "Material": "Beton",
+            "LV_Beschreibung": "Streifenfundament",
+            "iTWO_Key": "RB-FU-STR",
+            "Typenkommentare": "",
+            "Q_Dicke": 90,
+            "Breite": 90,
+            "Q_Hoehe": 40,
+            "Fundamentstärke": 40,
+            "LV_07_Betonfestigkeitsklasse": "C25/30",
+            "LV_07_Expositionsklasse": "B2",
+            "LV_07_Schalung": "Fundamentschalung"
+        }
+    ]
+}

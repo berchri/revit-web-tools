@@ -1,0 +1,30 @@
+<table class="{{tableStyle}}" data-id="{{eNameJS}}">
+    <thead class="{{theadStyle}}">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Höhe</th>
+            <th scope="col">Betonfestigkeit</th>
+            <th scope="col">Typ-Kommentar</th>
+            <th scope="col">-</th>
+            <th scope="col">-</th>
+        </tr>
+    </thead>
+    <tbody class="text-center align-middle">
+        {{#each typesCollection}}
+        <tr>
+            <th scope="row">{{id}}</th>
+            <td>{{Name}}</td>
+            <td>{{Q_Hoehe}}</td>
+            <td>{{LV_07_Betonfestigkeitsklasse}}</td>
+            <td>{{R_Typ_Kommentar}}</td>
+            <td><a href="#" id="tr-delete" class="tr-delete" data-trID="{{@index}}" data-id="{{eNameJS}}">
+                    {{{iconDelete}}}
+                </a></td>
+            <td><a href="#" id="tr-edit" class="tr-edit" data-trID="{{@index}}" data-id="{{eNameJS}}">
+                    {{{iconEdit}}}
+                </a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

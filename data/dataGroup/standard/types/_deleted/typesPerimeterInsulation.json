@@ -1,0 +1,19 @@
+{
+    "typesCollection": [
+        {
+            "id": 1,
+            "Name": "WA_PD_XPS_60_1L.E-KV4+1L.E-KV5/9mm",
+            "Kategorie": "Wand",
+            "LV_Gewerk": "12 Abdichtungen bei Betonflächen und Wänden",
+            "Material": "Dämmung",
+            "LV_Beschreibung": "Perimeterdaemmung",
+            "iTWO_Key": "WA-PD",
+            "Typenkommentare": "",
+            "R_Typ_Kommentar": "",
+            "LV_12_Daemmung": "XPS",
+            "LV_12_Daemmungsdicke": 6,
+            "Q_Dicke": 6,
+            "LV_12_Abdichtung": "1L.E-KV4+1L.E-KV5/9mm"
+        }
+    ]
+}

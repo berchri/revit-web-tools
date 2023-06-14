@@ -1,0 +1,20 @@
+{
+    "typesCollection": [
+        {
+            "id": 1,
+            "Name": "ST_STB_DN250_C25/30_XC1",
+            "Kategorie": "Stütze_rund",
+            "LV_Gewerk": "07 Beton- u Stahlbetonarbeiten",
+            "Ausführung": "Ortbeton",
+            "Material": "Beton",
+            "LV_Beschreibung": "Ortbetonstütze",
+            "iTWO_Key": "ST-BET",
+            "Typenkommentare": "",
+            "Q_Dicke": 25,
+            "Durchmesser": 25,
+            "LV_07_Betonfestigkeitsklasse": "C25/30",
+            "LV_07_Expositionsklasse": "XC1",
+            "LV_07_Schalung": "Stuetzenschalung"
+        }
+    ]
+}

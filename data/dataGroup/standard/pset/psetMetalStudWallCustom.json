@@ -1,0 +1,67 @@
+{
+    "psetNameUI": "frei definierte Metallständerwand",
+    "psetElement": [
+        {
+            "aName": "LV_39_Typ_Frei",
+            "aNameUI": "Metallständerwand Typ",
+            "aValueType": "radio",
+            "aValue": [
+                "Einfachständerwand",
+                "Doppelständerwand",
+                "Schachtwand",
+                "Vorsatzschale direkt befestigt",
+                "Vorsatzschale freistehend"
+            ],
+            "aValueUnit": ""
+        },
+        {
+            "aName": "Name",
+            "aNameJS": "customName",
+            "aNameUI": "Name Kurzbezeichnung",
+            "aValueType": "string",
+            "aValue": "",
+            "aValueUnit": "max. 20 Zeichen"
+        },
+        {
+            "aName": "Q_Dicke",
+            "aNameJS": "thickness",
+            "aNameUI": "Dicke",
+            "aValueType": "numericMeasure",
+            "aValue": 0,
+            "aValueDefault": "10",
+            "aValueUnit": "cm"
+        },
+        {
+            "aName": "LV_Kurztext",
+            "aNameJS": "shortText",
+            "aNameUI": "Kurztext",
+            "aValueType": "string",
+            "aValue": "",
+            "aValueUnit": "max. 20 Zeichen",
+            "aValueWhitespaceAllowed": true,
+            "aValueLength": 60
+        }
+    ],
+    "psetElementConst": [
+        {
+            "aName": "LV_Gewerk",
+            "aNameJS": "trade",
+            "aValue": "39 Trockenbauarbeiten"
+        },
+        {
+            "aName": "iTWO_Key",
+            "aNameJS": "iTWO_Key",
+            "aValue": "WA-GK-FREI"
+        },
+        {
+            "aName": "LV_Beschreibung",
+            "aNameJS": "description",
+            "aValue": "Metallständerwand"
+        },
+        {
+            "aName": "Material",
+            "aValue": "Trockenbau - Gipsplatte"
+        }
+    ],
+    "psetElementModelCategory": "Architektur/Wand"
+}

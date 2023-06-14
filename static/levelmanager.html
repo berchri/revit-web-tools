@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico">
+    <title>Swietelsky DUE swiBIM</title>
+    <link href="./css/main.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/levelmanager.css" rel="stylesheet">
+    <script src="./lib/jquery.min.js"></script>
+    <script src="./lib/bootstrap.bundle.min.js"></script>
+    <script src="./lib/handlebars.runtime.js"></script>
+    <script src="./js-levelmanager/templatescompiled.js"></script>
+    <script src="./lib/filesaver.min.js"></script>
+    <script type="module" src="./js-levelmanager/levels_c.js"></script>
+</head>
+
+<body>
+    <!-- <header class="p-0">
+        <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom">
+            <a class="navbar-brand" href="#">
+                <img src="./img/swietelsky-logo-de.svg" width="110" alt="" loading="lazy">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="a-refresh" type="button">
+                            <svg class="icon">
+                                <use href="#house"></use>
+                            </svg>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="a-building-elements">
+                            <svg class="icon">
+                                <use href="#box"></use>
+                            </svg>
+                            <span>BIM Bauteile</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" id="a-level-manager">
+                            <svg class="icon">
+                                <use href="#layers"></use>
+                            </svg>
+                            <span>Ebenen</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="nav-item-text text-secondary">
+                    <svg class="icon">
+                        <use href="#tag"></use>
+                    </svg><span id="nav-version-info">Version: -</span>
+                </div>
+            </div>
+        </nav>
+    </header> -->
+    <section class="level-Manager">
+        <div class="container-fluid overflow-hidden">
+            <div class="row rowfixed">
+                <!-- sidebar -->
+                <nav class="col colfixed-s bg-swi-grau1 border-right p-0" id="column-nav">
+                    <div class="sidebar-sticky" id="nav-sidebar">
+                        <h6 class="sidebar-heading px-3 mt-4 mb-1 font-weight-bolder" id="nav-e-group">
+                            <span>Level-Manager</span>
+                        </h6>
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" id="link-wizard">
+                                    <svg class="icon">
+                                        <use href="#list-ul"></use>
+                                    </svg><span>Assistent starten</span>
+                                </a>
+                            </li>
+                            <!--
+                            <li class="nav-item">
+                                <a class=".nav-link-lmgr" id="link-create-manually" href="#">
+                                    <svg class="icon">
+                                        <use href="#list-ul"></use>
+                                    </svg><span>Manuell anlegen</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class=".nav-link-lmgr" id="link-create-beam" href="#">
+                                    <svg class="icon">
+                                        <use href="#list-ul"></use>
+                                    </svg><span>UZ anzeigen</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class=".nav-link-lmgr" id="link-create-roof" href="#">
+                                    <svg class="icon">
+                                        <use href="#list-ul"></use>
+                                    </svg><span>+Dach</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class=".nav-link-lmgr" id="link-create-storey" href="#">
+                                    <svg class="icon">
+                                        <use href="#list-ul"></use>
+                                    </svg><span>+Geschoß</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class=".nav-link-lmgr" id="link-open-modal" href="#" data-toggle="modal"
+                                    data-target="#myModal">
+                                    <svg class="icon">
+                                        <use href="#list-ul"></use>
+                                    </svg><span>openModal</span>
+                                </a>
+                            </li>
+                            -->
+                            <!-- <li class="mx-auto mt-4">
+                                <div class="spinner-border text-primary text-center" role="status"></div>
+                            </li> -->
+                        </ul>
+                        <h6 class="sidebar-heading px-3 mt-4 mb-1 font-weight-bolder" id="nav-e-group">
+                            <span>Ebenenstruktur</span>
+                        </h6>
+                        <ul class="nav flex-column" id="nav-level-structures">
+                        </ul>
+                    </div>
+                    <div class="sidebar-bottom" id="nav-data-exchange">
+                        <h6 class="sidebar-heading px-3 mt-4 mb-1 font-weight-bolder" id="nav-e-group">
+                            <span>Datenaustausch</span>
+                        </h6>
+                        <ul class="nav flex-column" id="nav-b-elements">
+                            <li class="nav-item">
+                                <!-- <a class="nav-link" href="#" id="nav-link-export">
+                                    <svg class="icon">
+                                        <use href="#export"></use>
+                                    </svg><span>Export</span>
+                                </a> -->
+                                <a class="nav-link" href="#" id="nav-link-export">
+                                    <svg class="icon">
+                                        <use href="#export"></use>
+                                    </svg><span>an Revit senden</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <!-- <a class="nav-link disabled" href="#" id="nav-link-import">
+                                    <svg class="icon">
+                                        <use href="#import"></use>
+                                    </svg><span>Import</span>
+                                </a> -->
+                                <a class="nav-link" href="#" id="nav-link-store">
+                                    <svg class="icon">
+                                        <use href="#server"></use>
+                                    </svg><span>Speichern, Laden</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- Main: Level Structure -->
+                <div class="col colfixed-level-1 p-0" id="level-structure-column">
+                    <div class="row m-0 lmgr-toolbar border-bottom">
+                        <div class="d-flex head-col-first justify-content-start align-items-center">
+                            <div class="p-3">Geschoßanzahl ändern</div>
+                            <div class="btn-group" role="group">
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn-swi" data-toggle="dropdown"> - </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#" id="storey-delete-top">oben entfernen</a>
+                                        <a class="dropdown-item" href="#" id="storey-delete-bottom">unten entfernen</a>
+                                    </div>
+                                </div>
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn-swi" data-toggle="dropdown"> + </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#" id="storey-add-top">oben hinzufügen</a>
+                                        <a class="dropdown-item" href="#" id="storey-add-bottom">unten hinzufügen</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="head-col d-flex align-items-center px-3">
+                            <div class="arrow-body">
+                                <div class="arrow-body-text">Standardebenen</div>
+                            </div>
+                            <div class="arrow-right"></div>
+                        </div>
+                        <div class="head-col d-flex align-items-center px-3">
+                            <div class="arrow-body">
+                                <div class="arrow-body-text">Deckensprünge</div>
+                            </div>
+                            <div class="arrow-right"></div>
+                        </div>
+                        <div class="head-col d-flex align-items-center px-3">
+                            <div class="arrow-body">
+                                <div class="arrow-body-text">Unterzüge</div>
+                            </div>
+                            <div class="arrow-right"></div>
+                        </div>
+                        <div class="head-col d-flex align-items-center px-3">
+                            <div class="arrow-body">
+                                <div class="arrow-body-text">weitere Ebenen</div>
+                            </div>
+                            <div class="arrow-right"></div>
+                        </div>
+                    </div>
+                    <div class="row-levels m-0">
+                        <form autocomplete="off" id="level-structure-main"></form>
+                    </div>
+                </div>
+                <!-- End Main -->
+                <!-- level wizard -->
+                <div class="col colfixed-m border-right bg-swi-grau1" id="column-wizard">
+                    <div id="form-heading"><button type="button" class="close" id="btn-close-wizard">×</button>
+                        <div class="pt-3 pb-2 mb3 border-bottom">
+                            <h3 id="buildingElement">Ebenen Assistent</h3>
+                            <p class="h6 text-muted text-uppercase" id="modelCategory">Regelgeschoß definieren</p>
+                        </div>
+                    </div>
+                    <div class="d-flex  mt-3 border rounded p-3">
+                        <div class="pr-4 text-secondary mt-1">
+                            <svg class="" width="50px" height="50px" viewBox="0 0 16 16">
+                                <use href="#info"></use>
+                            </svg>
+                        </div>
+                        <div class="text">Im Assistenten werden das Regelgeschoß und weitere Informationen abgefragt, um daraus eine Bauwerkstruktur zu erstellen. Genauere und von der Regel abweichende Angaben können im nächsten Schritt gemacht werden.</div>
+                    </div>
+                    <form autocomplete="off">
+                        <div id="form-container">
+                            <div class="form-group input-row my-4">
+                                <label class="mr-3 my-0 label-width-auto" for="nameLevelStructure">
+                                    <div>Name der Ebenenstrukur</div>
+                                    <small class="form-text text-muted mt-0">bzw. Bauteilname</small>
+                                </label>
+                                <div class="mb-0 input-container">
+                                    <input name="nameLevelStructure" type="text" class="form-control" placeholder="Bauteil A" value="Bauteil A" id="nameLevelStructure">
+                                    <div class="invalid-tooltip" id="nameLevelStructure-notification"></div>
+                                </div>
+                            </div>
+                            <div class="form-group input-row my-4">
+                                <label class="mr-3 my-0 label-width-auto" for="shortNameLevelStructure">
+                                    <div>Bauteil Kurzbezeichnung (optional)</div>
+                                    <small class="form-text text-muted mt-0">Ergänzung des Ebenennamens</small>
+                                    <small class="form-text text-muted mt-0">z.B.: <b>BT-A</b>_1000_EG01...</small>
+                                </label>
+                                <div class="mb-0 input-container">
+                                    <input name="shortNameLevelStructure" type="text" class="form-control" placeholder="z.B. BT-A" value="" id="shortNameLevelStructure">
+                                    <div class="invalid-tooltip" id="shortNameLevelStructure-notification"></div>
+                                </div>
+                                <!-- <small id="Q_HoeheOriginal" class="form-text text-muted mt-0">Q_Hoehe</small> -->
+                            </div>
+                            <div class="form-group input-row my-4">
+                                <label class="mr-3 my-0 label-width-auto" for="storeyCountUp">Anzahl Geschoße über &#177;0.00</label>
+                                <div class="input-group my-0 input-container">
+                                    <input name="storeyCountUp" type="text" class="form-control" id="storeyCountUp" value="2" readonly>
+                                    <div class="input-group-append" id="button-addon3">
+                                        <button class="btn btn-outline-secondary btn-minus" type="button">-</button>
+                                        <button class="btn btn-outline-secondary btn-plus" type="button">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group input-row my-4">
+                                <label class="mr-3 my-0 label-width-auto" for="storeyCountDown">Anzahl Geschoße unter &#177;0.00</label>
+                                <div class="input-group my-0 input-container">
+                                    <input name="storeyCountDown" type="text" class="form-control" placeholder="1" value="1" id="storeyCountDown" readonly>
+                                    <div class="input-group-append" id="button-addon3">
+                                        <button class="btn btn-outline-secondary btn-minus" type="button">-</button>
+                                        <button class="btn btn-outline-secondary btn-plus" type="button">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--
+                            <div class="form-group input-row my-4">
+                                <label class="mr-3 my-0 label-width-auto" for="nameFirstStorey-select">erstes Geschoß
+                                    über
+                                    &#177;0.00</label>
+                                <div class="input-group my-0 input-container">
+                                    <select class="custom-select" id="nameFirstStorey-select">
+                                        <option>UG</option>
+                                        <option>EG</option>
+                                        <option>WTF</option>
+                                    </select>
+                                </div>
+                            </div>
+                            -->
+                            <div class="form-group input-row my-4">
+                                <label class="mr-3 my-0 label-width-auto" for="elevationStructuralSlab">Höhenkote Rohboden EG</label>
+                                <div class="input-group mb-0 input-container">
+                                    <input name="elevationStructuralSlab" type="text" class="form-control" placeholder="-0,15" value="-0,15" id="elevationStructuralSlab" data-valuetype="numericMeasure">
+                                    <div class="invalid-tooltip" id="elevationStructuralSlab-notification"></div>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">m</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group input-row my-4">
+                                <label class="mr-3 my-0 label-width-auto" for="storeyHeight">Lichte Rohbauhöhe</label>
+                                <div class="input-group mb-0 input-container">
+                                    <input name="storeyHeight" type="text" class="form-control" placeholder="2,67" value="2,67" id="storeyHeight" data-valuetype="numericMeasure">
+                                    <div class="invalid-tooltip" id="storeyHeight-notification"></div>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">m</span>
+                                    </div>
+                                </div>
+                                <!-- <small id="Q_HoeheOriginal" class="form-text text-muted mt-0">Q_Hoehe</small> -->
+                            </div>
+                            <div class="form-group input-row my-4">
+                                <label class="mr-3 my-0 label-width-auto" for="slabHeight">Stärke Geschoßdecken</label>
+                                <div class="input-group mb-0 input-container">
+                                    <input name="slabHeight" type="text" class="form-control" placeholder="20" value="20" id="slabHeight" data-valuetype="numericMeasure">
+                                    <div class="invalid-tooltip" id="slabHeight-notification"></div>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">cm</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group input-row my-4">
+                                <label class="mr-3 my-0 label-width-auto" for="foundationHeight">Stärke der Bodenplatte</label>
+                                <div class="input-group mb-0 input-container">
+                                    <input name="foundationHeight" type="text" class="form-control" placeholder="50" value="50" id="foundationHeight" data-valuetype="numericMeasure">
+                                    <div class="invalid-tooltip" id="foundationHeight-notification"></div>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">cm</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-btn">
+                            <button class="btn-swi" id="btn-create-structure"> Anlegen <svg class="icon-btn">
+                                    <use href="#plus"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col col-wizard-info border-right" id="column-wizard-info">
+                    <iframe src="./img/svg/levelmanager/wizard.html" id="svg-wizard-info" frameborder="0" width="100%" height="100%"></iframe>
+                </div>
+                <!-- End level wizard -->
+                <!-- Export -->
+                <div id="level-manager-export" class="col">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap pt-3 pb-2 mb-3 border-bottom">
+                        <h3>Export</h3>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <h6>Elemente im Export</h6>
+                        <ul class="list-group mt-3 mb-3" id="list-elements-export">
+                        </ul>
+                        <ul class="list-group mt-3 mb-3" id="list-elements-export-empty">
+                            <li class="list-group-item d-flex justify-content-between align-items-center px-5"> Keine Elemente angelegt. <span class="badge badge-primary badge-pill ml-1 float-right"></span>
+                            </li>
+                        </ul>
+                        <!-- <button class="btn-swi" id="btn-export-web-view">WebView Test</button> -->
+                        <button type="button" class="btn-swi btn-export-download" id="btn-export-download-all">
+                            <svg class="icon">
+                                <use href="#export"></use>
+                            </svg><span>Alles an Revit senden</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- End Export -->
+                <div id="main-store" class="col">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap pt-3 pb-2 mb-3 border-bottom">
+                        <h3>Sitzung Laden oder Speichern</h3>
+                    </div>
+                    <div class="d-flex flex-column align-items-center load-storage disabled border rounded m-3 p-3">
+                        <h6 class="mt-1">Gespeicherte Sitzung...</h6>
+                        <div class="d-flex align-items-center p-2">
+                            <div class="p-1"><svg class="icon">
+                                    <use href="#file"></use>
+                                </svg></div>
+                            <div class="p-1 lh-1" id="session-date">TT.MM.JJJJ - HH:MM</div>
+                            <div class="p-1 pl-3 lh-1">(Bauteile) Strukturen<span id="session-element-count" class="badge badge-pill badge-primary">0</span></div>
+                        </div>
+                        <div class="p-1"><button type="button" class="btn-swi" id="btn-load" data-toggle="modal" data-target="#modal-u">Laden
+                                <svg class="icon-btn">
+                                    <use href="#database-up"></use>
+                                </svg>
+                            </button>
+                            <button type="button" class="btn-swi-secondary" id="btn-delete-session" data-toggle="modal" data-target="#modal-u">Löschen
+                                <svg class="icon-btn">
+                                    <use href="#trash-can"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column align-items-center m-3 p-3 border rounded">
+                        <h6 class="mt-1">Diese Sitzung Speichern</h6>
+                        <!-- <div class="d-flex justify-content-between"> -->
+                        <div><button type="button" class="btn-swi" id="btn-save" data-toggle="modal" data-target="#modal-u">Speichern
+                                <svg class="icon-btn">
+                                    <use href="#database-down"></use>
+                                </svg>
+                            </button></div>
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Modal -->
+    <div class="modal" tabindex="-1" id="modal-u">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-u__title"></h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="modal-u__message"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="btn-modal-u__deny"></button>
+                    <button type="button" class="btn btn-secondary" id="btn-modal-u__accept"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal" tabindex="-1" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title"></h5>
+                    <button type="button" class="close" id="btn-modal-close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="modal-message"></p>
+                    <div id="modal-input">
+                        <!--
+                        <form autocomplete="off" id="form-modal">
+                            <div class="my-4">
+                                <label>Ebenen darüber</label>
+
+                                <div class="custom-control custom-radio mb-2">
+                                    <input type="radio" id="radio-upper-change-up" name="radio-upper"
+                                        class="custom-control-input" value="radio-upper-change-up">
+                                    <label class="custom-control-label" for="radio-upper-change-up">nach oben
+                                        verschieben</label>
+                                </div>
+                                <div class="custom-control custom-radio mb-2">
+                                    <input type="radio" id="radio-upper-const" name="radio-upper"
+                                        class="custom-control-input" value="radio-upper-const">
+                                    <label class="custom-control-label" for="radio-upper-const">Höhen
+                                        beibehalten</label>
+                                </div>
+                                <div class="custom-control custom-radio mb-2">
+                                    <input type="radio" id="radio-upper-change-down" name="radio-upper"
+                                        class="custom-control-input" value="radio-upper-change-down">
+                                    <label class="custom-control-label" for="radio-upper-change-down">nach unten
+                                        verschieben</label>
+                                </div>
+
+                            </div>
+                            <div class="my-4">
+                                <label>Ebenen darunter</label>
+                                <div class="custom-control custom-radio mb-2">
+                                    <input type="radio" id="radio-lower-change-up" name="radio-lower"
+                                        class="custom-control-input" value="radio-lower-change-up">
+                                    <label class="custom-control-label" for="radio-lower-change-up">nach oben
+                                        verschieben</label>
+                                </div>
+                                <div class="custom-control custom-radio mb-2">
+                                    <input type="radio" id="radio-lower-const" name="radio-lower"
+                                        class="custom-control-input" value="radio-lower-const">
+                                    <label class="custom-control-label" for="radio-lower-const">Höhen
+                                        beibehalten</label>
+                                </div>
+                                <div class="custom-control custom-radio mb-2">
+                                    <input type="radio" id="radio-lower-change-down" name="radio-lower"
+                                        class="custom-control-input" value="radio-lower-change-down">
+                                    <label class="custom-control-label" for="radio-lower-change-down">nach unten
+                                        verschieben</label>
+                                </div>
+                            </div>
+                        </form>
+                    -->
+                        <form autocomplete="off" id="form-modal-new">
+                            <div class="my-4 p-3" id="form-modal-elevation-down">
+                                <div class="mb-3">
+                                    <input type="radio" id="radio-upper-change-down" name="radio-elevation-down" class="btn-radio-input" value="radio-upper-change-down">
+                                    <label class="btn-radio border rounded p-3" for="radio-upper-change-down">
+                                        <div class="d-flex justify-content-start align-items-center fb-height">
+                                            <div class="px-3 fi-checkbox">
+                                                <div class="p-1 p-1 btn-radio-checkbox rounded">
+                                                    <!-- <svg class="check" viewBox="0 0 16 16">
+                                                        <use href="#check"></use>
+                                                    </svg> -->
+                                                </div>
+                                            </div>
+                                            <div class="px-3 fi-image">
+                                                <img src="./img/svg/levelmanager/move_upper-down.svg" alt="" style="height: 100%; width:100%; object-fit: contain;">
+                                            </div>
+                                            <div class="px-3 fi-text text-center">Ebenen darüber mitverschieben</div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="radio" id="radio-lower-change-down" name="radio-elevation-down" class="btn-radio-input" value="radio-lower-change-down" disabled>
+                                    <label class="btn-radio border rounded p-3" for="radio-lower-change-down">
+                                        <div class="d-flex justify-content-start align-items-center fb-height">
+                                            <div class="px-3 fi-checkbox">
+                                                <div class="p-1 btn-radio-checkbox rounded check1"></div>
+                                            </div>
+                                            <div class="px-3 fi-image">
+                                                <img src="./img/svg/levelmanager/move_lower-down.svg" alt="" style="height: 100%; width:100%; object-fit: contain;">
+                                            </div>
+                                            <div class="px-3 fi-text text-center">Ebenen darunter mitverschieben</div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="radio" id="radio-elevation-change-down" name="radio-elevation-down" class="btn-radio-input" value="radio-elevation-change-down">
+                                    <label class="btn-radio border rounded p-3" for="radio-elevation-change-down">
+                                        <div class="d-flex justify-content-start align-items-center fb-height">
+                                            <div class="px-3 fi-checkbox">
+                                                <div class="p-1 btn-radio-checkbox rounded"></div>
+                                            </div>
+                                            <div class="px-3 fi-image">
+                                                <img src="./img/svg/levelmanager/move_elevation-down.svg" alt="" style="height: 100%; width:100%; object-fit: contain;">
+                                            </div>
+                                            <div class="px-3 fi-text text-center">Nur die Ebene verschieben</div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="radio" id="radio-all-change-down" name="radio-elevation-down" class="btn-radio-input" value="radio-all-change-down">
+                                    <label class="btn-radio border rounded p-3" for="radio-all-change-down">
+                                        <div class="d-flex justify-content-start align-items-center fb-height">
+                                            <div class="px-3 fi-checkbox">
+                                                <div class="p-1 btn-radio-checkbox rounded"></div>
+                                            </div>
+                                            <div class="px-3 fi-image">
+                                                <img src="./img/svg/levelmanager/move_all-down.svg" alt="" style="height: 100%; width:100%; object-fit: contain;">
+                                            </div>
+                                            <div class="px-3 fi-text text-center">Alle Ebenen verschieben</div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="my-4 p-3" id="form-modal-elevation-up">
+                                <div class="mb-3">
+                                    <input type="radio" id="radio-upper-change-up" name="radio-elevation-up" class="btn-radio-input" value="radio-upper-change-up">
+                                    <label class="btn-radio border rounded p-3" for="radio-upper-change-up">
+                                        <div class="d-flex justify-content-start align-items-center fb-height">
+                                            <div class="px-3 fi-checkbox">
+                                                <div class="p-1 btn-radio-checkbox rounded"></div>
+                                            </div>
+                                            <div class="px-3 fi-image">
+                                                <img src="./img/svg/levelmanager/move_upper-up.svg" alt="" style="height: 100%; width:100%; object-fit: contain;">
+                                            </div>
+                                            <div class="px-3 fi-text text-center">Ebenen darüber mitverschieben</div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="radio" id="radio-lower-change-up" name="radio-elevation-up" class="btn-radio-input" value="radio-lower-change-up">
+                                    <label class="btn-radio border rounded p-3" for="radio-lower-change-up">
+                                        <div class="d-flex justify-content-start align-items-center fb-height">
+                                            <div class="px-3 fi-checkbox">
+                                                <div class="p-1 btn-radio-checkbox rounded"></div>
+                                            </div>
+                                            <div class="px-3 fi-image">
+                                                <img src="./img/svg/levelmanager/move_lower-up.svg" alt="" style="height: 100%; width:100%; object-fit: contain;">
+                                            </div>
+                                            <div class="px-3 fi-text text-center">Ebenen darunter mitverschieben</div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="radio" id="radio-elevation-change-up" name="radio-elevation-up" class="btn-radio-input" value="radio-elevation-change-up">
+                                    <label class="btn-radio border rounded p-3" for="radio-elevation-change-up">
+                                        <div class="d-flex justify-content-start align-items-center fb-height">
+                                            <div class="px-3 fi-checkbox">
+                                                <div class="p-1 btn-radio-checkbox rounded"></div>
+                                            </div>
+                                            <div class="px-3 fi-image">
+                                                <img src="./img/svg/levelmanager/move_elevation-up.svg" alt="" style="height: 100%; width:100%; object-fit: contain;">
+                                            </div>
+                                            <div class="px-3 fi-text text-center">Nur die Ebene verschieben</div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="radio" id="radio-all-change-up" name="radio-elevation-up" class="btn-radio-input" value="radio-all-change-up">
+                                    <label class="btn-radio border rounded p-3" for="radio-all-change-up">
+                                        <div class="d-flex justify-content-start align-items-center fb-height">
+                                            <div class="px-3 fi-checkbox">
+                                                <div class="p-1 btn-radio-checkbox rounded"></div>
+                                            </div>
+                                            <div class="px-3 fi-image">
+                                                <img src="./img/svg/levelmanager/move_all-up.svg" alt="" style="height: 100%; width:100%; object-fit: contain;">
+                                            </div>
+                                            <div class="px-3 fi-text text-center">Alle Ebenen verschieben</div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- <div class="my-4 p-3" id="form-modal-height-increase">
+
+                                <div class="mb-3">
+                                    <input type="radio" id="radio-e-upper-change-up" name="radio-height-increase"
+                                        class="btn-radio-input" value="radio-e-upper-change-up">
+                                    <label class="btn-radio border rounded p-3" for="radio-e-upper-change-up">
+                                        <div class="d-flex justify-content-start align-items-center fb-height">
+                                            <div class="px-3 fi-checkbox">
+                                                <div class="p-1 btn-radio-checkbox rounded"></div>
+                                            </div>
+                                            <div class="px-3 fi-image">
+                                                <img src="./img/svg/levelmanager/move_upper-up.svg" alt=""
+                                                    style="height: 100%; width:100%; object-fit: contain;">
+                                            </div>
+                                            <div class="px-3 fi-text text-center">Ebenen darüber mitverschieben</div>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <div class="mb-3">
+                                    <input type="radio" id="radio-e-lower-change-down" name="radio-height-increase"
+                                        class="btn-radio-input" value="radio-e-lower-change-down">
+                                    <label class="btn-radio border rounded p-3" for="radio-e-lower-change-down">
+                                        <div class="d-flex justify-content-start align-items-center fb-height">
+                                            <div class="px-3 fi-checkbox">
+                                                <div class="p-1 btn-radio-checkbox rounded"></div>
+                                            </div>
+                                            <div class="px-3 fi-image">
+                                                <img src="./img/svg/levelmanager/move_lower-up.svg" alt=""
+                                                    style="height: 100%; width:100%; object-fit: contain;">
+                                            </div>
+                                            <div class="px-3 fi-text text-center">Ebenen darunter mitverschieben</div>
+                                        </div>
+                                    </label>
+                                </div>
+
+                            </div> -->
+                            <div class="my-4 p-3" id="form-modal-height-decrease">
+                                <div class="mb-3">
+                                    <input type="radio" id="radio-e-upper-change-down" name="radio-height-decrease" class="btn-radio-input" value="radio-e-upper-change-down">
+                                    <label class="btn-radio border rounded p-3" for="radio-e-upper-change-down">
+                                        <div class="d-flex justify-content-start align-items-center fb-height">
+                                            <div class="px-3 fi-checkbox">
+                                                <div class="p-1 btn-radio-checkbox rounded"></div>
+                                            </div>
+                                            <div class="px-3 fi-image">
+                                                <img src="./img/svg/levelmanager/height_decrease_upper.svg" alt="" style="height: 100%; width:100%; object-fit: contain;">
+                                            </div>
+                                            <div class="px-3 fi-text text-center">Obere Ebenen nach unten verschieben. </div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="radio" id="radio-e-lower-change-up" name="radio-height-decrease" class="btn-radio-input" value="radio-e-lower-change-up">
+                                    <label class="btn-radio border rounded p-3" for="radio-e-lower-change-up">
+                                        <div class="d-flex justify-content-start align-items-center fb-height">
+                                            <div class="px-3 fi-checkbox">
+                                                <div class="p-1 btn-radio-checkbox rounded"></div>
+                                            </div>
+                                            <div class="px-3 fi-image">
+                                                <img src="./img/svg/levelmanager/height_decrease_lower.svg" alt="" style="height: 100%; width:100%; object-fit: contain;">
+                                            </div>
+                                            <div class="px-3 fi-text text-center">Untere Ebenen nach oben verschieben. </div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="my-4 p-3" id="form-modal-height-increase">
+                                <div class="mb-3">
+                                    <input type="radio" id="radio-e-upper-change-up" name="radio-height-increase" class="btn-radio-input" value="radio-e-upper-change-up">
+                                    <label class="btn-radio border rounded p-3" for="radio-e-upper-change-up">
+                                        <div class="d-flex justify-content-start align-items-center fb-height">
+                                            <div class="px-3 fi-checkbox">
+                                                <div class="p-1 btn-radio-checkbox rounded"></div>
+                                            </div>
+                                            <div class="px-3 fi-image">
+                                                <img src="./img/svg/levelmanager/height_increase_upper.svg" alt="" style="height: 100%; width:100%; object-fit: contain;">
+                                            </div>
+                                            <div class="px-3 fi-text text-center">Obere Ebenen nach oben verschieben. </div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="radio" id="radio-e-lower-change-down" name="radio-height-increase" class="btn-radio-input" value="radio-e-lower-change-down">
+                                    <label class="btn-radio border rounded p-3" for="radio-e-lower-change-down">
+                                        <div class="d-flex justify-content-start align-items-center fb-height">
+                                            <div class="px-3 fi-checkbox">
+                                                <div class="p-1 btn-radio-checkbox rounded"></div>
+                                            </div>
+                                            <div class="px-3 fi-image">
+                                                <img src="./img/svg/levelmanager/height_increase_lower.svg" alt="" style="height: 100%; width:100%; object-fit: contain;">
+                                            </div>
+                                            <div class="px-3 fi-text text-center">Untere Ebenen nach unten verschieben. </div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="btn-modal-deny"></button>
+                    <button type="button" class="btn btn-secondary" id="btn-modal-accept"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="background">
+        <div class="spinner-border text-primary spinner-centered" id="spinner" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <img src="./img/lm.svg" class="img-bg-elements" alt="" loading="lazy">
+    </section>
+    <!-- svg icons -->
+    <section class="svg">
+        <svg id="arrow-clockwise" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-clockwise" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
+            <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
+        </svg>
+        <svg id="arrow-up" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z" />
+        </svg>
+        <svg id="arrow-up-circle-fill" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-up-circle-fill icon-size-big" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
+        </svg>
+        <svg id="arrow-down" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z" />
+        </svg>
+        <svg id="arrow-down-circle-fill" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-down-circle-fill icon-size-big" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z" />
+        </svg>
+        <svg id="box" class="bi bi-box" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5 8.186 1.113zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z" />
+        </svg>
+        <svg id="chevron-contract" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chevron-contract" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M3.646 13.854a.5.5 0 0 0 .708 0L8 10.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708zm0-11.708a.5.5 0 0 1 .708 0L8 5.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708z" />
+        </svg>
+        <svg id="chevron-expand" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chevron-expand" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z" />
+        </svg>
+        <svg id="check" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
+            <path d="M13.485 1.431a1.473 1.473 0 0 1 2.104 2.062l-7.84 9.801a1.473 1.473 0 0 1-2.12.04L.431 8.138a1.473 1.473 0 0 1 2.084-2.083l4.111 4.112 6.82-8.69a.486.486 0 0 1 .04-.045z" />
+        </svg>
+        <svg id="export" class="bi bi-download" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M.5 8a.5.5 0 0 1 .5.5V12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8.5a.5.5 0 0 1 1 0V12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8.5A.5.5 0 0 1 .5 8z" />
+            <path fill-rule="evenodd" d="M5 7.5a.5.5 0 0 1 .707 0L8 9.793 10.293 7.5a.5.5 0 1 1 .707.707l-2.646 2.647a.5.5 0 0 1-.708 0L5 8.207A.5.5 0 0 1 5 7.5z" />
+            <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0v-8A.5.5 0 0 1 8 1z" />
+        </svg>
+        <svg class="bi bi-exclamation-triangle" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M7.938 2.016a.146.146 0 0 0-.054.057L1.027 13.74a.176.176 0 0 0-.002.183c.016.03.037.05.054.06.015.01.034.017.066.017h13.713a.12.12 0 0 0 .066-.017.163.163 0 0 0 .055-.06.176.176 0 0 0-.003-.183L8.12 2.073a.146.146 0 0 0-.054-.057A.13.13 0 0 0 8.002 2a.13.13 0 0 0-.064.016zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z" />
+            <path d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995z" />
+        </svg>
+        <svg id="house" class="bi bi-house" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+            <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
+        </svg>
+        <svg id="info" class="bi bi-info-circle" width="16px" height="16px" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+            <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z" />
+            <circle cx="8" cy="4.5" r="1" />
+        </svg>
+        <svg id="layers" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-layers" viewBox="0 0 16 16">
+            <path d="M8.235 1.559a.5.5 0 0 0-.47 0l-7.5 4a.5.5 0 0 0 0 .882L3.188 8 .264 9.559a.5.5 0 0 0 0 .882l7.5 4a.5.5 0 0 0 .47 0l7.5-4a.5.5 0 0 0 0-.882L12.813 8l2.922-1.559a.5.5 0 0 0 0-.882l-7.5-4zm3.515 7.008L14.438 10 8 13.433 1.562 10 4.25 8.567l3.515 1.874a.5.5 0 0 0 .47 0l3.515-1.874zM8 9.433 1.562 6 8 2.567 14.438 6 8 9.433z" />
+        </svg>
+        <svg id="list-ul" class="bi bi-list-ul" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor">
+            <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+        </svg>
+        <svg id="pencil" class="bi bi-pencil-square" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+        </svg>
+        <svg id="plus" class="bi bi-plus-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z" />
+            <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z" />
+            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+        </svg>
+        <svg id="question" class="bi bi-question-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+            <path d="M5.25 6.033h1.32c0-.781.458-1.384 1.36-1.384.685 0 1.313.343 1.313 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.007.463h1.307v-.355c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.326 0-2.786.647-2.754 2.533zm1.562 5.516c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z" />
+        </svg>
+        <svg id="tag" class="bi bi-tag" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M.5 2A1.5 1.5 0 0 1 2 .5h4.586a1.5 1.5 0 0 1 1.06.44l7 7a1.5 1.5 0 0 1 0 2.12l-4.585 4.586a1.5 1.5 0 0 1-2.122 0l-7-7A1.5 1.5 0 0 1 .5 6.586V2zM2 1.5a.5.5 0 0 0-.5.5v4.586a.5.5 0 0 0 .146.353l7 7a.5.5 0 0 0 .708 0l4.585-4.585a.5.5 0 0 0 0-.708l-7-7a.5.5 0 0 0-.353-.146H2z" />
+            <path fill-rule="evenodd" d="M2.5 4.5a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm2-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+        </svg>
+        <svg id="import" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-upload" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M.5 8a.5.5 0 0 1 .5.5V12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8.5a.5.5 0 0 1 1 0V12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8.5A.5.5 0 0 1 .5 8zM5 4.854a.5.5 0 0 0 .707 0L8 2.56l2.293 2.293A.5.5 0 1 0 11 4.146L8.354 1.5a.5.5 0 0 0-.708 0L5 4.146a.5.5 0 0 0 0 .708z" />
+            <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0v-8A.5.5 0 0 1 8 2z" />
+        </svg>
+        <svg id="x-circle" class="bi bi-x-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+            <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z" />
+            <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z" />
+        </svg>
+        <svg id="trash-can" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+        </svg>
+        <svg id="server" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-database" viewBox="0 0 16 16">
+            <path d="M4.318 2.687C5.234 2.271 6.536 2 8 2s2.766.27 3.682.687C12.644 3.125 13 3.627 13 4c0 .374-.356.875-1.318 1.313C10.766 5.729 9.464 6 8 6s-2.766-.27-3.682-.687C3.356 4.875 3 4.373 3 4c0-.374.356-.875 1.318-1.313ZM13 5.698V7c0 .374-.356.875-1.318 1.313C10.766 8.729 9.464 9 8 9s-2.766-.27-3.682-.687C3.356 7.875 3 7.373 3 7V5.698c.271.202.58.378.904.525C4.978 6.711 6.427 7 8 7s3.022-.289 4.096-.777A4.92 4.92 0 0 0 13 5.698ZM14 4c0-1.007-.875-1.755-1.904-2.223C11.022 1.289 9.573 1 8 1s-3.022.289-4.096.777C2.875 2.245 2 2.993 2 4v9c0 1.007.875 1.755 1.904 2.223C4.978 15.71 6.427 16 8 16s3.022-.289 4.096-.777C13.125 14.755 14 14.007 14 13V4Zm-1 4.698V10c0 .374-.356.875-1.318 1.313C10.766 11.729 9.464 12 8 12s-2.766-.27-3.682-.687C3.356 10.875 3 10.373 3 10V8.698c.271.202.58.378.904.525C4.978 9.71 6.427 10 8 10s3.022-.289 4.096-.777A4.92 4.92 0 0 0 13 8.698Zm0 3V13c0 .374-.356.875-1.318 1.313C10.766 14.729 9.464 15 8 15s-2.766-.27-3.682-.687C3.356 13.875 3 13.373 3 13v-1.302c.271.202.58.378.904.525C4.978 12.71 6.427 13 8 13s3.022-.289 4.096-.777c.324-.147.633-.323.904-.525Z" />
+        </svg>
+        <svg id="file" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-text" viewBox="0 0 16 16">
+            <path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z" />
+            <path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z" />
+        </svg>
+        <svg id="database-down" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-database-down" viewBox="0 0 16 16">
+            <path d="M12.5 9a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7Zm.354 5.854 1.5-1.5a.5.5 0 0 0-.708-.708l-.646.647V10.5a.5.5 0 0 0-1 0v2.793l-.646-.647a.5.5 0 0 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0Z" />
+            <path d="M12.096 6.223A4.92 4.92 0 0 0 13 5.698V7c0 .289-.213.654-.753 1.007a4.493 4.493 0 0 1 1.753.25V4c0-1.007-.875-1.755-1.904-2.223C11.022 1.289 9.573 1 8 1s-3.022.289-4.096.777C2.875 2.245 2 2.993 2 4v9c0 1.007.875 1.755 1.904 2.223C4.978 15.71 6.427 16 8 16c.536 0 1.058-.034 1.555-.097a4.525 4.525 0 0 1-.813-.927C8.5 14.992 8.252 15 8 15c-1.464 0-2.766-.27-3.682-.687C3.356 13.875 3 13.373 3 13v-1.302c.271.202.58.378.904.525C4.978 12.71 6.427 13 8 13h.027a4.552 4.552 0 0 1 0-1H8c-1.464 0-2.766-.27-3.682-.687C3.356 10.875 3 10.373 3 10V8.698c.271.202.58.378.904.525C4.978 9.71 6.427 10 8 10c.262 0 .52-.008.774-.024a4.525 4.525 0 0 1 1.102-1.132C9.298 8.944 8.666 9 8 9c-1.464 0-2.766-.27-3.682-.687C3.356 7.875 3 7.373 3 7V5.698c.271.202.58.378.904.525C4.978 6.711 6.427 7 8 7s3.022-.289 4.096-.777ZM3 4c0-.374.356-.875 1.318-1.313C5.234 2.271 6.536 2 8 2s2.766.27 3.682.687C12.644 3.125 13 3.627 13 4c0 .374-.356.875-1.318 1.313C10.766 5.729 9.464 6 8 6s-2.766-.27-3.682-.687C3.356 4.875 3 4.373 3 4Z" />
+        </svg>
+        <svg id="database-up" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-database-up" viewBox="0 0 16 16">
+            <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.354-5.854 1.5 1.5a.5.5 0 0 1-.708.708L13 11.707V14.5a.5.5 0 0 1-1 0v-2.793l-.646.647a.5.5 0 0 1-.708-.708l1.5-1.5a.5.5 0 0 1 .708 0Z" />
+            <path d="M12.096 6.223A4.92 4.92 0 0 0 13 5.698V7c0 .289-.213.654-.753 1.007a4.493 4.493 0 0 1 1.753.25V4c0-1.007-.875-1.755-1.904-2.223C11.022 1.289 9.573 1 8 1s-3.022.289-4.096.777C2.875 2.245 2 2.993 2 4v9c0 1.007.875 1.755 1.904 2.223C4.978 15.71 6.427 16 8 16c.536 0 1.058-.034 1.555-.097a4.525 4.525 0 0 1-.813-.927C8.5 14.992 8.252 15 8 15c-1.464 0-2.766-.27-3.682-.687C3.356 13.875 3 13.373 3 13v-1.302c.271.202.58.378.904.525C4.978 12.71 6.427 13 8 13h.027a4.552 4.552 0 0 1 0-1H8c-1.464 0-2.766-.27-3.682-.687C3.356 10.875 3 10.373 3 10V8.698c.271.202.58.378.904.525C4.978 9.71 6.427 10 8 10c.262 0 .52-.008.774-.024a4.525 4.525 0 0 1 1.102-1.132C9.298 8.944 8.666 9 8 9c-1.464 0-2.766-.27-3.682-.687C3.356 7.875 3 7.373 3 7V5.698c.271.202.58.378.904.525C4.978 6.711 6.427 7 8 7s3.022-.289 4.096-.777ZM3 4c0-.374.356-.875 1.318-1.313C5.234 2.271 6.536 2 8 2s2.766.27 3.682.687C12.644 3.125 13 3.627 13 4c0 .374-.356.875-1.318 1.313C10.766 5.729 9.464 6 8 6s-2.766-.27-3.682-.687C3.356 4.875 3 4.373 3 4Z" />
+        </svg>
+    </section>
+</body>
+
+</html>

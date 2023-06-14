@@ -1,0 +1,100 @@
+{
+    "psetNameUI": "Streifenfundament",
+    "psetElement": [
+        {
+            "aName": "Q_Dicke",
+            "aNameJS": "thickness",
+            "aNameUI": "Dicke",
+            "aValueType": "numericMeasure",
+            "aValueDefault": "90",
+            "aValueUnit": "cm"
+        },
+        {
+            "aName": "Q_Hoehe",
+            "aNameJS": "hight",
+            "aNameUI": "Höhe",
+            "aValueType": "numericMeasure",
+            "aValue": 0,
+            "aValueDefault": "40",
+            "aValueUnit": "cm"
+        },
+        {
+            "aName": "LV_07_Betonfestigkeitsklasse",
+            "aNameJS": "concreteStrengthClass",
+            "aNameUI": "Betonfestigkeitsklasse",
+            "aValueType": "enum",
+            "aValue": [
+                "C12/15",
+                "C16/20",
+                "C20/25",
+                "C25/30",
+                "C30/37",
+                "C35/45",
+                "C40/50",
+                "C45/55",
+                "C50/60"
+            ],
+            "aValueDefault": 3,
+            "aValueUnit": ""
+        },
+        {
+            "aName": "LV_07_Expositionsklasse",
+            "aNameJS": "exposureClass",
+            "aNameUI": "Expositionsklasse",
+            "aValueType": "enum",
+            "aValue": [
+                "X0",
+                "XC1",
+                "XC2",
+                "B1",
+                "B2",
+                "B3",
+                "B4",
+                "B5",
+                "B7",
+                "BS1A"
+            ],
+            "aValueDefault": 4,
+            "aValueUnit": ""
+        },
+        {
+            "aName": "R_Typ_Kommentar",
+            "aNameJS": "typeComment",
+            "aNameUI": "Kommentar",
+            "aValueType": "string",
+            "aValue": "",
+            "aValueUnit": "max. 20 Zeichen"
+        }
+    ],
+    "psetElementConst": [
+        {
+            "aName": "LV_07_Schalung",
+            "aNameJS": "formwork",
+            "aValue": "Fundamentschalung"
+        },
+        {
+            "aName": "LV_Gewerk",
+            "aNameJS": "trade",
+            "aValue": "07 Beton- u Stahlbetonarbeiten"
+        },
+        {
+            "aName": "iTWO_Key",
+            "aNameJS": "iTWO_Key",
+            "aValue": "RB-FU-STR"
+        },
+        {
+            "aName": "LV_Beschreibung",
+            "aNameJS": "description",
+            "aValue": "Streifenfundament"
+        },
+        {
+            "aName": "Material",
+            "aValue": "Ortbeton - bewehrt Verputzt"
+        },
+        {
+            "aName": "Ausführung",
+            "aValue": "Ortbeton"
+        }
+    ],
+    "psetElementModelCategory": "Ingenieurbau/Fundament/Wand"
+}

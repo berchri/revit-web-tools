@@ -1,0 +1,22 @@
+{
+    "typesCollection": [
+        {
+            "id": 1,
+            "Name": "BA_STB_200x400_C25/30_XC1",
+            "Kategorie": "Balken",
+            "LV_Gewerk": "07 Beton- u Stahlbetonarbeiten",
+            "Ausführung": "Ortbeton",
+            "Material": "Beton",
+            "LV_Beschreibung": "Ortbetonbalken",
+            "iTWO_Key": "BA-BET",
+            "Typenkommentare": "",
+            "Q_Dicke": 20,
+            "Breite": 20,
+            "Q_Laenge": 40,
+            "Höhe": 40,
+            "LV_07_Betonfestigkeitsklasse": "C25/30",
+            "LV_07_Expositionsklasse": "XC1",
+            "LV_07_Schalung": "Unterzugschalung"
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+<div class="d-flex rh-1">
+    <div class="col {{colWall}}"></div>
+    <div class="col col-storeyheight"></div>
+    <div class="col col-inputs d-flex align-items-{{elevationDirectionClass}} py-1">
+        <div class="level-card border rounded p-2">
+            <h6 class="mb-3">{{levelName}}</h6>
+            <div class="d-flex justify-content-end align-items-center">
+                <div class="text-right">{{levelType}}</div>
+                <div class="input-group ml-2 card-input">
+                    <input name="{{levelName}}" type="text" class="form-control" id="{{id}}" placeholder="Höhe eingeben"
+                        value="{{levelElevation}}" />
+                    <div class="input-group-append">
+                        <span class="input-group-text">m</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

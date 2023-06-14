@@ -1,0 +1,11 @@
+{{#each exportList}}
+<li class="list-group-item d-flex justify-content-between align-items-center px-5">
+    <span>{{levelName}}</span>
+    <button type="button" class="btn-swi ml-5 btn-export-download" data-name="{{levelName}}">
+        <svg class="icon">
+            <use href="#export"></use>
+        </svg><span>an Revit senden</span>
+    </button>
+    {{!-- <span class="badge badge-primary badge-pill ml-1">{{countedTypes}}</span> --}}
+</li>
+{{/each}}

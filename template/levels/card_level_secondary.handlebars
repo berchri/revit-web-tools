@@ -1,0 +1,24 @@
+<div class="level-card border rounded shadow p-2" data-id="{{id}}">
+    <div class="d-flex justify-content-between align-items-center mb-2 card-head">
+        <h1 class="h6 mb-0">{{levelName}}</h1>
+        <div>
+            <span class="icon-card-dir" data-id="i-up-{{id}}">
+                <svg class="icon-dir">
+                    <use href="#arrow-up-circle-fill" class="icon-size-big"></use>
+                </svg>
+            </span>
+            <span class="icon-card-dir" data-id="i-down-{{id}}">
+                <svg class="icon-dir">
+                    <use href="#arrow-down-circle-fill" class="icon-size-big"></use>
+                </svg>
+            </span>
+        </div>
+        <div>
+            <button type="button" class="close btn-close-card" data-id="{{levelName}}">&times;</button>
+        </div>
+    </div>
+    <div class="d-flex justify-content-between align-items-center">
+        <div class="text-right">{{levelType}}</div>
+        <div><span class="h5 mb-0 text-lowercase">{{levelElevationUI}} m</span></div>
+    </div>
+</div>

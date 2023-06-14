@@ -1,0 +1,27 @@
+<div class="level-card border rounded shadow p-2" data-id="{{id}}">
+    <div class="d-flex justify-content-between align-items-center mb-2 card-head">
+        <h1 class="h6 mb-0">{{storeyName}}</h1>
+        <div>
+            <span class="icon-card-dir" data-id="i-contract-{{id}}">
+                <svg class="icon-dir">
+                    <use href="#chevron-contract" class="icon-size-big"></use>
+                </svg>
+            </span>
+            <span class="icon-card-dir" data-id="i-expand-{{id}}">
+                <svg class="icon-dir">
+                    <use href="#chevron-expand" class="icon-size-big"></use>
+                </svg>
+            </span>
+        </div>
+    </div>
+    <div class="d-flex justify-content-end align-items-center">
+        <div class="text-right">Rohbauhöhe</div>
+        <div class="input-group ml-2 card-input input-storeyheight">
+            <input name="{{storeyName}}" type="text" class="form-control" id="{{id}}" value="{{height}}"
+                data-type="{{levelType}}" />
+            <div class="input-group-append">
+                <span class="input-group-text" id="i-enumNr-unit">m</span>
+            </div>
+        </div>
+    </div>
+</div>
