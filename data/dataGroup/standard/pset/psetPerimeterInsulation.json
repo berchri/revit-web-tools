@@ -2,12 +2,25 @@
     "psetNameUI": "Perimeterdämmung",
     "psetElement": [
         {
+            "aName": "LV_12_Typ",
+            "aNameJS": "LV_12_Typ",
+            "aNameUI": "Perimeterdämmung Typ",
+            "aValueType": "radio",
+            "aValue": [
+                "vertikal (Wand)",
+                "horizontal (unter der Bodenplatte)"
+            ],
+            "aValueUnit": ""
+        },
+        {
             "aName": "LV_12_Daemmung",
             "aNameUI": "Material Dämmung",
             "aValueType": "enum",
             "aValue": [
                 "EPS",
-                "XPS"
+                "XPS",
+                "XPS-G50",
+                "XPS-G70"
             ],
             "aValueDefault": 0
         },
@@ -34,6 +47,7 @@
             "aNameJS": "insulation",
             "aNameUI": "Art der Abdichtung",
             "aValue": [
+                "-",
                 "1L.E-KV5",
                 "1L.E-KV4+1L.E-KV5/9mm",
                 "2L.E-KV5/10mm",
@@ -74,5 +88,5 @@
             "aValue": "Dämmung - hart"
         }
     ],
-    "psetElementModelCategory": "Architektur/Wand"
+    "psetElementModelCategory": "-"
 }

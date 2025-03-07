@@ -3,13 +3,11 @@
 
 var Service = require( 'node-windows' ).Service;
 var fs = require( 'fs' )
+const { Vorlageversion } = require( './package.json' )
 
-// Get Arguments from CLI
-// process.argv.forEach( function ( val, index, array ) {
-//     console.log( index + ': ' + val );
-// } );
+
 const processType = process.argv[ 2 ];
-const appName = process.argv[ 3 ];
+const appName = process.argv[ 3 ] + "_v" + Vorlageversion;
 const argumentStage = process.argv[ 4 ];
 
 function startProcess( processType ) {
@@ -45,7 +43,7 @@ svc.on( 'alreadyuninstalled', function () {
 } );
 
 svc.on( 'start', function () {
-    console.log( svc.name + ' started!\nVisit http://atsrvbtk001:5005 to see it in action.' );
+    console.log( svc.name + ' started!\nVisit http://atsrvbtk001:xxxx to see it in action.' );
     // let fileName = appName.replace( /\W/g, '' )
     // fileName = fileName.toLowerCase();
     // fs.readFile( `${__dirname}/daemon/${fileName}.out.log`, ( err, data ) => {

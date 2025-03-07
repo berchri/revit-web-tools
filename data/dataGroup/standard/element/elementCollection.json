@@ -25,6 +25,14 @@
             "eGroupNameUI": "Stahlbeton Fundament"
         },
         {
+            "eName": "FoundationMonolithic",
+            "eNameUI": "Monolithische Bodenplatte",
+            "eTypes": "typesFoundationMonolithic",
+            "ePSet": "pSetFoundationMonolithic",
+            "eGroupName": "concrete footing",
+            "eGroupNameUI": "Stahlbeton Fundament"
+        },
+        {
             "eName": "FoundationHaunch",
             "eNameUI": "Fundamentverstärkung",
             "eTypes": "typesFoundationHaunch",

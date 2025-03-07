@@ -54,12 +54,15 @@
             "aValueUnit": ""
         },
         {
-            "aName": "LV_07_Deckensprung",
-            "aNameUI": "Deckensprung",
-            "aValueType": "boolean",
-            "aValue": false,
-            "aValueDefault": false,
-            "aValueUnit": ""
+            "aName": "LV_07_Beschreibung",
+            "aNameUI": "Beschreibung",
+            "aValueType": "enum",
+            "aValue": [
+                "Unterzug",
+                "Überzug",
+                "Deckensprung"
+            ],
+            "aValueDefault": 0
         },
         {
             "aName": "R_Typ_Kommentar",

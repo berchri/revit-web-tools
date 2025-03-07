@@ -4,9 +4,11 @@ const fs = require( 'fs' );
 const os = require( 'os' );
 const bp = require( 'body-parser' );
 const normalizePort = require( 'normalize-port' );
-let portNr = '5222'
+const { Vorlageversion, portNumber } = require( './package.json' );
 
-if ( process.argv[ 2 ] === 'dev' ) portNr = '5223'
+let portNr = portNumber
+
+if ( process.argv[ 2 ] === 'dev' ) portNr = '5226'
 
 const app = express();
 const port = normalizePort( process.env.PORT || portNr )
@@ -14,7 +16,11 @@ const server = app.listen( port, ( _ ) => {
     console.log( '___________________________________________________________' );
     console.log( ' >>> Server on ' + os.hostname + ' with Port ' + port + ' is running.' );
     console.log( ' >>> http://localhost:' + port );
+    console.log( ' >>> http://localhost:' + port + '/levelmanager.html' );
+    console.log( ' >>> http://localhost:' + port + '/bauteilgenerator.html' );
     console.log( ' >>> http://' + os.hostname + ':' + port );
+    console.log( '___________________________________________________________' );
+    console.log( ' >>> App Version: ' + Vorlageversion );
     console.log( '___________________________________________________________' );
 } );
 

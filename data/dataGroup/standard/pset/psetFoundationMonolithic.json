@@ -1,61 +1,39 @@
 {
-    "psetNameUI": "Decke aus Beton",
+    "psetNameUI": "Monolithische Bodenplatte",
     "psetElement": [
         {
             "aName": "Q_Hoehe",
             "aNameJS": "hight",
             "aNameUI": "Höhe",
             "aValueType": "numericMeasure",
-            "aValueDefault": "20",
+            "aValue": 0,
+            "aValueDefault": "40",
             "aValueUnit": "cm"
         },
         {
-            "aName": "LV_07_Betonfestigkeitsklasse",
-            "aNameJS": "concreteStrengthClass",
-            "aNameUI": "Betonfestigkeitsklasse",
+            "aName": "LV_07_Glätten_Hartstoffgemisch",
+            "aNameUI": "Glätten",
             "aValueType": "enum",
             "aValue": [
-                "C20/25",
-                "C25/30",
-                "C30/37",
-                "C35/45",
-                "C40/50",
-                "C45/55",
-                "C50/60"
-            ],
-            "aValueDefault": 2,
-            "aValueUnit": ""
-        },
-        {
-            "aName": "LV_07_Expositionsklasse",
-            "aNameJS": "exposureClass",
-            "aNameUI": "Expositionsklasse",
-            "aValueType": "enum",
-            "aValue": [
-                "XC1",
-                "XC2",
-                "B1",
-                "B2",
-                "B3",
-                "B4",
-                "B5",
-                "B7",
-                "BS1A"
+                "nein",
+                "ja",
+                "ja, mit Korund",
+                "ja, mit Quarz",
+                "ja, mit Siliciumcarbid"
             ],
             "aValueDefault": 0,
             "aValueUnit": ""
         },
         {
-            "aName": "LV_07_Beschreibung",
-            "aNameUI": "Beschreibung",
+            "aName": "LV_07_Verdunstungsschutz",
+            "aNameUI": "Verdunstungsschutz",
             "aValueType": "enum",
             "aValue": [
-                "Balkonplatte",
-                "Decke über Aufzug",
-                "Geschossdecke",
-                "Rampe"
+                "sprühfähig",
+                "Folie"
             ],
-            "aValueDefault": 2
+            "aValueDefault": 0,
+            "aValueUnit": ""
         },
         {
             "aName": "R_Typ_Kommentar",
@@ -70,7 +48,7 @@
         {
             "aName": "LV_07_Schalung",
             "aNameJS": "formwork",
-            "aValue": "Deckenschalung"
+            "aValue": "Fundamentschalung"
         },
         {
             "aName": "LV_Gewerk",
@@ -80,12 +58,12 @@
         {
             "aName": "iTWO_Key",
             "aNameJS": "iTWO_Key",
-            "aValue": "DE-BET"
+            "aValue": "RB-FU-MON"
         },
         {
             "aName": "LV_Beschreibung",
             "aNameJS": "description",
-            "aValue": "Ortbetondecke"
+            "aValue": "Monolithische Bodenplatte"
         },
         {
             "aName": "Material",

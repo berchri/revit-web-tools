@@ -81,6 +81,27 @@ class LevelStructure {
         return `data${this.structureCount}`
     }
 
+    changeStructure( activeStructure, nameNew, shortNameNew ) {
+        let index = Number( activeStructure.replace( 'data', '' ) )
+        if ( this[ activeStructure ].levelStructureShortName !== shortNameNew ) {
+            this[ activeStructure ].levelStructure.forEach( ( e, i, a ) => {
+                if ( e.levelName ) {
+                    a[ i ] = Level.changeLevelName( e, this[ activeStructure ].levelStructureShortName, shortNameNew )
+                }
+            } )
+
+            this[ activeStructure ].levelStructureShortName = shortNameNew;
+            this.levelStructureShortNames[ index - 1 ] = shortNameNew;
+        }
+
+        if ( this[ activeStructure ].levelStructureName !== nameNew ) {
+            this[ activeStructure ].levelStructureName = nameNew;
+            this.levelStructureNames[ index - 1 ] = nameNew;
+        }
+
+        return this[ activeStructure ]
+    }
+
     removeData() {
         this.levelStructureNames = []
         this.levelStructureShortNames = []
@@ -426,7 +447,6 @@ class LevelStructure {
         let storey = this[ activeStructure ].levelStructure.filter( e => e.storeyName === storeyName )
         let rdok = storey.find( e => e.levelType.includes( 'RDOK' ) )
         let rduk = storey.find( e => e.levelType === 'RDUK' || e.levelType === 'FUK' )
-
         if ( storeyName === 'FU01' ) {
             rdok = { levelElevation: Number.NEGATIVE_INFINITY }
         }
@@ -443,6 +463,12 @@ class LevelStructure {
         }
         if ( levelType === 'custom' ) {
             t = 'HE'
+            let isBuildingStoreyList = this[ activeStructure ].levelStructure.filter( e => e.isBuildingStorey === 1 || e.levelType === 'FUK' )
+            let i = isBuildingStoreyList.findIndex( e => e.storeyName === storeyName )
+            i--
+            if ( i >= 0 ) {
+                rduk = isBuildingStoreyList[ i ]
+            }
         }
 
         let customLevels = storey.filter( e => e.levelType === t ).map( e => e.levelElevation )
@@ -456,7 +482,6 @@ class LevelStructure {
 
         if ( action === 'storey-add-top' ) {
             // console.log( 'array: ', arrStructure )
-
             arrStructure.splice( 0, arrStructure.findIndex( ( e ) => e.levelType === 'slab' ) )
 
             let lastElement = arrStructure[ 0 ]
@@ -678,12 +703,11 @@ class LevelStructure {
             c = 'card_custom_level'
         }
 
-
         if ( levelType === 'beam' ) {
             let nr = limitObjects[ 1 ].id.slice( 0, 4 )
             let h = Level.levelName( levelStructureShortName, inputValue * 1000 )
             levelNew = {
-                id: `${nr}_${limitObjects.storeyName}_UZUK`,
+                id: `${nr}_${limitObjects[ 1 ].storeyName}_UZUK`,
                 isBuildingStorey: 0,
                 levelElevation: inputValue,
                 levelName: Level.levelName( levelStructureShortName, i, `${nr}_${limitObjects[ 1 ].storeyName}_UZUK` ),
@@ -725,47 +749,47 @@ class LevelStructure {
                     customLevelType: customLevelType
                 }
             }
-            if ( storeyName === 'DD01' ) {
+            // if ( storeyName === 'DD01' ) {
+            //     let nr = limitObjects[ 0 ].id.slice( 0, 4 )
+            //     levelNew = {
+            //         id: `${nr}_DD01_HE`,
+            //         isBuildingStorey: 0,
+            //         levelElevation: inputValue,
+            //         levelName: Level.levelName( levelStructureShortName, i, `${nr}_DD01_HE` ),
+            //         levelType: t,
+            //         storeyName: 'DD01',
+            //         storeyNumber: 1,
+            //         column: c,
+            //         levelElevationUI: Level.levelName( levelStructureShortName, i ),
+            //         isCustom: true,
+            //         customLevelType: customLevelType
+            //     }
+            // }
+            // if ( storeyName === 'EG01' ) {
+            //     levelNew = {
+            //         id: '1000_EG01_HE',
+            //         isBuildingStorey: 0,
+            //         levelElevation: inputValue,
+            //         levelName: Level.levelName( levelStructureShortName, i, '1000_EG01_HE' ),
+            //         levelType: t,
+            //         storeyName: 'EG01',
+            //         storeyNumber: 1,
+            //         column: c,
+            //         levelElevationUI: Level.levelName( levelStructureShortName, i ),
+            //         isCustom: true,
+            //         customLevelType: customLevelType
+            //     }
+            // }
+            if ( storeyName.includes( 'OG' ) || storeyName.includes( 'EG' ) || storeyName.includes( 'UG' ) || storeyName.includes( 'DD' ) ) {
                 let nr = limitObjects[ 0 ].id.slice( 0, 4 )
                 levelNew = {
-                    id: `${nr}_DD01_HE`,
+                    id: `${nr}_${limitObjects[ 0 ].storeyName}_HE`,
                     isBuildingStorey: 0,
                     levelElevation: inputValue,
-                    levelName: Level.levelName( levelStructureShortName, i, `${nr}_DD01_HE` ),
+                    levelName: Level.levelName( levelStructureShortName, i, `${nr}_${limitObjects[ 0 ].storeyName}_HE` ),
                     levelType: t,
-                    storeyName: 'DD01',
-                    storeyNumber: 1,
-                    column: c,
-                    levelElevationUI: Level.levelName( levelStructureShortName, i ),
-                    isCustom: true,
-                    customLevelType: customLevelType
-                }
-            }
-            if ( storeyName === 'EG01' ) {
-                levelNew = {
-                    id: '1000_EG01_HE',
-                    isBuildingStorey: 0,
-                    levelElevation: inputValue,
-                    levelName: Level.levelName( levelStructureShortName, i, '1000_EG01_HE' ),
-                    levelType: t,
-                    storeyName: 'EG01',
-                    storeyNumber: 1,
-                    column: c,
-                    levelElevationUI: Level.levelName( levelStructureShortName, i ),
-                    isCustom: true,
-                    customLevelType: customLevelType
-                }
-            }
-            if ( storeyName.includes( 'OG' ) || storeyName.includes( 'EG' ) || storeyName.includes( 'UG' ) ) {
-                let nr = limitObjects[ 1 ].id.slice( 0, 4 )
-                levelNew = {
-                    id: `${nr}_${limitObjects[ 1 ].storeyName}_HE`,
-                    isBuildingStorey: 0,
-                    levelElevation: inputValue,
-                    levelName: Level.levelName( levelStructureShortName, i, `${nr}_${limitObjects[ 1 ].storeyName}_HE` ),
-                    levelType: t,
-                    storeyName: limitObjects[ 1 ].storeyName,
-                    storeyNumber: limitObjects[ 1 ].storeyNumber,
+                    storeyName: limitObjects[ 0 ].storeyName,
+                    storeyNumber: limitObjects[ 0 ].storeyNumber,
                     column: c,
                     levelElevationUI: Level.levelName( levelStructureShortName, i ),
                     isCustom: true,
@@ -777,15 +801,19 @@ class LevelStructure {
         // let levelsStorey = this[ activeStructure ].levelStructure.filter( ( e ) => e.storeyName === storeyName )
         let levels = this[ activeStructure ].levelStructure
 
-        for ( const i in levels ) {
-            if ( levels[ i ].levelElevation === undefined ) continue
-            if ( levels[ i ].levelElevation > inputValue ) continue
-            if ( levels[ i ].levelElevation < inputValue ) {
+        if ( levels.at( -1 ).levelElevation > inputValue ) {
+            levels.push( levelNew )
+        } else {
+            for ( const i of levels.keys() ) {
+                let currentElevation = levels[ i ]?.levelElevation
+
+                if ( currentElevation === undefined ) continue
+                if ( currentElevation > inputValue ) continue
+
                 levels.splice( i, 0, levelNew )
                 break
             }
         }
-        if ( levels.at( -1 ).levelElevation > inputValue ) levels.push( levelNew )
 
         return this[ activeStructure ]
     }
@@ -1013,7 +1041,7 @@ class Level {
         // }
     }
 
-    static levelName( levelStructureName, elevation, id ) {
+    static levelName( levelStructureShortName, elevation, id ) {
         let sign = '+'
         if ( elevation < 0 ) sign = ''
         elevation = elevation / 1000
@@ -1028,16 +1056,26 @@ class Level {
         // todo: new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(number));
 
         // return `${nr}_${storey}${storeyNr}_${levelType}_${sign}${elevation}`
-        let prefix = levelStructureName + '_'
-        if ( levelStructureName === '' ) prefix = ''
+        let prefix = levelStructureShortName + '_'
+        if ( levelStructureShortName === '' ) prefix = ''
 
         if ( id ) return `${prefix}${id}_${sign}${elevation}`
         return `${sign}${elevation}`
     }
 
-    // static changeLevelName( elevation, id ) {
-    //     return () => this.levelName( elevation, id )
-    // }
+    static changeLevelName( level, LevelstructureShortNameOld, LevelstructureShortNameNew ) {
+        if ( LevelstructureShortNameOld === '' ) {
+            level.levelName = LevelstructureShortNameNew + '_' + level.levelName
+            return level
+        }
+        else {
+            level.levelName = level.levelName.replace( LevelstructureShortNameOld, LevelstructureShortNameNew )
+        }
+        if ( level.levelName.startsWith( '_' ) ) {
+            level.levelName = level.levelName.replace( '_', '' )
+        }
+        return level
+    }
 
 }
 

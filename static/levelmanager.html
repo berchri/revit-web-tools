@@ -200,7 +200,7 @@
                         </div>
                         <div class="head-col d-flex align-items-center px-3">
                             <div class="arrow-body">
-                                <div class="arrow-body-text">weitere Ebenen</div>
+                                <div class="arrow-body-text">Hilfsebenen</div>
                             </div>
                             <div class="arrow-right"></div>
                         </div>
@@ -212,7 +212,7 @@
                 <!-- End Main -->
                 <!-- level wizard -->
                 <div class="col colfixed-m border-right bg-swi-grau1" id="column-wizard">
-                    <div id="form-heading"><button type="button" class="close" id="btn-close-wizard">×</button>
+                    <div id="form-heading"><button type="button" class="close btn-close-wizard" id="">×</button>
                         <div class="pt-3 pb-2 mb3 border-bottom">
                             <h3 id="buildingElement">Ebenen Assistent</h3>
                             <p class="h6 text-muted text-uppercase" id="modelCategory">Regelgeschoß definieren</p>
@@ -334,6 +334,46 @@
                         </div>
                     </form>
                 </div>
+                <div class="col colfixed-m border-right bg-swi-grau1" id="column-wizard-edit">
+                    <div id="form-heading"><button type="button" class="close btn-close-wizard" id="">×</button>
+                        <div class="pt-3 pb-2 mb3 border-bottom">
+                            <h3 id="buildingElement">Ebenen Assistent</h3>
+                            <p class="h6 text-muted text-uppercase" id="modelCategory">Namen oder Bezeichnung ändern</p>
+                        </div>
+                    </div>
+                    <form autocomplete="off">
+                        <div id="form-container">
+                            <div class="form-group input-row my-4">
+                                <label class="mr-3 my-0 label-width-auto" for="editNameLevelStructure">
+                                    <div>Name der Ebenenstrukur</div>
+                                    <small class="form-text text-muted mt-0">bzw. Bauteilname</small>
+                                </label>
+                                <div class="mb-0 input-container">
+                                    <input name="editNameLevelStructure" type="text" class="form-control" placeholder="Bauteil A" value="Bauteil A" id="editNameLevelStructure">
+                                    <div class="invalid-tooltip" id="editNameLevelStructure-notification"></div>
+                                </div>
+                            </div>
+                            <div class="form-group input-row my-4">
+                                <label class="mr-3 my-0 label-width-auto" for="editShortNameLevelStructure">
+                                    <div>Bauteil Kurzbezeichnung (optional)</div>
+                                    <small class="form-text text-muted mt-0">Ergänzung des Ebenennamens</small>
+                                    <small class="form-text text-muted mt-0">z.B.: <b>BT-A</b>_1000_EG01...</small>
+                                </label>
+                                <div class="mb-0 input-container">
+                                    <input name="editShortNameLevelStructure" type="text" class="form-control" placeholder="z.B. BT-A" value="" id="editShortNameLevelStructure">
+                                    <div class="invalid-tooltip" id="editShortNameLevelStructure-notification"></div>
+                                </div>
+                                <!-- <small id="Q_HoeheOriginal" class="form-text text-muted mt-0">Q_Hoehe</small> -->
+                            </div>
+                        </div>
+                        <div class="form-btn">
+                            <button type="button" class="btn-swi" id="btn-edit-structure"> Ändern <svg class="icon-btn">
+                                    <use href="#pencil"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
                 <div class="col col-wizard-info border-right" id="column-wizard-info">
                     <iframe src="./img/svg/levelmanager/wizard.html" id="svg-wizard-info" frameborder="0" width="100%" height="100%"></iframe>
                 </div>
@@ -373,13 +413,11 @@
                             <div class="p-1 lh-1" id="session-date">TT.MM.JJJJ - HH:MM</div>
                             <div class="p-1 pl-3 lh-1">(Bauteile) Strukturen<span id="session-element-count" class="badge badge-pill badge-primary">0</span></div>
                         </div>
-                        <div class="p-1"><button type="button" class="btn-swi" id="btn-load" data-toggle="modal" data-target="#modal-u">Laden
-                                <svg class="icon-btn">
+                        <div class="p-1"><button type="button" class="btn-swi" id="btn-load" data-toggle="modal" data-target="#modal-u">Laden <svg class="icon-btn">
                                     <use href="#database-up"></use>
                                 </svg>
                             </button>
-                            <button type="button" class="btn-swi-secondary" id="btn-delete-session" data-toggle="modal" data-target="#modal-u">Löschen
-                                <svg class="icon-btn">
+                            <button type="button" class="btn-swi-secondary" id="btn-delete-session" data-toggle="modal" data-target="#modal-u">Löschen <svg class="icon-btn">
                                     <use href="#trash-can"></use>
                                 </svg>
                             </button>
@@ -388,8 +426,7 @@
                     <div class="d-flex flex-column align-items-center m-3 p-3 border rounded">
                         <h6 class="mt-1">Diese Sitzung Speichern</h6>
                         <!-- <div class="d-flex justify-content-between"> -->
-                        <div><button type="button" class="btn-swi" id="btn-save" data-toggle="modal" data-target="#modal-u">Speichern
-                                <svg class="icon-btn">
+                        <div><button type="button" class="btn-swi" id="btn-save" data-toggle="modal" data-target="#modal-u">Speichern <svg class="icon-btn">
                                     <use href="#database-down"></use>
                                 </svg>
                             </button></div>

@@ -26,29 +26,31 @@ templates['building_structure'] = template({"1":function(container,depth0,helper
         return undefined
     };
 
-  return "    <div class=\"d-flex flex-column col-slab px-3 pb-1\">\r\n        <div class=\"slab-height-increase\"></div>\r\n        "
-    + ((stack1 = ((helper = (helper = lookupProperty(helpers,"card_height") || (depth0 != null ? lookupProperty(depth0,"card_height") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"card_height","hash":{},"data":data,"loc":{"start":{"line":20,"column":8},"end":{"line":20,"column":25}}}) : helper))) != null ? stack1 : "")
-    + " <div class=\"d-flex flex-column align-items-center mb-4\">\r\n            <button type=\"button\" class=\"btn-lm-add\" data-cardid=\"slab_"
-    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":21,"column":71},"end":{"line":21,"column":85}}}) : helper)))
-    + "\">+</button>\r\n            <div class=\"level-card new-elevation border rounded shadow p-2\" id=\"slab_"
-    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":22,"column":85},"end":{"line":22,"column":99}}}) : helper)))
-    + "\">\r\n                <h1 class=\"d-flex align-items-center h6 mb-2 card-head\">"
-    + alias4(((helper = (helper = lookupProperty(helpers,"id") || (depth0 != null ? lookupProperty(depth0,"id") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data,"loc":{"start":{"line":23,"column":72},"end":{"line":23,"column":78}}}) : helper)))
-    + "_neu</h1>\r\n                <div class=\"d-flex justify-content-end align-items-center\">\r\n                    <div class=\"text-right\">RDUK</div>\r\n                    <div class=\"input-group ml-2 card-input\">\r\n                        <input name=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"levelName") || (depth0 != null ? lookupProperty(depth0,"levelName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"levelName","hash":{},"data":data,"loc":{"start":{"line":27,"column":37},"end":{"line":27,"column":50}}}) : helper)))
+  return "        <div class=\"d-flex flex-column col-slab px-3 pb-1\">\r\n            <div class=\"slab-height-increase\"></div>\r\n            "
+    + ((stack1 = ((helper = (helper = lookupProperty(helpers,"card_height") || (depth0 != null ? lookupProperty(depth0,"card_height") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"card_height","hash":{},"data":data,"loc":{"start":{"line":20,"column":12},"end":{"line":20,"column":29}}}) : helper))) != null ? stack1 : "")
+    + " <div class=\"d-flex flex-column align-items-center mb-4\">\r\n                <button type=\"button\" class=\"btn-lm-add\" data-cardid=\"slab_"
+    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":21,"column":75},"end":{"line":21,"column":89}}}) : helper)))
+    + "\">+</button>\r\n                <div class=\"level-card new-elevation border rounded shadow p-2\" id=\"slab_"
+    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":22,"column":89},"end":{"line":22,"column":103}}}) : helper)))
+    + "\">\r\n                    <h1 class=\"d-flex align-items-center h6 mb-2 card-head\">"
+    + alias4(((helper = (helper = lookupProperty(helpers,"IDNumber") || (depth0 != null ? lookupProperty(depth0,"IDNumber") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"IDNumber","hash":{},"data":data,"loc":{"start":{"line":23,"column":76},"end":{"line":23,"column":88}}}) : helper)))
+    + "_"
+    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":23,"column":89},"end":{"line":23,"column":103}}}) : helper)))
+    + "_RDUK_neu</h1>\r\n                    <div class=\"d-flex justify-content-end align-items-center\">\r\n                        <div class=\"text-right\">RDUK</div>\r\n                        <div class=\"input-group ml-2 card-input\">\r\n                            <input name=\""
+    + alias4(((helper = (helper = lookupProperty(helpers,"levelName") || (depth0 != null ? lookupProperty(depth0,"levelName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"levelName","hash":{},"data":data,"loc":{"start":{"line":27,"column":41},"end":{"line":27,"column":54}}}) : helper)))
     + "\" type=\"text\" class=\"form-control\" id=\"input-slab_"
-    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":27,"column":100},"end":{"line":27,"column":114}}}) : helper)))
-    + "\"\r\n                            placeholder=\"Höhe eingeben\" data-type=\"slab-increase\" data-storey=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":28,"column":95},"end":{"line":28,"column":109}}}) : helper)))
-    + "\">\r\n                        <div class=\"invalid-tooltip\" id=\"input-slab_"
-    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":29,"column":68},"end":{"line":29,"column":82}}}) : helper)))
-    + "-notification\"></div>\r\n                        <div class=\"input-group-append\">\r\n                            <span class=\"input-group-text\">m</span>\r\n                        </div>\r\n                    </div>\r\n                    <div><button type=\"button\" class=\"btn-lm-add-small\" id=\"btn-slab_"
-    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":34,"column":85},"end":{"line":34,"column":99}}}) : helper)))
-    + "\"\r\n                            data-inputid=\"input-slab_"
-    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":35,"column":53},"end":{"line":35,"column":67}}}) : helper)))
-    + "\">+</button></div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n";
+    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":27,"column":104},"end":{"line":27,"column":118}}}) : helper)))
+    + "\" placeholder=\"Höhe eingeben\" data-type=\"slab-increase\" data-storey=\""
+    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":27,"column":187},"end":{"line":27,"column":201}}}) : helper)))
+    + "\">\r\n                            <div class=\"invalid-tooltip\" id=\"input-slab_"
+    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":28,"column":72},"end":{"line":28,"column":86}}}) : helper)))
+    + "-notification\"></div>\r\n                            <div class=\"input-group-append\">\r\n                                <span class=\"input-group-text\">m</span>\r\n                            </div>\r\n                        </div>\r\n                        <div><button type=\"button\" class=\"btn-lm-add-small\" id=\"btn-slab_"
+    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":33,"column":89},"end":{"line":33,"column":103}}}) : helper)))
+    + "\" data-inputid=\"input-slab_"
+    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":33,"column":130},"end":{"line":33,"column":144}}}) : helper)))
+    + "\">+</button></div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n";
 },"3":function(container,depth0,helpers,partials,data) {
-    return "    <div class=\"d-flex flex-column col-slab px-3 pb-1\">\r\n    </div>\r\n";
+    return "        <div class=\"d-flex flex-column col-slab px-3 pb-1\">\r\n        </div>\r\n";
 },"5":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
         if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
@@ -57,29 +59,62 @@ templates['building_structure'] = template({"1":function(container,depth0,helper
         return undefined
     };
 
-  return "    <div class=\"d-flex flex-column col-beam px-3 pb-1\">\r\n        <div class=\"beam\"></div>\r\n        "
-    + ((stack1 = ((helper = (helper = lookupProperty(helpers,"card_beam") || (depth0 != null ? lookupProperty(depth0,"card_beam") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"card_beam","hash":{},"data":data,"loc":{"start":{"line":48,"column":8},"end":{"line":48,"column":23}}}) : helper))) != null ? stack1 : "")
-    + " <div class=\"d-flex flex-column align-items-center mb-4\">\r\n            <button type=\"button\" class=\"btn-lm-add\" data-cardid=\"beam_"
-    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":49,"column":71},"end":{"line":49,"column":85}}}) : helper)))
-    + "\">+</button>\r\n            <div class=\"level-card new-elevation border rounded shadow p-2\" id=\"beam_"
-    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":50,"column":85},"end":{"line":50,"column":99}}}) : helper)))
-    + "\">\r\n                <h1 class=\"d-flex align-items-center h6 mb-2 card-head\">"
-    + alias4(((helper = (helper = lookupProperty(helpers,"beamID") || (depth0 != null ? lookupProperty(depth0,"beamID") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"beamID","hash":{},"data":data,"loc":{"start":{"line":51,"column":72},"end":{"line":51,"column":82}}}) : helper)))
-    + "_neu</h1>\r\n                <div class=\"d-flex justify-content-end align-items-center\">\r\n                    <div class=\"text-right\">UZUK</div>\r\n                    <div class=\"input-group ml-2 card-input\">\r\n                        <input name=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"levelName") || (depth0 != null ? lookupProperty(depth0,"levelName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"levelName","hash":{},"data":data,"loc":{"start":{"line":55,"column":37},"end":{"line":55,"column":50}}}) : helper)))
+  return "        <div class=\"d-flex flex-column col-beam px-3 pb-1\">\r\n            <div class=\"beam\"></div>\r\n            "
+    + ((stack1 = ((helper = (helper = lookupProperty(helpers,"card_beam") || (depth0 != null ? lookupProperty(depth0,"card_beam") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"card_beam","hash":{},"data":data,"loc":{"start":{"line":46,"column":12},"end":{"line":46,"column":27}}}) : helper))) != null ? stack1 : "")
+    + " <div class=\"d-flex flex-column align-items-center mb-4\">\r\n                <button type=\"button\" class=\"btn-lm-add\" data-cardid=\"beam_"
+    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":47,"column":75},"end":{"line":47,"column":89}}}) : helper)))
+    + "\">+</button>\r\n                <div class=\"level-card new-elevation border rounded shadow p-2\" id=\"beam_"
+    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":48,"column":89},"end":{"line":48,"column":103}}}) : helper)))
+    + "\">\r\n                    <h1 class=\"d-flex align-items-center h6 mb-2 card-head\">"
+    + alias4(((helper = (helper = lookupProperty(helpers,"IDNumber") || (depth0 != null ? lookupProperty(depth0,"IDNumber") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"IDNumber","hash":{},"data":data,"loc":{"start":{"line":49,"column":76},"end":{"line":49,"column":88}}}) : helper)))
+    + "_"
+    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":49,"column":89},"end":{"line":49,"column":103}}}) : helper)))
+    + "_UZUK_neu</h1>\r\n                    <div class=\"d-flex justify-content-end align-items-center\">\r\n                        <div class=\"text-right\">UZUK</div>\r\n                        <div class=\"input-group ml-2 card-input\">\r\n                            <input name=\""
+    + alias4(((helper = (helper = lookupProperty(helpers,"levelName") || (depth0 != null ? lookupProperty(depth0,"levelName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"levelName","hash":{},"data":data,"loc":{"start":{"line":53,"column":41},"end":{"line":53,"column":54}}}) : helper)))
     + "\" type=\"text\" class=\"form-control\" id=\"input-beam_"
-    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":55,"column":100},"end":{"line":55,"column":114}}}) : helper)))
-    + "\"\r\n                            placeholder=\"Höhe eingeben\" data-type=\"beam\" data-storey=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":56,"column":86},"end":{"line":56,"column":100}}}) : helper)))
-    + "\">\r\n                        <div class=\"invalid-tooltip\" id=\"input-beam_"
-    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":57,"column":68},"end":{"line":57,"column":82}}}) : helper)))
-    + "-notification\"></div>\r\n                        <div class=\"input-group-append\">\r\n                            <span class=\"input-group-text\">m</span>\r\n                        </div>\r\n                    </div>\r\n                    <div><button type=\"button\" class=\"btn-lm-add-small\" id=\"btn-beam_"
-    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":62,"column":85},"end":{"line":62,"column":99}}}) : helper)))
-    + "\"\r\n                            data-inputid=\"input-beam_"
-    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":63,"column":53},"end":{"line":63,"column":67}}}) : helper)))
-    + "\">+</button></div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n";
+    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":53,"column":104},"end":{"line":53,"column":118}}}) : helper)))
+    + "\" placeholder=\"Höhe eingeben\" data-type=\"beam\" data-storey=\""
+    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":53,"column":178},"end":{"line":53,"column":192}}}) : helper)))
+    + "\">\r\n                            <div class=\"invalid-tooltip\" id=\"input-beam_"
+    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":54,"column":72},"end":{"line":54,"column":86}}}) : helper)))
+    + "-notification\"></div>\r\n                            <div class=\"input-group-append\">\r\n                                <span class=\"input-group-text\">m</span>\r\n                            </div>\r\n                        </div>\r\n                        <div><button type=\"button\" class=\"btn-lm-add-small\" id=\"btn-beam_"
+    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":59,"column":89},"end":{"line":59,"column":103}}}) : helper)))
+    + "\" data-inputid=\"input-beam_"
+    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":59,"column":130},"end":{"line":59,"column":144}}}) : helper)))
+    + "\">+</button></div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n";
 },"7":function(container,depth0,helpers,partials,data) {
-    return "    <div class=\"d-flex flex-column col-beam px-3 pb-1\">\r\n    </div>\r\n";
+    return "        <div class=\"d-flex flex-column col-beam px-3 pb-1\">\r\n        </div>\r\n";
+},"9":function(container,depth0,helpers,partials,data) {
+    var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+          return parent[propertyName];
+        }
+        return undefined
+    };
+
+  return "        <div class=\"d-flex justify-content-center flex-column col-custom px-3 pb-1\">\r\n            "
+    + ((stack1 = ((helper = (helper = lookupProperty(helpers,"card_custom_level") || (depth0 != null ? lookupProperty(depth0,"card_custom_level") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"card_custom_level","hash":{},"data":data,"loc":{"start":{"line":70,"column":12},"end":{"line":70,"column":35}}}) : helper))) != null ? stack1 : "")
+    + " <div class=\"d-flex flex-column align-items-center mb-4\">\r\n                <button type=\"button\" class=\"btn-lm-add\" data-cardid=\"custom_"
+    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":71,"column":77},"end":{"line":71,"column":91}}}) : helper)))
+    + "\">+</button>\r\n                <div class=\"level-card new-elevation border rounded shadow p-2\" id=\"custom_"
+    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":72,"column":91},"end":{"line":72,"column":105}}}) : helper)))
+    + "\">\r\n                    <h1 class=\"d-flex align-items-center h6 mb-2 card-head\">"
+    + alias4(((helper = (helper = lookupProperty(helpers,"IDNumber") || (depth0 != null ? lookupProperty(depth0,"IDNumber") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"IDNumber","hash":{},"data":data,"loc":{"start":{"line":73,"column":76},"end":{"line":73,"column":88}}}) : helper)))
+    + "_"
+    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":73,"column":89},"end":{"line":73,"column":103}}}) : helper)))
+    + "_HE_neu</h1>\r\n                    <div class=\"d-flex justify-content-end align-items-center\">\r\n                        <div class=\"text-right\">HE</div>\r\n                        <div class=\"input-group ml-2 card-input\">\r\n                            <input name=\""
+    + alias4(((helper = (helper = lookupProperty(helpers,"levelName") || (depth0 != null ? lookupProperty(depth0,"levelName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"levelName","hash":{},"data":data,"loc":{"start":{"line":77,"column":41},"end":{"line":77,"column":54}}}) : helper)))
+    + "\" type=\"text\" class=\"form-control\" id=\"input-custom_"
+    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":77,"column":106},"end":{"line":77,"column":120}}}) : helper)))
+    + "\" placeholder=\"Höhe eingeben\" data-type=\"custom\" data-storey=\""
+    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":77,"column":182},"end":{"line":77,"column":196}}}) : helper)))
+    + "\">\r\n                            <div class=\"invalid-tooltip\" id=\"input-custom_"
+    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":78,"column":74},"end":{"line":78,"column":88}}}) : helper)))
+    + "-notification\"></div>\r\n                            <div class=\"input-group-append\">\r\n                                <span class=\"input-group-text\">m</span>\r\n                            </div>\r\n                        </div>\r\n                        <div><button type=\"button\" class=\"btn-lm-add-small\" id=\"btn-custom_"
+    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":83,"column":91},"end":{"line":83,"column":105}}}) : helper)))
+    + "\" data-inputid=\"input-custom_"
+    + alias4(((helper = (helper = lookupProperty(helpers,"storeyName") || (depth0 != null ? lookupProperty(depth0,"storeyName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"storeyName","hash":{},"data":data,"loc":{"start":{"line":83,"column":134},"end":{"line":83,"column":148}}}) : helper)))
+    + "\">+</button></div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n";
 },"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
         if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
@@ -101,8 +136,9 @@ templates['building_structure'] = template({"1":function(container,depth0,helper
     + " justify-content-between col-levels px-3 py-1\">\r\n        "
     + ((stack1 = ((helper = (helper = lookupProperty(helpers,"card_level") || (depth0 != null ? lookupProperty(depth0,"card_level") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"card_level","hash":{},"data":data,"loc":{"start":{"line":14,"column":8},"end":{"line":14,"column":24}}}) : helper))) != null ? stack1 : "")
     + "\r\n    </div>\r\n"
-    + ((stack1 = lookupProperty(helpers,"if").call(alias1,(depth0 != null ? lookupProperty(depth0,"showSlabHeightIncrease") : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.program(3, data, 0),"data":data,"loc":{"start":{"line":17,"column":4},"end":{"line":43,"column":11}}})) != null ? stack1 : "")
-    + ((stack1 = lookupProperty(helpers,"if").call(alias1,(depth0 != null ? lookupProperty(depth0,"showBeam") : depth0),{"name":"if","hash":{},"fn":container.program(5, data, 0),"inverse":container.program(7, data, 0),"data":data,"loc":{"start":{"line":45,"column":4},"end":{"line":71,"column":11}}})) != null ? stack1 : "")
+    + ((stack1 = lookupProperty(helpers,"if").call(alias1,(depth0 != null ? lookupProperty(depth0,"showSlabHeightIncrease") : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.program(3, data, 0),"data":data,"loc":{"start":{"line":17,"column":4},"end":{"line":41,"column":11}}})) != null ? stack1 : "")
+    + ((stack1 = lookupProperty(helpers,"if").call(alias1,(depth0 != null ? lookupProperty(depth0,"showBeam") : depth0),{"name":"if","hash":{},"fn":container.program(5, data, 0),"inverse":container.program(7, data, 0),"data":data,"loc":{"start":{"line":43,"column":4},"end":{"line":67,"column":11}}})) != null ? stack1 : "")
+    + ((stack1 = lookupProperty(helpers,"if").call(alias1,(depth0 != null ? lookupProperty(depth0,"showCustomLevel") : depth0),{"name":"if","hash":{},"fn":container.program(9, data, 0),"inverse":container.program(7, data, 0),"data":data,"loc":{"start":{"line":68,"column":4},"end":{"line":91,"column":11}}})) != null ? stack1 : "")
     + "</div>";
 },"useData":true});
 templates['card_level'] = template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
@@ -322,11 +358,13 @@ templates['navlink'] = template({"compiler":[8,">= 4.3.0"],"main":function(conta
         return undefined
     };
 
-  return "<li class=\"nav-item\">\r\n    <a class=\"nav-link\" href=\"#\" data-id=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"levelStructureId") || (depth0 != null ? lookupProperty(depth0,"levelStructureId") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"levelStructureId","hash":{},"data":data,"loc":{"start":{"line":2,"column":42},"end":{"line":2,"column":62}}}) : helper)))
+  return "<li class=\"nav-item d-flex justify-content-between\">\r\n    <a class=\"nav-link l-level-structures\" href=\"#\" data-id=\""
+    + alias4(((helper = (helper = lookupProperty(helpers,"levelStructureId") || (depth0 != null ? lookupProperty(depth0,"levelStructureId") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"levelStructureId","hash":{},"data":data,"loc":{"start":{"line":2,"column":61},"end":{"line":2,"column":81}}}) : helper)))
     + "\">\r\n        <svg class=\"icon\">\r\n            <use href=\"#list-ul\"></use>\r\n        </svg><span>"
     + alias4(((helper = (helper = lookupProperty(helpers,"Bauteil") || (depth0 != null ? lookupProperty(depth0,"Bauteil") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"Bauteil","hash":{},"data":data,"loc":{"start":{"line":5,"column":20},"end":{"line":5,"column":31}}}) : helper)))
-    + "</span>\r\n    </a>\r\n</li>";
+    + "</span>\r\n    </a>\r\n    <a class=\"nav-link l-edit-level-structures\" href=\"#\" data-id=\""
+    + alias4(((helper = (helper = lookupProperty(helpers,"levelStructureId") || (depth0 != null ? lookupProperty(depth0,"levelStructureId") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"levelStructureId","hash":{},"data":data,"loc":{"start":{"line":7,"column":66},"end":{"line":7,"column":86}}}) : helper)))
+    + "\">\r\n        <svg class=\"icon\">\r\n            <use href=\"#pencil\"></use>\r\n        </svg>\r\n    </a>\r\n</li>";
 },"useData":true});
 templates['new_element'] = template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
     var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {

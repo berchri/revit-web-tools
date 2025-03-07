@@ -6,5 +6,6 @@
     "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": true,
     "files.trimTrailingWhitespace": true,
     "html.format.maxPreserveNewLines": 0,
-    "terminal.integrated.defaultLocation": "editor"
+    "terminal.integrated.defaultLocation": "editor",
+    "terminal.integrated.defaultProfile.windows": "Git Bash"
 }

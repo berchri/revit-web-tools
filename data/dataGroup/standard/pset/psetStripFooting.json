@@ -10,15 +10,6 @@
             "aValueUnit": "cm"
         },
         {
-            "aName": "Q_Hoehe",
-            "aNameJS": "hight",
-            "aNameUI": "Höhe",
-            "aValueType": "numericMeasure",
-            "aValue": 0,
-            "aValueDefault": "40",
-            "aValueUnit": "cm"
-        },
-        {
             "aName": "LV_07_Betonfestigkeitsklasse",
             "aNameJS": "concreteStrengthClass",
             "aNameUI": "Betonfestigkeitsklasse",
@@ -96,5 +87,5 @@
             "aValue": "Ortbeton"
         }
     ],
-    "psetElementModelCategory": "Ingenieurbau/Fundament/Wand"
+    "psetElementModelCategory": "Architektur/Wand"
 }

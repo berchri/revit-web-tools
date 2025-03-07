@@ -334,6 +334,7 @@ $( () => {
 
     $( '#btn-export-download' ).on( 'click', () => {
         let jsonData = JSON.stringify( exportCollection, null, 4 );
+        console.log( 'exportCollection :>> ', exportCollection );
         let jsonFile = new File( [ jsonData ], { type: "application/json;charset=utf-8" } );
         if ( window.chrome?.webview ) {
             /* this is for testing

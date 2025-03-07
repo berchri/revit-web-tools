@@ -6,7 +6,7 @@
             "aNameUI": "Dämmung Typ",
             "aValueType": "radio",
             "aValue": [
-                "Kellerwand",
+                "Kellerwand (Tektalan)",
                 "Feuermauer",
                 "Trennfuge"
             ]

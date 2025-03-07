@@ -32,6 +32,7 @@ at.swi.bim = ( ( bim ) => {
                 PrefabColumnRound,
                 PrefabWall,
                 ETICS,
+                FoundationMonolithic,
                 FoundationSlab,
                 FoundationHaunch,
                 Masonry,
@@ -249,7 +250,7 @@ at.swi.bim = ( ( bim ) => {
             this.LV_Beschreibung = searchPsetValue( cData, 'LV_Beschreibung' );
             this.iTWO_Key = searchPsetValue( cData, 'iTWO_Key' );
             this.Typenkommentare = typeComment;
-            // this.R_Typ_Kommentar = typeComment;
+            this.R_Typ_Kommentar = typeComment;
 
             // function importType(obj){
             //     // this.id = ''
@@ -322,7 +323,7 @@ at.swi.bim = ( ( bim ) => {
                 b = inputValue( 'Q_Hoehe' ),
                 c = inputValue( 'LV_07_Betonfestigkeitsklasse' ),
                 d = inputValue( 'LV_07_Expositionsklasse' ),
-                e = inputValue( 'LV_07_Deckensprung' ),
+                e = inputValue( 'LV_07_Beschreibung' ),
                 // d = inputValue( 'LV_07_BST550' ),
                 f = searchPsetValue( cData, 'LV_07_Schalung' ),
 
@@ -353,20 +354,16 @@ at.swi.bim = ( ( bim ) => {
             // this.LV_07_BST550 = d;
             this.LV_07_Expositionsklasse = d;
             this.LV_07_Schalung = f;
-            this.LV_07_DeckensprungUI = 'N';
-            this.LV_07_Deckensprung = e;
-
-            if ( e === true ) {
-                this.LV_Beschreibung = 'Deckensprung';
-                this.LV_07_DeckensprungUI = 'J'
-            }
+            this.LV_07_Balken_Typ = e;
+            this.LV_Beschreibung = e;
 
 
             function createName() {
                 let t = a * 10;
                 let l = b * 10;
-                if ( e === true ) return `BA_D-SPRUNG_${t}x${l}_${c}_${d}`
-                if ( e === false ) return `BA_STB_${t}x${l}_${c}_${d}`
+                if ( e === 'Deckensprung' ) return `BA_STB_DSPR_${t}x${l}_${c}_${d}`
+                if ( e === 'Unterzug' ) return `BA_STB_UZ_${t}x${l}_${c}_${d}`
+                if ( e === 'Überzug' ) return `BA_STB_ÜZ_${t}x${l}_${c}_${d}`
             }
         }
         exportModification() {
@@ -515,7 +512,7 @@ at.swi.bim = ( ( bim ) => {
 
             this.LV_Beschreibung = 'Dämmung ' + type;
             switch ( type ) {
-                case 'Kellerwand':
+                case 'Kellerwand (Tektalan)':
                 case 'Trennfuge':
                     this.Q_Dicke = b
                     break;
@@ -529,7 +526,7 @@ at.swi.bim = ( ( bim ) => {
                 let ta = a * 10;
                 let tb = b * 10;
                 switch ( type ) {
-                    case 'Kellerwand': return `WA_DAEMM_KW_${tb}`;
+                    case 'Kellerwand (Tektalan)': return `WA_DAEMM_KW_${tb}`;
                     case 'Feuermauer': return `WA_DAEMM_FM_${ta}`;
                     case 'Trennfuge': return `WA_DAEMM_TF_${tb}`;
                 }
@@ -558,7 +555,7 @@ at.swi.bim = ( ( bim ) => {
         static selectedRadio( type ) {
             let aValueDefault;
             switch ( type ) {
-                case 'Kellerwand':
+                case 'Kellerwand (Tektalan)':
                     return [
                         {
                             aNameJS: 'Q_Dicke',
@@ -595,7 +592,7 @@ at.swi.bim = ( ( bim ) => {
                         aValueType: 'numericMeasure',
                         aValueEvenOdd: 'even',
                         aValueMin: 6,
-                        aValueMax: 20,
+                        aValueMax: 22,
                         aDisabled: false
                     },
                     {
@@ -908,7 +905,7 @@ at.swi.bim = ( ( bim ) => {
                 // c = inputValue( 'LV_07_BST550' ),
                 d = inputValue( 'LV_07_Expositionsklasse' ),
                 // e = inputValue( 'LV_07_Unterstellhoehe' ),
-                f = inputValue( 'LV_07_Ausführung' ),
+                f = inputValue( 'LV_07_Beschreibung' ),
                 g = searchPsetValue( cData, 'LV_07_Schalung' ),
 
                 typeComment = inputValue( 'R_Typ_Kommentar' );
@@ -922,14 +919,22 @@ at.swi.bim = ( ( bim ) => {
             if ( f === 'Rampe' ) {
                 name = name.replace( 'DE_STB', 'DE_STB_RAMPE' )
             }
+            if ( f === 'Balkonplatte' ) {
+                name = name.replace( 'DE_STB', 'DE_STB_BA' )
+            }
 
             super( name, cData, typeComment, id, eNameJS, 'Decke', 'OST_Floors' );
 
             if ( f === 'Decke über Aufzug' ) {
                 this.iTWO_Key = 'DE-BET-AUF'
+                this.LV_Beschreibung = 'Decke über Aufzug'
             }
             if ( f === 'Rampe' ) {
                 this.iTWO_Key = 'DE-BET-RAMPE'
+                this.LV_Beschreibung = 'Rampe'
+            }
+            if ( f === 'Balkonplatte' ) {
+                this.LV_Beschreibung = 'Balkonplatte'
             }
 
             this.Q_Hoehe = a;
@@ -1184,7 +1189,7 @@ at.swi.bim = ( ( bim ) => {
             }
             if ( t === 'Loggien-Balkonbrüstung' ) {
                 this.LV_Beschreibung = 'Loggien-Balkonbrüstung';
-                this.iTWO_Key = 'RB-FT-SF| L- Balkonbrüstung';
+                this.iTWO_Key = 'RB-FT-BB';
                 this.LV_Gewerk = '16 Fertigteile';
                 this.Ausführung = 'Fertigteil';
             }
@@ -1254,7 +1259,7 @@ at.swi.bim = ( ( bim ) => {
                         },
                         {
                             aNameJS: 'Q_Dicke_2',
-                            aValue: [ 20, 25, 30, 35, 40 ],
+                            aValue: [ 18, 20, 25, 30, 35, 40 ],
                             aValueDefault: 20,
                             aValueType: 'enumNr',
                         },
@@ -1572,6 +1577,63 @@ at.swi.bim = ( ( bim ) => {
 
     }
 
+    class FoundationMonolithic extends GeneralType {
+        constructor( arr, cData, id, eNameJS ) {
+            inputData = arr;
+            let
+                a = inputValue( 'Q_Hoehe' ),
+                f = searchPsetValue( cData, 'LV_07_Schalung' ),
+                g = inputValue( 'LV_07_Glätten_Hartstoffgemisch' ),
+                h = inputValue( 'LV_07_Verdunstungsschutz' ),
+
+                typeComment = inputValue( 'R_Typ_Kommentar' );
+            let name = createName();
+            super( name, cData, typeComment, id, eNameJS, 'Decke', 'OST_Floors' );
+            this.Q_Hoehe = a;
+            this.LV_07_Schalung = f;
+            this.LV_07_Glätten_Hartstoffgemisch = g;
+            this.LV_07_Verdunstungsschutz = h
+
+
+            function createName() {
+                let t = a * 10;
+                let ver = ''
+                let gl = '_GL-N'
+                if ( g === 'ja' ) gl = '_GL-J'
+                if ( g === 'ja, mit Korund' ) gl = '_GL-KO'
+                if ( g === 'ja, mit Quarz' ) gl = '_GL-QU'
+                if ( g === 'ja, mit Siliciumcarbid' ) gl = '_GL-SI'
+
+                h === 'sprühfähig' ? ver = '_VER-SPR' : ver = '_VER-FOL'
+
+                return `FU_STB_MON_${t}${gl}${ver}`;
+            }
+        }
+
+        exportModification() {
+            const obj = {
+                CompoundStructWidth: this.Q_Hoehe,
+                Basisfamilie: 'Geschossdecke',
+                Familienname: this.Name,
+                Material: this.Material,
+                Muster: '<Flächenfüllung>',
+                Musterfarbe: 32768,
+                Parameter: {
+                    LV_07_Glätten_Hartstoffgemisch: this.LV_07_Glätten_Hartstoffgemisch,
+                    LV_07_Verdunstungsschutz: this.LV_07_Verdunstungsschutz,
+                    LV_07_Schalung: this.LV_07_Schalung,
+                    Ausführung: this.Ausführung,
+                    LV_Gewerk: this.LV_Gewerk,
+                    LV_Beschreibung: this.LV_Beschreibung,
+                    Typenkommentare: this.Typenkommentare,
+                    iTWO_Key: this.iTWO_Key,
+                    SwiID: this.SwiID
+                }
+            }
+            return obj
+        }
+    }
+
     class FoundationSlab extends GeneralType {
         constructor( arr, cData, id, eNameJS ) {
             inputData = arr;
@@ -1585,7 +1647,7 @@ at.swi.bim = ( ( bim ) => {
 
                 typeComment = inputValue( 'R_Typ_Kommentar' );
             let name = createName();
-            super( name, cData, typeComment, id, eNameJS, 'Fundament', 'OST_StructuralFoundation' );
+            super( name, cData, typeComment, id, eNameJS, 'Decke', 'OST_Floors' );
             this.Q_Hoehe = a;
             this.LV_07_Betonfestigkeitsklasse = b;
             // this.LV_07_BST550 = c;
@@ -1606,7 +1668,7 @@ at.swi.bim = ( ( bim ) => {
         exportModification() {
             const obj = {
                 CompoundStructWidth: this.Q_Hoehe,
-                Basisfamilie: 'Fundamentplatte',
+                Basisfamilie: 'Geschossdecke',
                 Familienname: this.Name,
                 Material: this.Material,
                 Muster: '<Flächenfüllung>',
@@ -2659,9 +2721,9 @@ at.swi.bim = ( ( bim ) => {
                             "GKB_2x12,5mm",
                             "GKB_1x15mm",
                             "GKB_2x15mm",
-                            "GKF_2x12,5mm",
-                            "GKF_1x15mm",
-                            "GKF_2x15mm"
+                            // "GKF_2x12,5mm",
+                            // "GKF_1x15mm",
+                            // "GKF_2x15mm"
                         ],
                         aValueDefault: "GKB_1x12,5mm",
                         aForceValueDefault: true,
@@ -2697,9 +2759,9 @@ at.swi.bim = ( ( bim ) => {
                             "GKB_2x12,5mm",
                             "GKB_1x15mm",
                             "GKB_2x15mm",
-                            "GKF_2x12,5mm",
-                            "GKF_1x15mm",
-                            "GKF_2x15mm"
+                            // "GKF_2x12,5mm",
+                            // "GKF_1x15mm",
+                            // "GKF_2x15mm"
                         ],
                         aValueDefault: "GKB_1x12,5mm",
                         aForceValueDefault: true,
@@ -2777,33 +2839,33 @@ at.swi.bim = ( ( bim ) => {
                     case 'CW50':
                         switch ( drywallBoarding ) {
                             case "GKB_1x12,5mm": return [ { aNameJS: 'Q_Dicke', aValueMin: 6.25, aValueMax: 50, aValueType: 'numericMeasure' }, specialBoardingCondition ];
-                            case "GKF_2x12,5mm":
+                            // case "GKF_2x12,5mm":
                             case "GKB_2x12,5mm": return [ { aNameJS: 'Q_Dicke', aValueMin: 7.5, aValueMax: 50, aValueType: 'numericMeasure' }, specialBoardingCondition ];
-                            case "GKF_1x15mm":
+                            // case "GKF_1x15mm":
                             case "GKB_1x15mm": return [ { aNameJS: 'Q_Dicke', aValueMin: 6.5, aValueMax: 50, aValueType: 'numericMeasure' }, specialBoardingCondition ];
-                            case "GKF_2x15mm":
+                            // case "GKF_2x15mm":
                             case "GKB_2x15mm": return [ { aNameJS: 'Q_Dicke', aValueMin: 8.0, aValueMax: 50, aValueType: 'numericMeasure' }, specialBoardingCondition ];
                             default: return null
                         }
                     case 'CW75':
                         switch ( drywallBoarding ) {
                             case "GKB_1x12,5mm": return [ { aNameJS: 'Q_Dicke', aValueMin: 8.75, aValueMax: 50, aValueType: 'numericMeasure' }, specialBoardingCondition ];
-                            case "GKF_2x12,5mm":
+                            // case "GKF_2x12,5mm":
                             case "GKB_2x12,5mm": return [ { aNameJS: 'Q_Dicke', aValueMin: 10, aValueMax: 50, aValueType: 'numericMeasure' }, specialBoardingCondition ];
-                            case "GKF_1x15mm":
+                            // case "GKF_1x15mm":
                             case "GKB_1x15mm": return [ { aNameJS: 'Q_Dicke', aValueMin: 9.0, aValueMax: 50, aValueType: 'numericMeasure' }, specialBoardingCondition ];
-                            case "GKF_2x15mm":
+                            // case "GKF_2x15mm":
                             case "GKB_2x15mm": return [ { aNameJS: 'Q_Dicke', aValueMin: 10.5, aValueMax: 50, aValueType: 'numericMeasure' }, specialBoardingCondition ];
                             default: return null
                         }
                     case 'CW100':
                         switch ( drywallBoarding ) {
                             case "GKB_1x12,5mm": return [ { aNameJS: 'Q_Dicke', aValueMin: 11.25, aValueMax: 50, aValueType: 'numericMeasure' }, specialBoardingCondition ];
-                            case "GKF_2x12,5mm":
+                            // case "GKF_2x12,5mm":
                             case "GKB_2x12,5mm": return [ { aNameJS: 'Q_Dicke', aValueMin: 12.5, aValueMax: 50, aValueType: 'numericMeasure' }, specialBoardingCondition ];
-                            case "GKF_1x15mm":
+                            // case "GKF_1x15mm":
                             case "GKB_1x15mm": return [ { aNameJS: 'Q_Dicke', aValueMin: 11.5, aValueMax: 50, aValueType: 'numericMeasure' }, specialBoardingCondition ];
-                            case "GKF_2x15mm":
+                            // case "GKF_2x15mm":
                             case "GKB_2x15mm": return [ { aNameJS: 'Q_Dicke', aValueMin: 13.0, aValueMax: 50, aValueType: 'numericMeasure' }, specialBoardingCondition ];
 
                             default: return null
@@ -2811,11 +2873,11 @@ at.swi.bim = ( ( bim ) => {
                     case 'CW125':
                         switch ( drywallBoarding ) {
                             case "GKB_1x12,5mm": return [ { aNameJS: 'Q_Dicke', aValueMin: 13.75, aValueMax: 50, aValueType: 'numericMeasure' }, specialBoardingCondition ];
-                            case "GKF_2x12,5mm":
+                            // case "GKF_2x12,5mm":
                             case "GKB_2x12,5mm": return [ { aNameJS: 'Q_Dicke', aValueMin: 15, aValueMax: 50, aValueType: 'numericMeasure' }, specialBoardingCondition ];
-                            case "GKF_1x15mm":
+                            // case "GKF_1x15mm":
                             case "GKB_1x15mm": return [ { aNameJS: 'Q_Dicke', aValueMin: 14, aValueMax: 50, aValueType: 'numericMeasure' }, specialBoardingCondition ];
-                            case "GKF_2x15mm":
+                            // case "GKF_2x15mm":
                             case "GKB_2x15mm": return [ { aNameJS: 'Q_Dicke', aValueMin: 15.5, aValueMax: 50, aValueType: 'numericMeasure' }, specialBoardingCondition ];
 
                             default: return null
@@ -2823,11 +2885,11 @@ at.swi.bim = ( ( bim ) => {
                     case 'CW150':
                         switch ( drywallBoarding ) {
                             case "GKB_1x12,5mm": return [ { aNameJS: 'Q_Dicke', aValueMin: 16.25, aValueMax: 50, aValueType: 'numericMeasure' }, specialBoardingCondition ];
-                            case "GKF_2x12,5mm":
+                            // case "GKF_2x12,5mm":
                             case "GKB_2x12,5mm": return [ { aNameJS: 'Q_Dicke', aValueMin: 17.5, aValueMax: 50, aValueType: 'numericMeasure' }, specialBoardingCondition ];
-                            case "GKF_1x15mm":
+                            // case "GKF_1x15mm":
                             case "GKB_1x15mm": return [ { aNameJS: 'Q_Dicke', aValueMin: 16.5, aValueMax: 50, aValueType: 'numericMeasure' }, specialBoardingCondition ];
-                            case "GKF_2x15mm":
+                            // case "GKF_2x15mm":
                             case "GKB_2x15mm": return [ { aNameJS: 'Q_Dicke', aValueMin: 18.0, aValueMax: 50, aValueType: 'numericMeasure' }, specialBoardingCondition ];
 
                             default: return null
@@ -2845,24 +2907,24 @@ at.swi.bim = ( ( bim ) => {
                             case 'MW75': return [ { aNameJS: 'Q_Dicke', aValueMin: 8.75, aValueMax: 50, aValueType: 'numericMeasure' }, specialBoardingCondition ];
                             case 'MW100': return [ { aNameJS: 'Q_Dicke', aValueMin: 11.25, aValueMax: 50, aValueType: 'numericMeasure' }, specialBoardingCondition ];
                         }
+                    // case 'GKF_2x12,5mm':
                     case 'GKB_2x12,5mm':
-                    case 'GKF_2x12,5mm':
                         switch ( insulation ) {
                             case 'MW35': return [ { aNameJS: 'Q_Dicke', aValueMin: 6.0, aValueMax: 50, aValueType: 'numericMeasure' }, specialBoardingCondition ];
                             case 'MW50': return [ { aNameJS: 'Q_Dicke', aValueMin: 7.5, aValueMax: 50, aValueType: 'numericMeasure' }, specialBoardingCondition ];
                             case 'MW75': return [ { aNameJS: 'Q_Dicke', aValueMin: 10.0, aValueMax: 50, aValueType: 'numericMeasure' }, specialBoardingCondition ];
                             case 'MW100': return [ { aNameJS: 'Q_Dicke', aValueMin: 12.5, aValueMax: 50, aValueType: 'numericMeasure' }, specialBoardingCondition ];
                         }
+                    // case 'GKF_1x15mm':
                     case 'GKB_1x15mm':
-                    case 'GKF_1x15mm':
                         switch ( insulation ) {
                             case 'MW35': return [ { aNameJS: 'Q_Dicke', aValueMin: 5.0, aValueMax: 50, aValueType: 'numericMeasure' }, specialBoardingCondition ];
                             case 'MW50': return [ { aNameJS: 'Q_Dicke', aValueMin: 6.5, aValueMax: 50, aValueType: 'numericMeasure' }, specialBoardingCondition ];
                             case 'MW75': return [ { aNameJS: 'Q_Dicke', aValueMin: 9.0, aValueMax: 50, aValueType: 'numericMeasure' }, specialBoardingCondition ];
                             case 'MW100': return [ { aNameJS: 'Q_Dicke', aValueMin: 11.5, aValueMax: 50, aValueType: 'numericMeasure' }, specialBoardingCondition ];
                         }
+                    // case 'GKF_2x15mm':
                     case 'GKB_2x15mm':
-                    case 'GKF_2x15mm':
                         switch ( insulation ) {
                             case 'MW35': return [ { aNameJS: 'Q_Dicke', aValueMin: 6.5, aValueMax: 50, aValueType: 'numericMeasure' }, specialBoardingCondition ];
                             case 'MW50': return [ { aNameJS: 'Q_Dicke', aValueMin: 8.0, aValueMax: 50, aValueType: 'numericMeasure' }, specialBoardingCondition ];
@@ -3603,35 +3665,43 @@ at.swi.bim = ( ( bim ) => {
         constructor( arr, cData, id, eNameJS ) {
             inputData = arr;
             let
+                type = inputValue( 'LV_12_Typ' ),
                 a = inputValue( 'LV_12_Daemmung' ),
                 b = inputValue( 'LV_12_Daemmungsdicke' ),
                 c = inputValue( 'LV_12_Abdichtung' ),
 
                 typeComment = inputValue( 'R_Typ_Kommentar' );
+
             let name = createName();
-            super( name, cData, typeComment, id, eNameJS, 'Wand', 'OST_Walls' );
+            super( name, cData, typeComment, id, eNameJS, 'Wand', type === 'vertikal (Wand)' ? 'OST_Walls' : 'OST_Floors' );
+            this.LV_12_Typ = type;
+            this.LV_12_Typ_table = type.split( ' ' )[ 0 ]
             this.LV_12_Daemmung = a;
             this.LV_12_Daemmungsdicke = b;
             this.Q_Dicke = b;
             this.LV_12_Abdichtung = c;
+            this.iTWO_Key = type === 'vertikal (Wand)' ? 'WA-PD' : 'DE-PD'
 
             function createName() {
                 let t = b * 10
+                if ( type === 'horizontal (unter der Bodenplatte)' ) {
+                    return `DE_PD_${a}_${t}`
+                }
                 return `WA_PD_${a}_${t}_${c}`
+
             }
         }
 
         exportModification() {
             const obj = {
                 CompoundStructWidth: this.Q_Dicke,
-                Basisfamilie: 'Basiswand',
+                Basisfamilie: this.LV_12_Typ === 'vertikal (Wand)' ? 'Basiswand' : 'Geschossdecke',
                 Familienname: this.Name,
                 Material: this.Material,
                 Muster: '<Flächenfüllung>',
                 Musterfarbe: 16711935,
                 Parameter: {
                     LV_12_Daemmung: this.LV_12_Daemmung,
-                    LV_12_Abdichtung: this.LV_12_Abdichtung,
                     LV_Gewerk: this.LV_Gewerk,
                     LV_Beschreibung: this.LV_Beschreibung,
                     Typenkommentare: this.Typenkommentare,
@@ -3639,7 +3709,98 @@ at.swi.bim = ( ( bim ) => {
                     SwiID: this.SwiID
                 }
             }
+
+            if ( this.LV_12_Typ === 'vertikal (Wand)' ) {
+                obj.Parameter.LV_12_Abdichtung = this.LV_12_Abdichtung
+            }
             return obj
+        }
+
+        static getModelCategory( aValue ) {
+            if ( aValue === 'vertikal (Wand)' ) return 'Architektur/Wand'
+            return 'Architektur/Geschoßdecke'
+        }
+
+        static selectedRadio( aValue, psetData ) {
+            console.log( 'aValue :>> ', aValue );
+            switch ( aValue ) {
+                case 'vertikal (Wand)':
+                    return [
+                        {
+                            aNameJS: 'LV_12_Daemmung',
+                            aValue: [
+                                "EPS",
+                                "XPS"
+                            ],
+                            aValueDefault: 0,
+                            aValueType: 'enum'
+                        },
+                        {
+                            aNameJS: 'LV_12_Daemmungsdicke',
+                            aValue: [
+                                5,
+                                6,
+                                8,
+                                10,
+                                12,
+                                14,
+                                16,
+                                18,
+                                20
+                            ],
+                            aValueDefault: 5,
+                            aValueType: 'enumNr'
+                        },
+                        {
+                            aNameJS: 'LV_12_Abdichtung',
+                            aValue: [
+                                "1L.E-KV5",
+                                "1L.E-KV4+1L.E-KV5/9mm",
+                                "2L.E-KV5/10mm",
+                                "1L.E-KV4+2L.E-KV5/14mm",
+                                "1L.P-KV5/4mm",
+                                "1L.P-KV4+1L.P-KV5/9mm",
+                                "2L.P-KV5/10mm",
+                                "1L.P-KV4+2L.E-KV5/14mm"
+                            ],
+                            aValueDefault: "1L.E-KV5",
+                            aValueType: 'enum'
+                        }
+                    ];
+                case 'horizontal (unter der Bodenplatte)':
+                    return [
+                        {
+                            aNameJS: 'LV_12_Daemmung',
+                            aValue: [
+                                "XPS-G50",
+                                "XPS-G70"
+                            ],
+                            aValueDefault: "XPS-G50",
+                            aValueType: 'enum'
+                        },
+                        {
+                            aNameJS: 'LV_12_Daemmungsdicke',
+                            aValue: [
+                                5,
+                                6,
+                                8,
+                                10,
+                                16
+                            ],
+                            aValueDefault: 5,
+                            aValueType: 'enumNr'
+                        },
+                        {
+                            aNameJS: 'LV_12_Abdichtung',
+                            aDisabled: true,
+                            aValue: [
+                                "-",
+                            ],
+                            aValueDefault: "-",
+                            aValueType: 'enum'
+                        }
+                    ];
+            }
         }
     }
 
@@ -3669,7 +3830,7 @@ at.swi.bim = ( ( bim ) => {
                 this.Ausführung = 'Fertigteil';
             }
             if ( t === 'Fertigteilpodestplatte LG16' ) {
-                this.iTWO_Key = 'RB-FT-SF|Podest';
+                this.iTWO_Key = 'RB-FT-P';
                 this.LV_Gewerk = '16 Fertigteile';
                 this.LV_Beschreibung = 'Podestplatte';
                 this.Ausführung = 'Fertigteil';
@@ -3789,7 +3950,6 @@ at.swi.bim = ( ( bim ) => {
             inputData = arr;
             let
                 a = inputValue( 'Q_Dicke' ),
-                b = inputValue( 'Q_Hoehe' ),
                 d = inputValue( 'LV_07_Betonfestigkeitsklasse' ),
                 // e = inputValue( 'LV_07_BST550' ),
                 f = inputValue( 'LV_07_Expositionsklasse' ),
@@ -3797,30 +3957,27 @@ at.swi.bim = ( ( bim ) => {
 
                 typeComment = inputValue( 'R_Typ_Kommentar' );
             let name = createName();
-            super( name, cData, typeComment, id, eNameJS, 'Streifenfundament', 'OST_StructuralFoundation' );
+            super( name, cData, typeComment, id, eNameJS, 'Wand', 'OST_Walls' );
             this.Q_Dicke = a;
-            this.Breite = a;
-            this.Q_Hoehe = b;
-            this.Fundamentstärke = b;
             this.LV_07_Betonfestigkeitsklasse = d;
-            // this.LV_07_BST550 = e;
             this.LV_07_Expositionsklasse = f;
             this.LV_07_Schalung = g;
 
             function createName() {
                 let w = a * 10;
-                let h = b * 10;
-                return `FU_STB_${w}x${h}_${d}_${f}`;
+                return `FU_STB_${w}_${d}_${f}`;
             }
         }
 
         exportModification() {
             const obj = {
-                Basisfamilie: 'Streifenfundament 1000 x 500',
+                CompoundStructWidth: this.Q_Dicke,
+                Basisfamilie: 'Basiswand',
                 Familienname: this.Name,
+                Material: this.Material,
+                Muster: '<Flächenfüllung>',
+                Musterfarbe: 32768,
                 Parameter: {
-                    Breite: this.Q_Dicke,
-                    Fundamentstärke: this.Q_Hoehe,
                     LV_07_Betonfestigkeitsklasse: this.LV_07_Betonfestigkeitsklasse,
                     LV_07_Expositionsklasse: this.LV_07_Expositionsklasse,
                     LV_07_Schalung: this.LV_07_Schalung,

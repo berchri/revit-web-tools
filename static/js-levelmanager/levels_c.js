@@ -23,11 +23,6 @@ const wizard = [
         required: false
     },
     {
-        name: 'shortNameLevelStructure',
-        value: '',
-        required: false
-    },
-    {
         name: 'storeyCountUp',
         value: 2,
         required: true
@@ -80,20 +75,27 @@ $( '#link-wizard' ).on( 'click', () => {
     view.showView( 'wizard' )
 } )
 
-$( '#btn-close-wizard' ).on( 'click', () => {
+$( '.btn-close-wizard' ).on( 'click', () => {
     view.showView( 'start' )
 } )
-
-// $( '#link-create-manually' ).on( 'click', () => { view.showView( 'levelStructure' ) } )
-
-$( '#link-level-structure' ).on( 'click', function () {
-    view.showView( 'levelStructure', this.dataset.nameLevelStructure )
-} )
-
 
 $( '#btn-create-structure' ).on( 'click', function ( e ) {
     e.preventDefault()
     validateAssistant()
+} )
+
+$( '#btn-edit-structure' ).on( 'click', function ( e ) {
+    e.preventDefault()
+    const newName = $( '#editNameLevelStructure' ).val()
+    const newShortName = $( '#editShortNameLevelStructure' ).val()
+    const data = model.levelStructure.changeStructure( activeStructure, newName, newShortName )
+    view.changeNavLink( activeStructure, newName )
+    view.showView( 'spinner' )
+    setTimeout( () => {
+        createStructure( data )
+        view.showView( 'levelStructure' )
+        view.scrollTo()
+    }, 300 );
 } )
 
 
@@ -136,7 +138,7 @@ function validateAssistant() {
     // console.log( data )
 
     let trigger = data.levelStructure.filter( e => e.levelType === 'delta' && e.storeyName === 'EG01' )[ 0 ]
-    // console.log( trigger );
+    console.log( trigger );
     createStructure( data, true, trigger.id )
     setTimeout( () => {
         view.showView( 'levelStructure' )
@@ -216,7 +218,7 @@ $( '.btn-minus, .btn-plus' ).on( 'mouseenter', function () {
 } )
 
 function clickNavLink() {
-    $( '#nav-level-structures .nav-link' ).on( 'click', function () {
+    $( '.l-level-structures' ).on( 'click', function () {
         const data = model.getWizardData( this.dataset.id )
         view.showView( 'spinner' )
         setTimeout( () => {
@@ -225,20 +227,33 @@ function clickNavLink() {
             view.scrollTo()
         }, 300 );
     } )
+
+    $( '.l-edit-level-structures' ).on( 'click', function () {
+        const data = model.getWizardData( this.dataset.id )
+        activeStructure = data.levelStructureId
+        $( '#editNameLevelStructure' ).val( data.levelStructureName )
+        $( '#editShortNameLevelStructure' ).val( data.levelStructureShortName )
+
+        $( '#btn-edit-structure' ).prop( 'disabled', true )
+
+        $( '#column-wizard-edit .is-invalid' ).removeClass( 'is-invalid' )
+        view.showView( 'wizard-edit' )
+    } )
 }
 
 $( '#column-wizard :input:not(#nameLevelStructure, #shortNameLevelStructure)' ).on( 'change', function ( e ) {
-    // console.log( 'click', this );
     let inputValue = validateNumber( this )
     if ( typeof inputValue !== 'number' ) return
     if ( inputValue <= 0 && this.id !== 'elevationStructuralSlab' ) return view.notifyNegative( this, this.id )
     view.setValid( this )
 } )
 
-$( '#nameLevelStructure, #shortNameLevelStructure' ).on( 'change', function ( e ) {
+$( '#nameLevelStructure, #shortNameLevelStructure, #editNameLevelStructure, #editShortNameLevelStructure' ).on( 'change', function ( e ) {
     if ( this.id === 'nameLevelStructure' && this.value === '' ) return view.notifyEmpty( this, this.id )
+    if ( this.id === 'editNameLevelStructure' && this.value === '' ) return view.notifyEmpty( this, this.id )
     if ( !validateString( this ) ) return
     if ( !checkNameUnique( this ) ) return
+    $( '#btn-edit-structure' ).prop( 'disabled', false )
     view.setValid( this )
 } )
 
@@ -355,6 +370,8 @@ function validateString( input ) {
             message: 'Nur Groß- oder Kleinbuchstaben sind möglich'
         }
     }
+    stringValidation.editNameLevelStructure = stringValidation.nameLevelStructure
+    stringValidation.editShortNameLevelStructure = stringValidation.shortNameLevelStructure
 
     let regex = stringValidation[ input.id ]?.regex || stringValidation.default.regex
 

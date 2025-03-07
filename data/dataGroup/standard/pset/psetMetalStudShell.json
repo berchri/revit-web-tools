@@ -50,10 +50,7 @@
                 "GKB_1x12,5mm",
                 "GKB_2x12,5mm",
                 "GKB_1x15mm",
-                "GKB_2x15mm",
-                "GKF_2x12,5mm",
-                "GKF_1x15mm",
-                "GKF_2x15mm"
+                "GKB_2x15mm"
             ],
             "aValueDefault": 0,
             "aValueUnit": ""

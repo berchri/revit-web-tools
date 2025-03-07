@@ -4,7 +4,6 @@
             <th scope="col">#</th>
             <th scope="col">Name</th>
             <th scope="col">Dicke</th>
-            <th scope="col">Höhe</th>
             <th scope="col">Betonfestigkeit</th>
             <th scope="col">EK</th>
             <th scope="col">Typ-Kommentar</th>
@@ -14,21 +13,20 @@
     </thead>
     <tbody class="text-center align-middle">
         {{#each typesCollection}}
-            <tr>
-                <th scope="row">{{id}}</th>
-                <td>{{Name}}</td>
-                <td>{{Q_Dicke}}</td>
-                <td>{{Q_Hoehe}}</td>
-                <td>{{LV_07_Betonfestigkeitsklasse}}</td>
-                <td>{{LV_07_Expositionsklasse}}</td>
-                <td>{{R_Typ_Kommentar}}</td>
-                <td><a href="#" id="tr-delete" class="tr-delete" data-trID="{{@index}}" data-id="{{eNameJS}}">
-                        {{{iconDelete}}}
-                    </a></td>
-                <td><a href="#" id="tr-edit" class="tr-edit" data-trID="{{@index}}" data-id="{{eNameJS}}">
-                        {{{iconEdit}}}
-                    </a></td>
-            </tr>
+        <tr>
+            <th scope="row">{{id}}</th>
+            <td>{{Name}}</td>
+            <td>{{Q_Dicke}}</td>
+            <td>{{LV_07_Betonfestigkeitsklasse}}</td>
+            <td>{{LV_07_Expositionsklasse}}</td>
+            <td>{{R_Typ_Kommentar}}</td>
+            <td><a href="#" id="tr-delete" class="tr-delete" data-trID="{{@index}}" data-id="{{eNameJS}}">
+                    {{{iconDelete}}}
+                </a></td>
+            <td><a href="#" id="tr-edit" class="tr-edit" data-trID="{{@index}}" data-id="{{eNameJS}}">
+                    {{{iconEdit}}}
+                </a></td>
+        </tr>
         {{/each}}
     </tbody>
 </table>

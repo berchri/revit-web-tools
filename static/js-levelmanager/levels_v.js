@@ -2,7 +2,7 @@ function showView( section ) {
 
     const views = {
         'spinner': () => {
-            $( '#column-wizard, #column-wizard-info' ).toggle( false )
+            $( '#column-wizard, #column-wizard-info, #column-wizard-edit' ).toggle( false )
             $( '#level-structure-column' ).toggle( false )
             $( '#spinner' ).toggle( true )
             $( '#level-manager-export' ).toggle( false )
@@ -10,34 +10,43 @@ function showView( section ) {
         },
         'wizard': () => {
             $( '#column-wizard, #column-wizard-info' ).toggle( true )
+            $( '#column-wizard-edit' ).toggle( false )
+            $( '#level-structure-column' ).toggle( false )
+            $( '#spinner' ).toggle( false )
+            $( '#level-manager-export' ).toggle( false )
+            $( '#main-store' ).toggle( false )
+        },
+        'wizard-edit': () => {
+            $( '#column-wizard' ).toggle( false )
+            $( '#column-wizard-info, #column-wizard-edit' ).toggle( true )
             $( '#level-structure-column' ).toggle( false )
             $( '#spinner' ).toggle( false )
             $( '#level-manager-export' ).toggle( false )
             $( '#main-store' ).toggle( false )
         },
         'start': () => {
-            $( '#column-wizard, #column-wizard-info' ).toggle( false )
+            $( '#column-wizard, #column-wizard-info, #column-wizard-edit' ).toggle( false )
             $( '#level-structure-column' ).toggle( false )
             $( '#spinner' ).toggle( false )
             $( '#level-manager-export' ).toggle( false )
             $( '#main-store' ).toggle( false )
         },
         'levelStructure': () => {
-            $( '#column-wizard, #column-wizard-info' ).toggle( false )
+            $( '#column-wizard, #column-wizard-info, #column-wizard-edit' ).toggle( false )
             $( '#level-structure-column' ).toggle( true )
             $( '#spinner' ).toggle( false )
             $( '#level-manager-export' ).toggle( false )
             $( '#main-store' ).toggle( false )
         },
         'export': () => {
-            $( '#column-wizard, #column-wizard-info' ).toggle( false )
+            $( '#column-wizard, #column-wizard-info, #column-wizard-edit' ).toggle( false )
             $( '#level-structure-column' ).toggle( false )
             $( '#spinner' ).toggle( false )
             $( '#level-manager-export' ).toggle( true )
             $( '#main-store' ).toggle( false )
         },
         'store': () => {
-            $( '#column-wizard, #column-wizard-info' ).toggle( false )
+            $( '#column-wizard, #column-wizard-info, #column-wizard-edit' ).toggle( false )
             $( '#level-structure-column' ).toggle( false )
             $( '#spinner' ).toggle( false )
             $( '#level-manager-export' ).toggle( false )
@@ -131,11 +140,11 @@ function createBuildingStructure( data, catalyst = 'delta_RDOK-RDUK_EG01', affec
                 Handlebars.registerHelper( 'card_storey', html )
                 break
             case 'FUK':
+                console.log( level )
                 // level.colWall = 'col-empty'
                 // console.log( 'colcustom FUK: ', colCustom )
                 html = Handlebars.templates[ 'card_level' ]( level )
                 Handlebars.registerHelper( 'card_storey', '' )
-                // Handlebars.registerHelper( 'card_storey', '' )
                 Handlebars.registerHelper( 'card_level', html )
                 Handlebars.registerHelper( 'card_custom_level', '' ) // '' registrieren
                 // createFoundationStorey... auslagern
@@ -144,10 +153,13 @@ function createBuildingStructure( data, catalyst = 'delta_RDOK-RDUK_EG01', affec
                         storeyName: level.storeyName,
                         cssWall: 'wall-placeholder',
                         cssRow: 'row-height-s',
-                        showCustomLevel: true
+                        showCustomLevel: true,
+                        IDNumber: level.id.split( '_' )[ 0 ]
                     }
                     html = Handlebars.templates[ 'building_structure' ]( storeyOptions )
                     htmlAll = htmlAll.concat( html )
+                } else {
+                    console.log( 'skipped' )
                 }
                 break
             case 'RDUK': // for slab height increase
@@ -169,7 +181,8 @@ function createBuildingStructure( data, catalyst = 'delta_RDOK-RDUK_EG01', affec
                                 storeyName: level.storeyName,
                                 cssWall: 'wall-placeholder',
                                 cssRow: 'row-height-s',
-                                showCustomLevel: true
+                                showCustomLevel: true,
+                                IDNumber: level.id.split( '_' )[ 0 ]
                             }
                             Handlebars.registerHelper( 'card_custom_level', colCustom )
                             html = Handlebars.templates[ 'building_structure' ]( storeyOptions )
@@ -191,6 +204,7 @@ function createBuildingStructure( data, catalyst = 'delta_RDOK-RDUK_EG01', affec
             // }
 
             default:
+                console.log( level.id, level.levelType )
                 // level.colWall = 'col-wall'
                 part = Handlebars.templates[ `card_level` ]( level )
                 if ( colElevations === '' ) savedLevel = level
@@ -209,21 +223,18 @@ function createBuildingStructure( data, catalyst = 'delta_RDOK-RDUK_EG01', affec
                         showBeam: true,
                         showSlabHeightIncrease: true,
                         showCustomLevel: true,
-                        id: savedLevel.id
+                        IDNumber: savedLevel.id.split( '_' )[ 0 ]
                     }
                     if ( level.storeyName === 'DD01' ) {
                         storeyOptions.cssWall = 'wall attic'
                         storeyOptions.cssRow = 'row-height-s'
                         storeyOptions.cssContainerLevels = 'flex-column-reverse'
                     }
-                    if ( level.storeyName === 'DD01' || level.levelType === 'FUK' ) {
+                    if ( level.storeyName === 'DD01' ) {
                         storeyOptions.showBeam = false
                         storeyOptions.showSlabHeightIncrease = false
                     }
 
-                    if ( level.storeyName.includes( 'OG' ) || level.storeyName.includes( 'EG' ) || level.storeyName.includes( 'UG' ) ) {
-                        storeyOptions.beamID = savedLevel.id.replace( 'RDUK', 'UZUK' )
-                    }
                     // console.log( 'storeyOptions: ', storeyOptions )
                     html = Handlebars.templates[ 'building_structure' ]( storeyOptions )
                     htmlAll = htmlAll.concat( html )
@@ -290,6 +301,10 @@ function createNavLink( data ) {
     }
     let link = Handlebars.templates[ 'navlink' ]( linkData )
     $( '#nav-level-structures' ).append( link )
+}
+
+function changeNavLink( id, nameNew ) {
+    $( `.l-level-structures[data-id=${id}]>span` ).text( nameNew )
 }
 
 function removeNavLinks() {
@@ -471,4 +486,4 @@ function openModalMain( type, triggerOpen, data ) {
 }
 
 
-export { showView, createBuildingStructure, createNavLink, notifyNaN, notifyInvalidString, setValid, notifyEmpty, notifyNegative, notifyDuplicate, notifyRangeNumber, notifyElevationDuplicate, highlight, scrollTo, scrollEnd, svgSetActive, showCard, createLoadSaveView, removeNavLinks, openModalMain }
+export { showView, createBuildingStructure, createNavLink, notifyNaN, notifyInvalidString, setValid, notifyEmpty, notifyNegative, notifyDuplicate, notifyRangeNumber, notifyElevationDuplicate, highlight, scrollTo, scrollEnd, svgSetActive, showCard, createLoadSaveView, removeNavLinks, openModalMain, changeNavLink }

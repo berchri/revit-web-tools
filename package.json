@@ -1,6 +1,8 @@
 {
-    "name": "project_wifi_cb",
+    "name": "revit-tools-webapp",
     "version": "1.0.0",
+    "Vorlageversion": "2.1_dev",
+    "portNumber": "5056",
     "description": "Tool zum Erstellen von Bauteiltypen.",
     "main": "main.js",
     "dependencies": {
@@ -17,22 +19,13 @@
     },
     "scripts": {
         "start": "node main.js",
-        "test": "node dev.js",
-        "i-prod": "node node-windows.js install Revit-Tools prod",
-        "u-prod": "node node-windows.js uninstall Revit-Tools",
-        "i-dev": "node node-windows.js install Revit-Tools-Dev dev",
-        "u-dev": "node node-windows.js uninstall Revit-Tools-Dev",
-        "i-dev-new": "node node-windows.js install rvttoolsnew dev",
-        "u-dev-new": "node node-windows.js uninstall rvttoolsnew"
+        "install-app": "node node-windows.js install Revit-Tools",
+        "uninstall-app": "node node-windows.js uninstall Revit-Tools"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://gitlab.com/chris_b22/project_wifi_cb.git"
+        "url": "https://DigitaleUnternehmensEntwicklung@dev.azure.com/DigitaleUnternehmensEntwicklung/Revit-Tools-WebApp/_git/Revit-Tools-WebApp"
     },
     "author": "Christoph Berger",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://gitlab.com/chris_b22/project_wifi_cb/issues"
-    },
-    "homepage": "https://gitlab.com/chris_b22/project_wifi_cb#readme"
+    "license": "ISC"
 }

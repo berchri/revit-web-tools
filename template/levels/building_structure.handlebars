@@ -15,58 +15,78 @@
     </div>
     {{!-- container slab-height-increase --}}
     {{#if showSlabHeightIncrease}}
-    <div class="d-flex flex-column col-slab px-3 pb-1">
-        <div class="slab-height-increase"></div>
-        {{{card_height}}} <div class="d-flex flex-column align-items-center mb-4">
-            <button type="button" class="btn-lm-add" data-cardid="slab_{{storeyName}}">+</button>
-            <div class="level-card new-elevation border rounded shadow p-2" id="slab_{{storeyName}}">
-                <h1 class="d-flex align-items-center h6 mb-2 card-head">{{id}}_neu</h1>
-                <div class="d-flex justify-content-end align-items-center">
-                    <div class="text-right">RDUK</div>
-                    <div class="input-group ml-2 card-input">
-                        <input name="{{levelName}}" type="text" class="form-control" id="input-slab_{{storeyName}}"
-                            placeholder="Höhe eingeben" data-type="slab-increase" data-storey="{{storeyName}}">
-                        <div class="invalid-tooltip" id="input-slab_{{storeyName}}-notification"></div>
-                        <div class="input-group-append">
-                            <span class="input-group-text">m</span>
+        <div class="d-flex flex-column col-slab px-3 pb-1">
+            <div class="slab-height-increase"></div>
+            {{{card_height}}} <div class="d-flex flex-column align-items-center mb-4">
+                <button type="button" class="btn-lm-add" data-cardid="slab_{{storeyName}}">+</button>
+                <div class="level-card new-elevation border rounded shadow p-2" id="slab_{{storeyName}}">
+                    <h1 class="d-flex align-items-center h6 mb-2 card-head">{{IDNumber}}_{{storeyName}}_RDUK_neu</h1>
+                    <div class="d-flex justify-content-end align-items-center">
+                        <div class="text-right">RDUK</div>
+                        <div class="input-group ml-2 card-input">
+                            <input name="{{levelName}}" type="text" class="form-control" id="input-slab_{{storeyName}}" placeholder="Höhe eingeben" data-type="slab-increase" data-storey="{{storeyName}}">
+                            <div class="invalid-tooltip" id="input-slab_{{storeyName}}-notification"></div>
+                            <div class="input-group-append">
+                                <span class="input-group-text">m</span>
+                            </div>
                         </div>
+                        <div><button type="button" class="btn-lm-add-small" id="btn-slab_{{storeyName}}" data-inputid="input-slab_{{storeyName}}">+</button></div>
                     </div>
-                    <div><button type="button" class="btn-lm-add-small" id="btn-slab_{{storeyName}}"
-                            data-inputid="input-slab_{{storeyName}}">+</button></div>
                 </div>
             </div>
         </div>
-    </div>
     {{else}}
-    <div class="d-flex flex-column col-slab px-3 pb-1">
-    </div>
+        <div class="d-flex flex-column col-slab px-3 pb-1">
+        </div>
     {{/if}}
     {{!-- container beam --}}
     {{#if showBeam}}
-    <div class="d-flex flex-column col-beam px-3 pb-1">
-        <div class="beam"></div>
-        {{{card_beam}}} <div class="d-flex flex-column align-items-center mb-4">
-            <button type="button" class="btn-lm-add" data-cardid="beam_{{storeyName}}">+</button>
-            <div class="level-card new-elevation border rounded shadow p-2" id="beam_{{storeyName}}">
-                <h1 class="d-flex align-items-center h6 mb-2 card-head">{{beamID}}_neu</h1>
-                <div class="d-flex justify-content-end align-items-center">
-                    <div class="text-right">UZUK</div>
-                    <div class="input-group ml-2 card-input">
-                        <input name="{{levelName}}" type="text" class="form-control" id="input-beam_{{storeyName}}"
-                            placeholder="Höhe eingeben" data-type="beam" data-storey="{{storeyName}}">
-                        <div class="invalid-tooltip" id="input-beam_{{storeyName}}-notification"></div>
-                        <div class="input-group-append">
-                            <span class="input-group-text">m</span>
+        <div class="d-flex flex-column col-beam px-3 pb-1">
+            <div class="beam"></div>
+            {{{card_beam}}} <div class="d-flex flex-column align-items-center mb-4">
+                <button type="button" class="btn-lm-add" data-cardid="beam_{{storeyName}}">+</button>
+                <div class="level-card new-elevation border rounded shadow p-2" id="beam_{{storeyName}}">
+                    <h1 class="d-flex align-items-center h6 mb-2 card-head">{{IDNumber}}_{{storeyName}}_UZUK_neu</h1>
+                    <div class="d-flex justify-content-end align-items-center">
+                        <div class="text-right">UZUK</div>
+                        <div class="input-group ml-2 card-input">
+                            <input name="{{levelName}}" type="text" class="form-control" id="input-beam_{{storeyName}}" placeholder="Höhe eingeben" data-type="beam" data-storey="{{storeyName}}">
+                            <div class="invalid-tooltip" id="input-beam_{{storeyName}}-notification"></div>
+                            <div class="input-group-append">
+                                <span class="input-group-text">m</span>
+                            </div>
                         </div>
+                        <div><button type="button" class="btn-lm-add-small" id="btn-beam_{{storeyName}}" data-inputid="input-beam_{{storeyName}}">+</button></div>
                     </div>
-                    <div><button type="button" class="btn-lm-add-small" id="btn-beam_{{storeyName}}"
-                            data-inputid="input-beam_{{storeyName}}">+</button></div>
                 </div>
             </div>
         </div>
-    </div>
     {{else}}
-    <div class="d-flex flex-column col-beam px-3 pb-1">
-    </div>
+        <div class="d-flex flex-column col-beam px-3 pb-1">
+        </div>
+    {{/if}}
+    {{#if showCustomLevel}}
+        <div class="d-flex justify-content-center flex-column col-custom px-3 pb-1">
+            {{{card_custom_level}}} <div class="d-flex flex-column align-items-center mb-4">
+                <button type="button" class="btn-lm-add" data-cardid="custom_{{storeyName}}">+</button>
+                <div class="level-card new-elevation border rounded shadow p-2" id="custom_{{storeyName}}">
+                    <h1 class="d-flex align-items-center h6 mb-2 card-head">{{IDNumber}}_{{storeyName}}_HE_neu</h1>
+                    <div class="d-flex justify-content-end align-items-center">
+                        <div class="text-right">HE</div>
+                        <div class="input-group ml-2 card-input">
+                            <input name="{{levelName}}" type="text" class="form-control" id="input-custom_{{storeyName}}" placeholder="Höhe eingeben" data-type="custom" data-storey="{{storeyName}}">
+                            <div class="invalid-tooltip" id="input-custom_{{storeyName}}-notification"></div>
+                            <div class="input-group-append">
+                                <span class="input-group-text">m</span>
+                            </div>
+                        </div>
+                        <div><button type="button" class="btn-lm-add-small" id="btn-custom_{{storeyName}}" data-inputid="input-custom_{{storeyName}}">+</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{else}}
+        <div class="d-flex flex-column col-beam px-3 pb-1">
+        </div>
     {{/if}}
 </div>
